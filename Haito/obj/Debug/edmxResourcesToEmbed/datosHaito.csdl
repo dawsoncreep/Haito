@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HaitoModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="HaitoEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="clienteProveedor" EntityType="HaitoModel.clienteProveedor" />
+    <EntitySet Name="cotizacion" EntityType="HaitoModel.cotizacion" />
+    <EntitySet Name="cotizacionDetalle" EntityType="HaitoModel.cotizacionDetalle" />
+    <EntitySet Name="ordenCompra" EntityType="HaitoModel.ordenCompra" />
+    <EntitySet Name="ordenCompraDetalle" EntityType="HaitoModel.ordenCompraDetalle" />
+    <EntitySet Name="producto" EntityType="HaitoModel.producto" />
+    <EntitySet Name="sysdiagrams" EntityType="HaitoModel.sysdiagrams" />
+    <EntitySet Name="usuario" EntityType="HaitoModel.usuario" />
+    <AssociationSet Name="FK_cotizacion_clienteProveedor" Association="HaitoModel.FK_cotizacion_clienteProveedor">
+      <End Role="clienteProveedor" EntitySet="clienteProveedor" />
+      <End Role="cotizacion" EntitySet="cotizacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ordenCompra_clienteProveedor" Association="HaitoModel.FK_ordenCompra_clienteProveedor">
+      <End Role="clienteProveedor" EntitySet="clienteProveedor" />
+      <End Role="ordenCompra" EntitySet="ordenCompra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cotizacion_usuario" Association="HaitoModel.FK_cotizacion_usuario">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="cotizacion" EntitySet="cotizacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cotizacionDetalle_cotizacion" Association="HaitoModel.FK_cotizacionDetalle_cotizacion">
+      <End Role="cotizacion" EntitySet="cotizacion" />
+      <End Role="cotizacionDetalle" EntitySet="cotizacionDetalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cotizacionDetalle_producto" Association="HaitoModel.FK_cotizacionDetalle_producto">
+      <End Role="producto" EntitySet="producto" />
+      <End Role="cotizacionDetalle" EntitySet="cotizacionDetalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ordenCompra_usuario" Association="HaitoModel.FK_ordenCompra_usuario">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="ordenCompra" EntitySet="ordenCompra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ordenCompraDetalle_ordenCompra" Association="HaitoModel.FK_ordenCompraDetalle_ordenCompra">
+      <End Role="ordenCompra" EntitySet="ordenCompra" />
+      <End Role="ordenCompraDetalle" EntitySet="ordenCompraDetalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ordenCompraDetalle_producto" Association="HaitoModel.FK_ordenCompraDetalle_producto">
+      <End Role="producto" EntitySet="producto" />
+      <End Role="ordenCompraDetalle" EntitySet="ordenCompraDetalle" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(HaitoModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(HaitoModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <EntityType Name="clienteProveedor">
+    <Key>
+      <PropertyRef Name="idClienteProveedor" />
+    </Key>
+    <Property Name="idClienteProveedor" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="atencion" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="celular" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="telefono" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="telefono2" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="correo" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="diasCredito" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="domicilio" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="puestoArea" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="RFC" Type="String" MaxLength="13" Unicode="true" FixedLength="false" />
+    <Property Name="cliente" Type="Boolean" Nullable="false" />
+    <Property Name="codigoPostal" Type="String" MaxLength="8" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="cotizacion" Relationship="HaitoModel.FK_cotizacion_clienteProveedor" FromRole="clienteProveedor" ToRole="cotizacion" />
+    <NavigationProperty Name="ordenCompra" Relationship="HaitoModel.FK_ordenCompra_clienteProveedor" FromRole="clienteProveedor" ToRole="ordenCompra" />
+  </EntityType>
+  <EntityType Name="cotizacion">
+    <Key>
+      <PropertyRef Name="idCotizacion" />
+    </Key>
+    <Property Name="idCotizacion" Type="Int32" Nullable="false" />
+    <Property Name="idCliente" Type="Int32" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="idUsuario" Type="Int32" Nullable="false" />
+    <Property Name="observaciones" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="clienteProveedor" Relationship="HaitoModel.FK_cotizacion_clienteProveedor" FromRole="cotizacion" ToRole="clienteProveedor" />
+    <NavigationProperty Name="usuario" Relationship="HaitoModel.FK_cotizacion_usuario" FromRole="cotizacion" ToRole="usuario" />
+    <NavigationProperty Name="cotizacionDetalle" Relationship="HaitoModel.FK_cotizacionDetalle_cotizacion" FromRole="cotizacion" ToRole="cotizacionDetalle" />
+  </EntityType>
+  <EntityType Name="cotizacionDetalle">
+    <Key>
+      <PropertyRef Name="idCotizacionDetalle" />
+    </Key>
+    <Property Name="idCotizacionDetalle" Type="Int32" Nullable="false" />
+    <Property Name="idCotizacion" Type="Int32" Nullable="false" />
+    <Property Name="idProducto" Type="Int32" Nullable="false" />
+    <Property Name="cantidad" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="precioUnitario" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="idUnidadMedida" Type="Int32" />
+    <NavigationProperty Name="cotizacion" Relationship="HaitoModel.FK_cotizacionDetalle_cotizacion" FromRole="cotizacionDetalle" ToRole="cotizacion" />
+    <NavigationProperty Name="producto" Relationship="HaitoModel.FK_cotizacionDetalle_producto" FromRole="cotizacionDetalle" ToRole="producto" />
+  </EntityType>
+  <EntityType Name="ordenCompra">
+    <Key>
+      <PropertyRef Name="idOrdenCompra" />
+    </Key>
+    <Property Name="idOrdenCompra" Type="Int32" Nullable="false" />
+    <Property Name="idProveedor" Type="Int32" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="idUsuario" Type="Int32" Nullable="false" />
+    <Property Name="observaciones" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="clienteProveedor" Relationship="HaitoModel.FK_ordenCompra_clienteProveedor" FromRole="ordenCompra" ToRole="clienteProveedor" />
+    <NavigationProperty Name="usuario" Relationship="HaitoModel.FK_ordenCompra_usuario" FromRole="ordenCompra" ToRole="usuario" />
+    <NavigationProperty Name="ordenCompraDetalle" Relationship="HaitoModel.FK_ordenCompraDetalle_ordenCompra" FromRole="ordenCompra" ToRole="ordenCompraDetalle" />
+  </EntityType>
+  <EntityType Name="ordenCompraDetalle">
+    <Key>
+      <PropertyRef Name="idOrdenCompraDetalle" />
+    </Key>
+    <Property Name="idOrdenCompraDetalle" Type="Int32" Nullable="false" />
+    <Property Name="idOrdenCompra" Type="Int32" Nullable="false" />
+    <Property Name="idProducto" Type="Int32" Nullable="false" />
+    <Property Name="cantidad" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="precioUnitario" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="idUnidadMedida" Type="Int32" />
+    <NavigationProperty Name="ordenCompra" Relationship="HaitoModel.FK_ordenCompraDetalle_ordenCompra" FromRole="ordenCompraDetalle" ToRole="ordenCompra" />
+    <NavigationProperty Name="producto" Relationship="HaitoModel.FK_ordenCompraDetalle_producto" FromRole="ordenCompraDetalle" ToRole="producto" />
+  </EntityType>
+  <EntityType Name="producto">
+    <Key>
+      <PropertyRef Name="idProducto" />
+    </Key>
+    <Property Name="idProducto" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="idProveedor" Type="Int32" />
+    <NavigationProperty Name="cotizacionDetalle" Relationship="HaitoModel.FK_cotizacionDetalle_producto" FromRole="producto" ToRole="cotizacionDetalle" />
+    <NavigationProperty Name="ordenCompraDetalle" Relationship="HaitoModel.FK_ordenCompraDetalle_producto" FromRole="producto" ToRole="ordenCompraDetalle" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="pass" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="idRol" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="cotizacion" Relationship="HaitoModel.FK_cotizacion_usuario" FromRole="usuario" ToRole="cotizacion" />
+    <NavigationProperty Name="ordenCompra" Relationship="HaitoModel.FK_ordenCompra_usuario" FromRole="usuario" ToRole="ordenCompra" />
+  </EntityType>
+  <Association Name="FK_cotizacion_clienteProveedor">
+    <End Role="clienteProveedor" Type="HaitoModel.clienteProveedor" Multiplicity="1" />
+    <End Role="cotizacion" Type="HaitoModel.cotizacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="clienteProveedor">
+        <PropertyRef Name="idClienteProveedor" />
+      </Principal>
+      <Dependent Role="cotizacion">
+        <PropertyRef Name="idCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ordenCompra_clienteProveedor">
+    <End Role="clienteProveedor" Type="HaitoModel.clienteProveedor" Multiplicity="1" />
+    <End Role="ordenCompra" Type="HaitoModel.ordenCompra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="clienteProveedor">
+        <PropertyRef Name="idClienteProveedor" />
+      </Principal>
+      <Dependent Role="ordenCompra">
+        <PropertyRef Name="idProveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cotizacion_usuario">
+    <End Role="usuario" Type="HaitoModel.usuario" Multiplicity="1" />
+    <End Role="cotizacion" Type="HaitoModel.cotizacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="cotizacion">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cotizacionDetalle_cotizacion">
+    <End Role="cotizacion" Type="HaitoModel.cotizacion" Multiplicity="1" />
+    <End Role="cotizacionDetalle" Type="HaitoModel.cotizacionDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cotizacion">
+        <PropertyRef Name="idCotizacion" />
+      </Principal>
+      <Dependent Role="cotizacionDetalle">
+        <PropertyRef Name="idCotizacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cotizacionDetalle_producto">
+    <End Role="producto" Type="HaitoModel.producto" Multiplicity="1" />
+    <End Role="cotizacionDetalle" Type="HaitoModel.cotizacionDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="producto">
+        <PropertyRef Name="idProducto" />
+      </Principal>
+      <Dependent Role="cotizacionDetalle">
+        <PropertyRef Name="idProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ordenCompra_usuario">
+    <End Role="usuario" Type="HaitoModel.usuario" Multiplicity="1" />
+    <End Role="ordenCompra" Type="HaitoModel.ordenCompra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="ordenCompra">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ordenCompraDetalle_ordenCompra">
+    <End Role="ordenCompra" Type="HaitoModel.ordenCompra" Multiplicity="1" />
+    <End Role="ordenCompraDetalle" Type="HaitoModel.ordenCompraDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ordenCompra">
+        <PropertyRef Name="idOrdenCompra" />
+      </Principal>
+      <Dependent Role="ordenCompraDetalle">
+        <PropertyRef Name="idOrdenCompra" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ordenCompraDetalle_producto">
+    <End Role="producto" Type="HaitoModel.producto" Multiplicity="1" />
+    <End Role="ordenCompraDetalle" Type="HaitoModel.ordenCompraDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="producto">
+        <PropertyRef Name="idProducto" />
+      </Principal>
+      <Dependent Role="ordenCompraDetalle">
+        <PropertyRef Name="idProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

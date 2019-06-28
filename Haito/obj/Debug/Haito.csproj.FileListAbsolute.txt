@@ -1,0 +1,16 @@
+D:\PERSONAL\proyectos\HAITO\HaitoCotizaciones\Haito\bin\Debug\Haito.exe.config
+D:\PERSONAL\proyectos\HAITO\HaitoCotizaciones\Haito\bin\Debug\Haito.exe
+D:\PERSONAL\proyectos\HAITO\HaitoCotizaciones\Haito\bin\Debug\Haito.pdb
+D:\PERSONAL\proyectos\HAITO\HaitoCotizaciones\Haito\bin\Debug\EntityFramework.dll
+D:\PERSONAL\proyectos\HAITO\HaitoCotizaciones\Haito\bin\Debug\EntityFramework.xml
+D:\PERSONAL\proyectos\HAITO\HaitoCotizaciones\Haito\obj\Debug\Haito.csprojResolveAssemblyReference.cache
+D:\PERSONAL\proyectos\HAITO\HaitoCotizaciones\Haito\obj\Debug\Haito.Properties.Resources.resources
+D:\PERSONAL\proyectos\HAITO\HaitoCotizaciones\Haito\obj\Debug\Haito.csproj.GenerateResource.Cache
+D:\PERSONAL\proyectos\HAITO\HaitoCotizaciones\Haito\obj\Debug\Haito.exe
+D:\PERSONAL\proyectos\HAITO\HaitoCotizaciones\Haito\obj\Debug\Haito.pdb
+D:\PERSONAL\proyectos\HAITO\HaitoCotizaciones\Haito\obj\Debug\Haito.ProductoEditar.resources
+D:\PERSONAL\proyectos\HAITO\HaitoCotizaciones\Haito\obj\Debug\Haito.Productos.resources
+D:\PERSONAL\proyectos\HAITO\HaitoCotizaciones\Haito\obj\Debug\Haito.Empresas.resources
+D:\PERSONAL\proyectos\HAITO\HaitoCotizaciones\Haito\obj\Debug\Haito.EmpresasEditar.resources
+D:\PERSONAL\proyectos\HAITO\HaitoCotizaciones\Haito\obj\Debug\Haito.Clientes.resources
+D:\PERSONAL\proyectos\HAITO\HaitoCotizaciones\Haito\obj\Debug\Haito.ClienteEditar.resources
