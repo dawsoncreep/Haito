@@ -13,7 +13,7 @@ namespace Haito
 {
     public partial class ProductoEditar : Form
     {
-        int idProducto;
+        public int idProducto;
         public ProductoEditar(int _idProducto)
         {
             InitializeComponent();
@@ -49,10 +49,15 @@ namespace Haito
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (txtNombre.Text.Trim() == "")
+            {
+                return;
+            }
+
             dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
             qta.InsertarCambiarProducto(idProducto, (int)cbEmpresa.SelectedValue, txtNombre.Text, false);
             AutoClosingMessageBox.Show("Insertado con exito", "Éxito", 3000);
-            this.Close();
+            this.Hide();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

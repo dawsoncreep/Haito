@@ -33,9 +33,9 @@ namespace Haito
             // DataTable dt = new DataTable();
             proveedoresDataGridView.DataSource = cta.GetData(null, null);
             //ocultar las columnas que no se deben de ver
-           //proveedoresDataGridView.Columns[1].Visible = false;
-           //proveedoresDataGridView.Columns[11].Visible = false;
-           //proveedoresDataGridView.Columns[13].Visible = false;
+           proveedoresDataGridView.Columns[2].Visible = false;
+           proveedoresDataGridView.Columns[12].Visible = false;
+           proveedoresDataGridView.Columns[14].Visible = false;
         }
 
         private void cargarClientes()
@@ -46,9 +46,9 @@ namespace Haito
             // DataTable dt = new DataTable();
             clienteDataGridView.DataSource = cta.GetData(null,null);
             //ocultar las columnas que no se deben de ver
-            //clienteDataGridView.Columns[1].Visible = false;
-            //clienteDataGridView.Columns[11].Visible = false;
-            //clienteDataGridView.Columns[13].Visible = false;
+            clienteDataGridView.Columns[2].Visible = false;
+            clienteDataGridView.Columns[12].Visible = false;
+            clienteDataGridView.Columns[14].Visible = false;
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)

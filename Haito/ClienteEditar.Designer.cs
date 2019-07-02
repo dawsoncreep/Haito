@@ -64,6 +64,7 @@
             this.label4.Size = new System.Drawing.Size(48, 13);
             this.label4.TabIndex = 19;
             this.label4.Text = "Empresa";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // cbEmpresa
             // 

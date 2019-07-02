@@ -35,12 +35,15 @@
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuscarElementos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarElementos.Designer.cs">
+      <DependentUpon>BuscarElementos.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClienteEditar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +71,12 @@
     </Compile>
     <Compile Include="Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cotizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cotizacion.Designer.cs">
+      <DependentUpon>Cotizacion.cs</DependentUpon>
     </Compile>
     <Compile Include="dsHaito.cs">
       <DependentUpon>dsHaito.xsd</DependentUpon>
@@ -78,6 +93,13 @@
     </Compile>
     <Compile Include="EmpresasEditar.Designer.cs">
       <DependentUpon>EmpresasEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Numalet.cs" />
+    <Compile Include="reporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reporte.Designer.cs">
+      <DependentUpon>reporte.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilidades.cs" />
     <Compile Include="dsHaito.Designer.cs">
@@ -99,11 +121,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BuscarElementos.resx">
+      <DependentUpon>BuscarElementos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClienteEditar.resx">
       <DependentUpon>ClienteEditar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cotizacion.resx">
+      <DependentUpon>Cotizacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Empresas.resx">
       <DependentUpon>Empresas.cs</DependentUpon>
@@ -126,6 +154,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="reporte.resx">
+      <DependentUpon>reporte.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="dsHaito.xsc">
       <DependentUpon>dsHaito.xsd</DependentUpon>
     </None>

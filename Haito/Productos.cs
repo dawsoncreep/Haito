@@ -38,6 +38,7 @@ namespace Haito
         {
             ProductoEditar nuevo = new ProductoEditar(0);
             nuevo.ShowDialog();
+            nuevo.Close();
             cargarProductos();
         }
 
@@ -48,6 +49,7 @@ namespace Haito
             int idProductoEditar = (int)productoDataGridView.SelectedRows[0].Cells["idProducto"].Value;
             ProductoEditar nuevo = new ProductoEditar(idProductoEditar);
             nuevo.ShowDialog();
+            nuevo.Close();
             cargarProductos();
         }
 

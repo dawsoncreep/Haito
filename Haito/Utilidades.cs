@@ -38,4 +38,11 @@ namespace Haito
         [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Auto)]
         static extern IntPtr SendMessage(IntPtr hWnd, UInt32 Msg, IntPtr wParam, IntPtr lParam);
     }
+
+    enum unidadMedida
+    {
+        PZ = 1
+        ,Kg = 2
+        ,Ton = 3        
+    }
 }
