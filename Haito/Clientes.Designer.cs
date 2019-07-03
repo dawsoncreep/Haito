@@ -38,6 +38,7 @@
             this.proveedoresDataGridView = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.bSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.clienteDataGridView)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tpClientes.SuspendLayout();
@@ -140,6 +141,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.bSalir);
             this.panel1.Controls.Add(this.btnNuevo);
             this.panel1.Controls.Add(this.btnModificar);
             this.panel1.Controls.Add(this.btnEliminar);
@@ -159,6 +161,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1162, 452);
             this.panel2.TabIndex = 16;
+            // 
+            // bSalir
+            // 
+            this.bSalir.Location = new System.Drawing.Point(763, 3);
+            this.bSalir.Name = "bSalir";
+            this.bSalir.Size = new System.Drawing.Size(108, 23);
+            this.bSalir.TabIndex = 9;
+            this.bSalir.Text = "Salir";
+            this.bSalir.UseVisualStyleBackColor = true;
+            this.bSalir.Click += new System.EventHandler(this.bSalir_Click);
             // 
             // Clientes
             // 
@@ -192,5 +204,6 @@
         private System.Windows.Forms.DataGridView proveedoresDataGridView;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button bSalir;
     }
 }

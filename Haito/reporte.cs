@@ -24,10 +24,20 @@ namespace Haito
 
         private void reporte_Load(object sender, EventArgs e)
         {
-            reportViewer1.ServerReport.ReportPath = "/cotizacione";
-            ReportParameter parametro = new ReportParameter("idCotizacion", id.ToString());
-            reportViewer1.ServerReport.SetParameters(parametro);
-            
+            if (report == "ordenCompra")
+            {
+                reportViewer1.ServerReport.ReportPath = "/ordenCompra";
+                ReportParameter parametro = new ReportParameter("idOrdenCompra", id.ToString());
+                reportViewer1.ServerReport.SetParameters(parametro);
+            }
+
+
+            if (report == "cotizacion")
+            {
+                reportViewer1.ServerReport.ReportPath = "/cotizacione";
+                ReportParameter parametro = new ReportParameter("idCotizacion", id.ToString());
+                reportViewer1.ServerReport.SetParameters(parametro);
+            }
             this.reportViewer1.RefreshReport();
         }
     }

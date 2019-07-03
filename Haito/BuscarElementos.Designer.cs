@@ -36,6 +36,7 @@
             this.btnBuscarProducto = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.bSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBusqueda)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -60,6 +61,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.bSalir);
             this.panel1.Controls.Add(this.bAceptar);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtBuscar);
@@ -128,6 +130,16 @@
             this.panel3.Size = new System.Drawing.Size(690, 282);
             this.panel3.TabIndex = 2;
             // 
+            // bSalir
+            // 
+            this.bSalir.Location = new System.Drawing.Point(428, 3);
+            this.bSalir.Name = "bSalir";
+            this.bSalir.Size = new System.Drawing.Size(122, 23);
+            this.bSalir.TabIndex = 40;
+            this.bSalir.Text = "Salir";
+            this.bSalir.UseVisualStyleBackColor = true;
+            this.bSalir.Click += new System.EventHandler(this.bSalir_Click);
+            // 
             // BuscarElementos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,5 +168,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button bAceptar;
+        private System.Windows.Forms.Button bSalir;
     }
 }

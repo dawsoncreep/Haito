@@ -58,6 +58,10 @@ namespace Haito
         {
             switch (tablaBD)
             {
+                case "ordenCompra":
+                    cargarOrdenCompra();
+                    break;
+
                 case "productos":
                     cargarProductos();
                     break;
@@ -67,6 +71,18 @@ namespace Haito
                 default:
                     break;
             }
+        }
+
+        private void cargarOrdenCompra()
+        {
+            dsHaitoTableAdapters.busquedaOrdenCompraTableAdapter bcta = new dsHaitoTableAdapters.busquedaOrdenCompraTableAdapter();
+            dgvBusqueda.DataSource = bcta.GetData(txtBuscar.Text);
+            dgvBusqueda.Refresh();
+        }
+
+        private void cargarEmpresa()
+        {
+            return;
         }
 
         private void txtBuscar_KeyDown(object sender, KeyEventArgs e)
@@ -98,6 +114,12 @@ namespace Haito
         private void dgvBusqueda_DoubleClick(object sender, EventArgs e)
         {
             aceptar();
+        }
+
+        private void bSalir_Click(object sender, EventArgs e)
+        {
+            
+            this.Close();
         }
     }
 }

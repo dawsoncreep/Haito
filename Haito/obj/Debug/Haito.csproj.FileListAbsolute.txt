@@ -33,3 +33,8 @@ D:\PERSONAL\proyectos\HAITO\HAITO\Haito\Haito\obj\Debug\Haito.Properties.Resourc
 D:\PERSONAL\proyectos\HAITO\HAITO\Haito\Haito\obj\Debug\Haito.csproj.GenerateResource.Cache
 D:\PERSONAL\proyectos\HAITO\HAITO\Haito\Haito\obj\Debug\Haito.BuscarElementos.resources
 D:\PERSONAL\proyectos\HAITO\HAITO\Haito\Haito\obj\Debug\Haito.reporte.resources
+D:\PERSONAL\proyectos\HAITO\HAITO\Haito\Haito\obj\Debug\Haito.OrdenCompra.resources
+D:\PERSONAL\proyectos\HAITO\HAITO\Haito\Haito\obj\Debug\Haito.UsuarioEditar.resources
+D:\PERSONAL\proyectos\HAITO\HAITO\Haito\Haito\obj\Debug\Haito.Usuarios.resources
+D:\PERSONAL\proyectos\HAITO\HAITO\Haito\Haito\obj\Debug\Haito.fMenu.resources
+D:\PERSONAL\proyectos\HAITO\HAITO\Haito\Haito\obj\Debug\Haito.Login.resources

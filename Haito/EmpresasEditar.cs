@@ -22,7 +22,7 @@ namespace Haito
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
-            qta.InsertarCambiarEmpresa(idEmpresa, txtNombre.Text, false);
+            qta.InsertarCambiarEmpresa(idEmpresa, txtNombre.Text.ToUpper(), false);
             AutoClosingMessageBox.Show("Insertado con exito", "Éxito", 3000);
             this.Close();
         }
@@ -40,7 +40,7 @@ namespace Haito
             else //carga los datos del producto que se va a modificar
             {
                 dsHaitoTableAdapters.obtenerEmpresasActivasTableAdapter pata = new dsHaitoTableAdapters.obtenerEmpresasActivasTableAdapter();
-                DataTable dt = pata.GetData(idEmpresa);
+                DataTable dt = pata.GetData(idEmpresa,null);
                 txtID.Text = dt.Rows[0]["idEmpresa"].ToString();
                 txtNombre.Text = dt.Rows[0]["nombre"].ToString();
                

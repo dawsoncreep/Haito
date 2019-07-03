@@ -9,6 +9,8 @@ namespace Haito
     class Utilidades
     {
     }
+
+    
     public class AutoClosingMessageBox
     {
         System.Threading.Timer _timeoutTimer;
@@ -44,5 +46,11 @@ namespace Haito
         PZ = 1
         ,Kg = 2
         ,Ton = 3        
+    }
+
+    enum rol
+    {
+        admin = 1,
+        usuario = 2
     }
 }

@@ -112,7 +112,6 @@
             this.txtIDFolio.ReadOnly = true;
             this.txtIDFolio.Size = new System.Drawing.Size(115, 20);
             this.txtIDFolio.TabIndex = 0;
-            this.txtIDFolio.TextChanged += new System.EventHandler(this.txtIDFolio_TextChanged);
             // 
             // label1
             // 
@@ -156,6 +155,8 @@
             this.bBuscarEmpresa.TabIndex = 2;
             this.bBuscarEmpresa.Text = "Buscar";
             this.bBuscarEmpresa.UseVisualStyleBackColor = true;
+            this.bBuscarEmpresa.Visible = false;
+            this.bBuscarEmpresa.Click += new System.EventHandler(this.bBuscarEmpresa_Click);
             // 
             // bAtencion
             // 
@@ -165,6 +166,7 @@
             this.bAtencion.TabIndex = 4;
             this.bAtencion.Text = "Buscar";
             this.bAtencion.UseVisualStyleBackColor = true;
+            this.bAtencion.Visible = false;
             // 
             // label3
             // 
@@ -227,7 +229,6 @@
             this.cbUnidadMedida.Name = "cbUnidadMedida";
             this.cbUnidadMedida.Size = new System.Drawing.Size(97, 21);
             this.cbUnidadMedida.TabIndex = 11;
-            this.cbUnidadMedida.SelectedIndexChanged += new System.EventHandler(this.cbUnidadMedida_SelectedIndexChanged);
             // 
             // panel1
             // 
@@ -426,7 +427,6 @@
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductos.Size = new System.Drawing.Size(823, 297);
             this.dgvProductos.TabIndex = 0;
-            this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
             this.dgvProductos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentDoubleClick);
             this.dgvProductos.DoubleClick += new System.EventHandler(this.dgvProductos_DoubleClick);
             // 
@@ -456,18 +456,21 @@
             this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
             this.guardarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.guardarToolStripMenuItem.Text = "Guardar";
+            this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
             // 
             // imprimirToolStripMenuItem
             // 
             this.imprimirToolStripMenuItem.Name = "imprimirToolStripMenuItem";
             this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.imprimirToolStripMenuItem.Text = "Imprimir";
+            this.imprimirToolStripMenuItem.Click += new System.EventHandler(this.imprimirToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // cargarCotizacionToolStripMenuItem
             // 

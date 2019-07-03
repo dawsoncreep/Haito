@@ -16,7 +16,7 @@ namespace Haito
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new reporte("cotizacion",1));
+            Application.Run(new Login());
         }
     }
 }

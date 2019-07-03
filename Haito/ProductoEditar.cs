@@ -27,7 +27,7 @@ namespace Haito
             
             cbEmpresa.ValueMember = "idEmpresa";
             cbEmpresa.DisplayMember = "nombre";
-            cbEmpresa.DataSource = eata.GetData(0);
+            cbEmpresa.DataSource = eata.GetData(0,null);
            
 
             if (idProducto == 0)//nuevo producto carga el id del producto que sigue
@@ -55,13 +55,14 @@ namespace Haito
             }
 
             dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
-            qta.InsertarCambiarProducto(idProducto, (int)cbEmpresa.SelectedValue, txtNombre.Text, false);
+            qta.InsertarCambiarProducto(idProducto, (int)cbEmpresa.SelectedValue, txtNombre.Text.ToUpper(), false);
             AutoClosingMessageBox.Show("Insertado con exito", "Éxito", 3000);
             this.Hide();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            this.idProducto = 0;
             this.Close();
         }
 

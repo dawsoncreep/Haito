@@ -27,7 +27,7 @@ namespace Haito
             empresasDataGridView.DataSource = null;
             empresasDataGridView.Refresh();
             dsHaitoTableAdapters.obtenerEmpresasActivasTableAdapter eta = new dsHaitoTableAdapters.obtenerEmpresasActivasTableAdapter();
-            empresasDataGridView.DataSource = eta.GetData(0);
+            empresasDataGridView.DataSource = eta.GetData(0,null);
             empresasDataGridView.Columns[2].Visible = false;
         }
 
@@ -62,6 +62,11 @@ namespace Haito
                 AutoClosingMessageBox.Show("Eliminado con éxito", "Éxito", 3000);
                 cargarEmpresas();
             }
+        }
+
+        private void bSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
 

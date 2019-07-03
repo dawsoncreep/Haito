@@ -24,9 +24,11 @@ namespace Haito
   
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+
+            
             dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
-            qta.InsertarCambiarClienteProveedor(idCliente, (int)cbEmpresa.SelectedValue, tbAtencion.Text, tbCelular.Text,
-                tbTel1.Text, tbTel2.Text, tbCorreo.Text, tbDiasCredito.Text, tbDomicilio.Text, tbPuesto.Text, tbRFC.Text, cliente
+            qta.InsertarCambiarClienteProveedor(idCliente, (int)cbEmpresa.SelectedValue, tbAtencion.Text.ToUpper(), tbCelular.Text.ToUpper(),
+                tbTel1.Text.ToUpper(), tbTel2.Text.ToUpper(), tbCorreo.Text.ToUpper(), tbDiasCredito.Text.ToUpper(), tbDomicilio.Text.ToUpper(), tbPuesto.Text.ToUpper(), tbRFC.Text.ToUpper(), cliente
                 , tbCodigoPostal.Text, false);
             AutoClosingMessageBox.Show("Insertado con exito", "Éxito", 3000);
             this.Close();
@@ -39,8 +41,8 @@ namespace Haito
 
             cbEmpresa.ValueMember = "idEmpresa";
             cbEmpresa.DisplayMember = "nombre";
-            cbEmpresa.DataSource = eata.GetData(0);
-
+            cbEmpresa.DataSource = eata.GetData(0,null);
+            
             if (idCliente == 0)//nuevo producto carga el id del producto que sigue
             {
                 //saca el ultimo ID para asignar el siguiente
@@ -50,10 +52,19 @@ namespace Haito
             }
             else //carga los datos del producto que se va a modificar
             {
-                dsHaitoTableAdapters.obtenerClientesActivosTableAdapter cata = new dsHaitoTableAdapters.obtenerClientesActivosTableAdapter();
-                DataTable dt = cata.GetData(idCliente,null);
+                DataTable dt;
+                if (cliente)
+                {
+                    dsHaitoTableAdapters.obtenerClientesActivosTableAdapter cata = new dsHaitoTableAdapters.obtenerClientesActivosTableAdapter();
+                    dt = cata.GetData(idCliente, null);
+                }
+                else
+                {
+                    dsHaitoTableAdapters.obtenerProveedoresActivosTableAdapter cata = new dsHaitoTableAdapters.obtenerProveedoresActivosTableAdapter();
+                    dt = cata.GetData(idCliente, null);
+                }
+
                 txtID.Text = dt.Rows[0]["idClienteProveedor"].ToString();
-              
                 cbEmpresa.SelectedValue = dt.Rows[0]["idEmpresa"].ToString();
                 tbAtencion.Text = dt.Rows[0]["atencion"].ToString();
                 tbCelular.Text = dt.Rows[0]["celular"].ToString();

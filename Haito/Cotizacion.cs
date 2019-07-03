@@ -18,52 +18,66 @@ namespace Haito
         int idUsuario = 1;
         int idCotizacion = 0;
 
-        public Cotizacion(int _idCotizacion)
+        public Cotizacion(int _idCotizacion, int _idUsuario)
         {
             InitializeComponent();
-            if(_idCotizacion != 0)
-            idCotizacion = _idCotizacion;
+            if (_idCotizacion != 0)
+            {
+                idCotizacion = _idCotizacion;
+                txtIDFolio.Text = idCotizacion.ToString();
+            }
+            idUsuario=_idUsuario;
         }
 
    
 
         private void cargarDatosCotizacion()
         {
-            dsHaitoTableAdapters.obtenerDatosCotizacionTableAdapter dcta = new dsHaitoTableAdapters.obtenerDatosCotizacionTableAdapter();
-            DataTable dtCotizacion = dcta.GetData(idCotizacion);
+            try
+            {
+                dsHaitoTableAdapters.obtenerDatosCotizacionTableAdapter dcta = new dsHaitoTableAdapters.obtenerDatosCotizacionTableAdapter();
+                DataTable dtCotizacion = dcta.GetData(idCotizacion);
 
-            //agregar todo al datagrid y ocultar las columnas que no se ocupan solo mostrar las que se ocupan
-            dgvProductos.DataSource = null;
+                //agregar todo al datagrid y ocultar las columnas que no se ocupan solo mostrar las que se ocupan
+                dgvProductos.DataSource = null;
 
-            if (dtCotizacion.Rows.Count == 0)
-                return;
+                if (dtCotizacion.Rows.Count == 0)
+                    return;
 
-            //encabezado
-            cbEmpresa.SelectedValue = (int)dtCotizacion.Rows[0]["idEmpresa"];
-            cbAtencion.SelectedValue = (int) dtCotizacion.Rows[0]["idCliente"];
-            dateFecha.Text = dtCotizacion.Rows[0]["fecha"].ToString();
-            tbObservaciones.Text = dtCotizacion.Rows[0]["observaciones"].ToString();
+                //encabezado
+                cbEmpresa.SelectedValue = (int)dtCotizacion.Rows[0]["idEmpresa"];
+                cbAtencion.SelectedValue = (int)dtCotizacion.Rows[0]["idCliente"];
+                dateFecha.Text = dtCotizacion.Rows[0]["fecha"].ToString();
+                tbObservaciones.Text = dtCotizacion.Rows[0]["observaciones"].ToString();
 
-            //totales
-            tbSubtotal.Text = dtCotizacion.Rows[0]["subtotal"].ToString();
-            tbIVA.Text = dtCotizacion.Rows[0]["iva"].ToString();
-            tbTotal.Text = dtCotizacion.Rows[0]["total"].ToString();
+                //totales
+                tbSubtotal.Text = dtCotizacion.Rows[0]["subtotal"].ToString();
+                tbIVA.Text = dtCotizacion.Rows[0]["iva"].ToString();
+                tbTotal.Text = dtCotizacion.Rows[0]["total"].ToString();
 
-            dgvProductos.DataSource = dtCotizacion;
+                dgvProductos.DataSource = dtCotizacion;
 
-            //oculta las columnas que no nos interesan
-            dgvProductos.Columns[0].Visible = false;
-            dgvProductos.Columns[1].Visible = false;
-            dgvProductos.Columns[2].Visible = false;
-            dgvProductos.Columns[3].Visible = false;
-            dgvProductos.Columns[4].Visible = false;
-            dgvProductos.Columns[9].Visible = false;
-            dgvProductos.Columns[11].Visible = false;
-            dgvProductos.Columns[12].Visible = false;
-            dgvProductos.Columns[13].Visible = false;
-            dgvProductos.Columns[14].Visible = false;
-            dgvProductos.Refresh();
-
+                //oculta las columnas que no nos interesan
+                dgvProductos.Columns[0].Visible = false;
+                dgvProductos.Columns[1].Visible = false;
+                dgvProductos.Columns[2].Visible = false;
+                dgvProductos.Columns[3].Visible = false;
+                dgvProductos.Columns[4].Visible = false;
+                dgvProductos.Columns[9].Visible = false;
+                dgvProductos.Columns[11].Visible = false;
+                dgvProductos.Columns[12].Visible = false;
+                dgvProductos.Columns[13].Visible = false;
+                dgvProductos.Columns[14].Visible = false;
+                dgvProductos.Columns[15].Visible = false;
+                dgvProductos.Columns[16].Visible = false;
+                dgvProductos.Columns[17].Visible = false;
+                dgvProductos.Columns[18].Visible = false;
+                dgvProductos.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Cotizacion_Load(object sender, EventArgs e)
@@ -111,7 +125,7 @@ namespace Haito
             dsHaitoTableAdapters.obtenerEmpresasActivasTableAdapter eata = new dsHaitoTableAdapters.obtenerEmpresasActivasTableAdapter();
             cbEmpresa.DisplayMember = "nombre";
             cbEmpresa.ValueMember = "idEmpresa";
-            cbEmpresa.DataSource = eata.GetData(0);
+            cbEmpresa.DataSource = eata.GetData(0, false);
         }
 
        
@@ -169,7 +183,7 @@ namespace Haito
                 {
                     //ingresar en bd o hacer la actualizacion dependiendo si se habia guardado anteriormente
                     dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
-                    qta.InsertarCambiarCotizacion(int.Parse(txtIDFolio.Text), idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text);
+                    qta.InsertarCambiarCotizacion(int.Parse(txtIDFolio.Text), idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper());
                     int idProducto = int.Parse(dtProd.Rows[0]["idProducto"].ToString());
                     idCotizacion = int.Parse(txtIDFolio.Text);
                     qta.InsertarCambiarCotizacionDetalle(int.Parse(txtIDFolio.Text), idProducto, cantidad, precio, cbUnidadMedida.Text, false);
@@ -235,25 +249,17 @@ namespace Haito
             nuevo.Close();
             if (idProducto != 0)
             {
-                dsHaitoTableAdapters.obtenerProductosActivosTableAdapter ta = new dsHaitoTableAdapters.obtenerProductosActivosTableAdapter();
-                dtProd = ta.GetData(idProducto);
-                tbProducto.Text = dtProd.Rows[0]["nombre"].ToString();
+                try
+                {
+                    dsHaitoTableAdapters.obtenerProductosActivosTableAdapter ta = new dsHaitoTableAdapters.obtenerProductosActivosTableAdapter();
+                    dtProd = ta.GetData(idProducto);
+                    tbProducto.Text = dtProd.Rows[0]["nombre"].ToString();
+                }
+                catch
+                {
+                    AutoClosingMessageBox.Show("No encontrado", "Error", 3000);
+                }
             }            
-        }
-
-        private void cbUnidadMedida_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtIDFolio_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void eliminar()
@@ -294,6 +300,54 @@ namespace Haito
             buscar.Close();
         }
 
+        private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if ( idCotizacion != 0){
+                reporte report = new reporte("cotizacion", idCotizacion);
+                report.Show();
+
+            }
+        }
+
+        private void bBuscarEmpresa_Click(object sender, EventArgs e)
+        {
+            BuscarElementos buscar = new BuscarElementos("empresa");
+            buscar.ShowDialog();
+            if (buscar.resultado != 0)
+            {
+                cbEmpresa.SelectedValue = buscar.resultado;
+            }
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cbAtencion.SelectedIndex < 0)
+                {
+                    AutoClosingMessageBox.Show("Debe seleccionar un cliente", "Valida", 2000);
+                    return;
+                }
+
+                else
+                {
+                    //ingresar en bd o hacer la actualizacion dependiendo si se habia guardado anteriormente
+                    dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
+                    qta.InsertarCambiarCotizacion(int.Parse(txtIDFolio.Text), idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper());
+
+                    AutoClosingMessageBox.Show("Ingreso correcto", "Cotización", 2000);
+                }
+            }
+            catch (Exception ex) {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
         
     }
 }
