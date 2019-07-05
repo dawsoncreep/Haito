@@ -44,7 +44,8 @@ namespace Haito
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+            lVersion.Text = "Versión: " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString(); 
+        
         }
 
         private void txtContrasenia_KeyDown(object sender, KeyEventArgs e)

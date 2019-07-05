@@ -43,9 +43,11 @@ namespace Haito
 
                 if (dtCotizacion.Rows.Count == 0)
                     return;
-
-                //encabezado
-                cbEmpresa.SelectedValue = (int)dtCotizacion.Rows[0]["idEmpresa"];
+                try
+                {
+                    cbEmpresa.SelectedValue = (int)dtCotizacion.Rows[0]["idEmpresa"];
+                }
+                catch { }
                 cbAtencion.SelectedValue = (int)dtCotizacion.Rows[0]["idCliente"];
                 dateFecha.Text = dtCotizacion.Rows[0]["fecha"].ToString();
                 tbObservaciones.Text = dtCotizacion.Rows[0]["observaciones"].ToString();
@@ -125,7 +127,7 @@ namespace Haito
             dsHaitoTableAdapters.obtenerEmpresasActivasTableAdapter eata = new dsHaitoTableAdapters.obtenerEmpresasActivasTableAdapter();
             cbEmpresa.DisplayMember = "nombre";
             cbEmpresa.ValueMember = "idEmpresa";
-            cbEmpresa.DataSource = eata.GetData(0, false);
+            cbEmpresa.DataSource = eata.GetData(0, true);
         }
 
        

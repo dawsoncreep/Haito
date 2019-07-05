@@ -36,6 +36,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lVersion = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,6 +115,15 @@
             this.panel1.Size = new System.Drawing.Size(324, 100);
             this.panel1.TabIndex = 23;
             // 
+            // lVersion
+            // 
+            this.lVersion.AutoSize = true;
+            this.lVersion.Location = new System.Drawing.Point(13, 229);
+            this.lVersion.Name = "lVersion";
+            this.lVersion.Size = new System.Drawing.Size(35, 13);
+            this.lVersion.TabIndex = 24;
+            this.lVersion.Text = "label1";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -121,6 +131,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(567, 248);
+            this.Controls.Add(this.lVersion);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.Name = "Login";
@@ -129,6 +140,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -141,5 +153,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lVersion;
     }
 }

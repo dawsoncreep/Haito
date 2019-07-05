@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <!-- For more information on Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID=237468 -->
+    <section name="entityFramework" type="System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+  </configSections>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.6.1" />
+  </startup>
+  <connectionStrings>
+    <add name="Haito.Properties.Settings.HaitoConnectionString" connectionString="Data Source=.\;Initial Catalog=Haito;Integrated Security=True;uid=sa; pwd=Nissan2015;"
+      providerName="System.Data.SqlClient" />
+    <add name="HaitoEntities" connectionString="metadata=res://*/datosHaito.csdl|res://*/datosHaito.ssdl|res://*/datosHaito.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\sqlexpress;initial catalog=Haito;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;"
+      providerName="System.Data.EntityClient" />
+    <add name="HaitoEntities1" connectionString="metadata=res://*/HaitoEntities.csdl|res://*/HaitoEntities.ssdl|res://*/HaitoEntities.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\sqlexpress;initial catalog=Haito;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;"
+      providerName="System.Data.EntityClient" />
+  </connectionStrings>
+  <entityFramework>
+    <defaultConnectionFactory type="System.Data.Entity.Infrastructure.SqlConnectionFactory, EntityFramework" />
+  </entityFramework>
+</configuration>
