@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="Haito.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="Haito.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="icono.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="Haito" version="1.0.1.0" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="Haito" version="1.0.2.0" language="neutral" processorArchitecture="msil" />
     <commandLine file="Haito.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -79,14 +80,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Haito.exe" size="1300480">
-      <assemblyIdentity name="Haito" version="1.0.1.0" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Haito.exe" size="1558528">
+      <assemblyIdentity name="Haito" version="1.0.2.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>eFrVvBJuSK3Ke27f/d0p8wkxz5Vip8EpqymRPQXbCfI=</dsig:DigestValue>
+        <dsig:DigestValue>P+n5d9n3w00CM9/JdqP96n/DpJZhW36haqbOgbEVwik=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -217,6 +218,24 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>PAR+myERNvfvExeQjeTlzHs3+WzTqwb98xCBb59lQVM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="icono.ico" size="258110">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>MWFvn3R3RlaQAWFyEQtETwROwtkMF3EB1GIIhV0025s=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="images\icono.ico" size="258110">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>MWFvn3R3RlaQAWFyEQtETwROwtkMF3EB1GIIhV0025s=</dsig:DigestValue>
     </hash>
   </file>
   <file name="images\logoNegro.jpeg" size="36158">
