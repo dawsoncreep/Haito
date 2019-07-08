@@ -12,7 +12,7 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>D:\PERSONAL\proyectos\HAITO\HAITO\</PublishUrl>
+    <PublishUrl>D:\PERSONAL\proyectos\HAITO\HAITO\Haito\Instalador\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>

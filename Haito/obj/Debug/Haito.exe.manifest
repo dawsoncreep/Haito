@@ -4,7 +4,7 @@
   <description asmv2:iconFile="icono.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="Haito" version="1.0.3.0" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="Haito" version="1.0.4.0" language="neutral" processorArchitecture="msil" />
     <commandLine file="Haito.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -81,13 +81,13 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Haito.exe" size="1559040">
-      <assemblyIdentity name="Haito" version="1.0.3.0" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="Haito" version="1.0.4.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>byBSTr/3pnJjRAcaPOYWGslKrLeRFEUP1eWD8ZTQGaA=</dsig:DigestValue>
+        <dsig:DigestValue>5hC1zn8Q/57XT9n4m7WZIku0GusFCWw6BHZh/ZWPqJM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -208,18 +208,6 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>yjKhHuSCR1b4TOSiq74C6m8CbTn13HZMG5Slh63wtfw=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="es\Microsoft.SqlServer.Types.resources.dll" size="48216">
-      <assemblyIdentity name="Microsoft.SqlServer.Types.resources" version="11.0.0.0" publicKeyToken="89845DCD8080CC91" language="es" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>DoTuq5xRkGy/ib9FBhtk7+vcvxVMvzHN1bxkJjgpm4E=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
