@@ -24,8 +24,30 @@ namespace Haito
 
         private void reporte_Load(object sender, EventArgs e)
         {
+
+            reportViewer1.ProcessingMode = ProcessingMode.Remote;
+
+            ServerReport serverReport = reportViewer1.ServerReport;
+
+            // Get a reference to the default credentials  
+            System.Net.ICredentials credentials =
+                System.Net.CredentialCache.DefaultCredentials;
+
+            // Get a reference to the report server credentials  
+            ReportServerCredentials rsCredentials =
+                serverReport.ReportServerCredentials;
+
+            // Set the credentials for the server report  
+            rsCredentials.NetworkCredentials = credentials;
+
+            // Set the report server URL and report path  
+            serverReport.ReportServerUrl =
+                new Uri("http://localhost/reportserver");
+           
+
             if (report == "ordenCompra")
             {
+               
                 reportViewer1.ServerReport.ReportPath = "/ordenCompra";
                 ReportParameter parametro = new ReportParameter("idOrdenCompra", id.ToString());
                 reportViewer1.ServerReport.SetParameters(parametro);

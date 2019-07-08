@@ -37,6 +37,7 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Remote;
+            this.reportViewer1.ServerReport.ReportServerUrl = new System.Uri("", System.UriKind.Relative);
             this.reportViewer1.Size = new System.Drawing.Size(898, 495);
             this.reportViewer1.TabIndex = 0;
             // 
