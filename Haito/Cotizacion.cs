@@ -127,7 +127,7 @@ namespace Haito
             dsHaitoTableAdapters.obtenerEmpresasActivasTableAdapter eata = new dsHaitoTableAdapters.obtenerEmpresasActivasTableAdapter();
             cbEmpresa.DisplayMember = "nombre";
             cbEmpresa.ValueMember = "idEmpresa";
-            cbEmpresa.DataSource = eata.GetData(0, true);
+            cbEmpresa.DataSource = eata.GetData(0, false);
         }
 
        

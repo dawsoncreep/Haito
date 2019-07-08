@@ -6,6 +6,7 @@
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
         <ConnectString>Data Source=.\;Initial Catalog=Haito</ConnectString>
+        <Prompt>Especifique un nombre de usuario y una contraseña para el origen de datos DataSource1:</Prompt>
       </ConnectionProperties>
       <rd:SecurityType>DataBase</rd:SecurityType>
       <rd:DataSourceID>82894dfe-8c78-4657-87c5-e0c0ab3b08f4</rd:DataSourceID>
@@ -1006,7 +1007,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>ExecutionTime</rd:DefaultName>
-              <Top>32.50292mm</Top>
+              <Top>29.64542mm</Top>
               <Left>146.52878mm</Left>
               <Height>6.35mm</Height>
               <Width>37.88547mm</Width>
@@ -1296,7 +1297,7 @@
               <rd:DefaultName>Textbox18</rd:DefaultName>
               <Top>2.12275cm</Top>
               <Left>0.15601cm</Left>
-              <Height>1.8719cm</Height>
+              <Height>0.9194cm</Height>
               <Width>14.29931cm</Width>
               <ZIndex>4</ZIndex>
               <Style>
@@ -1347,7 +1348,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox22</rd:DefaultName>
-              <Top>2.4104cm</Top>
+              <Top>2.12465cm</Top>
               <Left>14.79992cm</Left>
               <Height>0.6cm</Height>
               <Width>3.64151cm</Width>
@@ -1369,10 +1370,10 @@
             </Border>
           </Style>
         </PageFooter>
-        <PageHeight>29.7cm</PageHeight>
-        <PageWidth>21cm</PageWidth>
-        <LeftMargin>0.5cm</LeftMargin>
-        <RightMargin>0.5cm</RightMargin>
+        <PageHeight>27.94cm</PageHeight>
+        <PageWidth>21.59cm</PageWidth>
+        <LeftMargin>1cm</LeftMargin>
+        <RightMargin>1cm</RightMargin>
         <TopMargin>1.5cm</TopMargin>
         <BottomMargin>1cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>

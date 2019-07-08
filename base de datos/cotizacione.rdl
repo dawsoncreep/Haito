@@ -6,6 +6,7 @@
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
         <ConnectString>Data Source=.\;Initial Catalog=Haito</ConnectString>
+        <Prompt>Especifique un nombre de usuario y una contraseña para el origen de datos DataSource1:</Prompt>
       </ConnectionProperties>
       <rd:SecurityType>DataBase</rd:SecurityType>
       <rd:DataSourceID>82894dfe-8c78-4657-87c5-e0c0ab3b08f4</rd:DataSourceID>
@@ -727,7 +728,7 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>16.17534mm</Height>
+        <Height>18.82117mm</Height>
         <Style>
           <Border>
             <Style>None</Style>
@@ -737,7 +738,7 @@
       <Width>186.63302mm</Width>
       <Page>
         <PageHeader>
-          <Height>74.06036mm</Height>
+          <Height>70.09161mm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -990,7 +991,6 @@
         </PageHeader>
         <PageFooter>
           <Height>42.033mm</Height>
-          <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
             <Textbox Name="ExecutionTime">
@@ -1013,8 +1013,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>ExecutionTime</rd:DefaultName>
-              <Top>32.50292mm</Top>
-              <Left>146.52878mm</Left>
+              <Top>29.96292mm</Top>
+              <Left>146.21128mm</Left>
               <Height>6.35mm</Height>
               <Width>37.88547mm</Width>
               <Style>
@@ -1305,7 +1305,7 @@
               <rd:DefaultName>Textbox18</rd:DefaultName>
               <Top>2.12275cm</Top>
               <Left>0.15601cm</Left>
-              <Height>1.8719cm</Height>
+              <Height>0.6019cm</Height>
               <Width>14.29931cm</Width>
               <ZIndex>4</ZIndex>
               <Style>
@@ -1356,8 +1356,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox22</rd:DefaultName>
-              <Top>2.4104cm</Top>
-              <Left>14.79992cm</Left>
+              <Top>2.1564cm</Top>
+              <Left>14.76817cm</Left>
               <Height>0.6cm</Height>
               <Width>3.64151cm</Width>
               <ZIndex>5</ZIndex>
@@ -1378,10 +1378,10 @@
             </Border>
           </Style>
         </PageFooter>
-        <PageHeight>29.7cm</PageHeight>
-        <PageWidth>21cm</PageWidth>
-        <LeftMargin>0.5cm</LeftMargin>
-        <RightMargin>0.5cm</RightMargin>
+        <PageHeight>27.94cm</PageHeight>
+        <PageWidth>21.59cm</PageWidth>
+        <LeftMargin>1cm</LeftMargin>
+        <RightMargin>1cm</RightMargin>
         <TopMargin>0.5cm</TopMargin>
         <BottomMargin>0.5cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
