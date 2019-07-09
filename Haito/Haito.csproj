@@ -25,7 +25,7 @@
     <ProductName>Cotizaciones</ProductName>
     <PublisherName>Jaime Castorena</PublisherName>
     <SuiteName>Haito</SuiteName>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -237,6 +237,9 @@
     <EmbeddedResource Include="reporte.resx">
       <DependentUpon>reporte.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="cotizacione.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="dsHaito.xsc">
       <DependentUpon>dsHaito.xsd</DependentUpon>
     </None>
@@ -249,6 +252,9 @@
       <DependentUpon>dsHaito.xsd</DependentUpon>
     </None>
     <None Include="Haito_ClaveTemporal.pfx" />
+    <None Include="ordenCompra.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

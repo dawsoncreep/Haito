@@ -24,41 +24,45 @@ namespace Haito
 
         private void reporte_Load(object sender, EventArgs e)
         {
+            reportViewer1.ProcessingMode = ProcessingMode.Local;
 
-            reportViewer1.ProcessingMode = ProcessingMode.Remote;
+            LocalReport localReport = reportViewer1.LocalReport;
 
-            ServerReport serverReport = reportViewer1.ServerReport;
-
-            // Get a reference to the default credentials  
-            System.Net.ICredentials credentials =
-                System.Net.CredentialCache.DefaultCredentials;
-
-            // Get a reference to the report server credentials  
-            ReportServerCredentials rsCredentials =
-                serverReport.ReportServerCredentials;
-
-            // Set the credentials for the server report  
-            rsCredentials.NetworkCredentials = credentials;
-
-            // Set the report server URL and report path  
-            serverReport.ReportServerUrl =
-                new Uri("http://localhost/reportserver");
-           
+            
+            reportViewer1.LocalReport.Refresh();
 
             if (report == "ordenCompra")
             {
-               
-                reportViewer1.ServerReport.ReportPath = "/ordenCompra";
+                localReport.ReportPath = "ordenCompra.rdl";
+
+                dsHaitoTableAdapters.obtenerDatosOrdenCompraTableAdapter dcta = new dsHaitoTableAdapters.obtenerDatosOrdenCompraTableAdapter();
+                dsHaito.obtenerDatosOrdenCompraDataTable dt = new dsHaito.obtenerDatosOrdenCompraDataTable();
+                dcta.Fill(dt, id);
+                reportViewer1.LocalReport.DataSources.Clear();
+                ReportDataSource datasource = new ReportDataSource("DataSet1", (DataTable)dt);
+                reportViewer1.LocalReport.DataSources.Add(datasource);
+                reportViewer1.ShowParameterPrompts = false;
+
                 ReportParameter parametro = new ReportParameter("idOrdenCompra", id.ToString());
-                reportViewer1.ServerReport.SetParameters(parametro);
+                reportViewer1.LocalReport.SetParameters(parametro);
+               
+              
             }
 
 
             if (report == "cotizacion")
             {
-                reportViewer1.ServerReport.ReportPath = "/cotizacione";
+                localReport.ReportPath = "cotizacione.rdl";
+                dsHaitoTableAdapters.obtenerDatosCotizacionTableAdapter dcta = new dsHaitoTableAdapters.obtenerDatosCotizacionTableAdapter();
+                dsHaito.obtenerDatosCotizacionDataTable dt = new dsHaito.obtenerDatosCotizacionDataTable();
+                dcta.Fill(dt, id);
+                reportViewer1.LocalReport.DataSources.Clear();
+                ReportDataSource datasource = new ReportDataSource("DataSet1", (DataTable)dt);
+                reportViewer1.LocalReport.DataSources.Add(datasource);
+                reportViewer1.ShowParameterPrompts = false;
+
                 ReportParameter parametro = new ReportParameter("idCotizacion", id.ToString());
-                reportViewer1.ServerReport.SetParameters(parametro);
+                reportViewer1.LocalReport.SetParameters(parametro);
             }
             this.reportViewer1.RefreshReport();
         }

@@ -70,3 +70,5 @@ D:\CODIGO\Haito\Haito\obj\Debug\Haito.reporte.resources
 D:\CODIGO\Haito\Haito\obj\Debug\Haito.csproj.GenerateResource.Cache
 D:\CODIGO\Haito\Haito\obj\Debug\Haito.exe.manifest
 D:\CODIGO\Haito\Haito\obj\Debug\Haito.application
+D:\PERSONAL\proyectos\HAITO\HAITO\Haito\Haito\bin\Debug\cotizacione.rdl
+D:\PERSONAL\proyectos\HAITO\HAITO\Haito\Haito\bin\Debug\ordenCompra.rdl
