@@ -12,7 +12,7 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>D:\PERSONAL\proyectos\HAITO\HAITO\Haito\Instalador\</PublishUrl>
+    <PublishUrl>D:\Acceso sistema\Instaladores\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -25,7 +25,7 @@
     <ProductName>Cotizaciones</ProductName>
     <PublisherName>Jaime Castorena</PublisherName>
     <SuiteName>Haito</SuiteName>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -237,9 +237,9 @@
     <EmbeddedResource Include="reporte.resx">
       <DependentUpon>reporte.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="cotizacione.rdl">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <Content Include="cotizacione.rdl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="dsHaito.xsc">
       <DependentUpon>dsHaito.xsd</DependentUpon>
     </None>
@@ -252,9 +252,9 @@
       <DependentUpon>dsHaito.xsd</DependentUpon>
     </None>
     <None Include="Haito_ClaveTemporal.pfx" />
-    <None Include="ordenCompra.rdl">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <Content Include="ordenCompra.rdl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
