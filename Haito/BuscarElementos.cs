@@ -14,6 +14,7 @@ namespace Haito
     {
         string tablaBD;
         public int resultado = 0;
+        public int idEncabezado = 0;
         public BuscarElementos(string tabla)
         {
             InitializeComponent();
@@ -40,6 +41,7 @@ namespace Haito
         {
             dsHaitoTableAdapters.busquedaCotizacionesTableAdapter bcta = new dsHaitoTableAdapters.busquedaCotizacionesTableAdapter();
             dgvBusqueda.DataSource = bcta.GetData(txtBuscar.Text);
+            dgvBusqueda.Columns[5].Visible = false;
             dgvBusqueda.Refresh();
 
         }
@@ -77,7 +79,9 @@ namespace Haito
         {
             dsHaitoTableAdapters.busquedaOrdenCompraTableAdapter bcta = new dsHaitoTableAdapters.busquedaOrdenCompraTableAdapter();
             dgvBusqueda.DataSource = bcta.GetData(txtBuscar.Text);
+            dgvBusqueda.Columns[4].Visible = false;
             dgvBusqueda.Refresh();
+
         }
 
         private void cargarEmpresa()
@@ -99,9 +103,12 @@ namespace Haito
 
         private void aceptar()
         {
-            if(dgvBusqueda.SelectedRows.Count==0)
+            if (dgvBusqueda.SelectedRows.Count == 0)
                 return;
+
             resultado = (int)dgvBusqueda.SelectedRows[0].Cells[0].Value;
+            if (tablaBD == "cotizacion")
+                idEncabezado = (int)dgvBusqueda.SelectedRows[0].Cells["idEncabezado"].Value;
             this.Hide();
         }
 

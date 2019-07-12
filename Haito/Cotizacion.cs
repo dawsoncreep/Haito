@@ -17,6 +17,7 @@ namespace Haito
         DateTime fecha = DateTime.Now;
         int idUsuario = 1;
         int idCotizacion = 0;
+        int idEncabezado = 0;
 
         public Cotizacion(int _idCotizacion, int _idUsuario)
         {
@@ -36,7 +37,7 @@ namespace Haito
             try
             {
                 dsHaitoTableAdapters.obtenerDatosCotizacionTableAdapter dcta = new dsHaitoTableAdapters.obtenerDatosCotizacionTableAdapter();
-                DataTable dtCotizacion = dcta.GetData(idCotizacion);
+                DataTable dtCotizacion = dcta.GetData(idCotizacion, idEncabezado);
 
                 //agregar todo al datagrid y ocultar las columnas que no se ocupan solo mostrar las que se ocupan
                 dgvProductos.DataSource = null;
@@ -48,6 +49,9 @@ namespace Haito
                     cbEmpresa.SelectedValue = (int)dtCotizacion.Rows[0]["idEmpresa"];
                 }
                 catch { }
+
+                cbEncabezado.SelectedIndex = (int)dtCotizacion.Rows[0]["idEncabezado"];
+
                 cbAtencion.SelectedValue = (int)dtCotizacion.Rows[0]["idCliente"];
                 dateFecha.Text = dtCotizacion.Rows[0]["fecha"].ToString();
                 tbObservaciones.Text = dtCotizacion.Rows[0]["observaciones"].ToString();
@@ -65,8 +69,10 @@ namespace Haito
                 dgvProductos.Columns[2].Visible = false;
                 dgvProductos.Columns[3].Visible = false;
                 dgvProductos.Columns[4].Visible = false;
-                dgvProductos.Columns[9].Visible = false;
-                dgvProductos.Columns[11].Visible = false;
+
+                dgvProductos.Columns[5].Visible = false;
+                dgvProductos.Columns[10].Visible = false;
+                
                 dgvProductos.Columns[12].Visible = false;
                 dgvProductos.Columns[13].Visible = false;
                 dgvProductos.Columns[14].Visible = false;
@@ -74,6 +80,8 @@ namespace Haito
                 dgvProductos.Columns[16].Visible = false;
                 dgvProductos.Columns[17].Visible = false;
                 dgvProductos.Columns[18].Visible = false;
+
+                dgvProductos.Columns[19].Visible = false;
                 dgvProductos.Refresh();
             }
             catch (Exception ex)
@@ -89,19 +97,26 @@ namespace Haito
             cargarEmpresas();
             cargarContactos(idEmpresa);
             cargarUM();
+            cargarEncabezados();
             if (idCotizacion != 0)
             {
                 cargarDatosCotizacion();
                
             }else
-            cargarSiguienteFolio();
+            cargarSiguienteFolio((int)cbEncabezado.SelectedValue);
         }
 
-        private void cargarSiguienteFolio()
+        private void cargarEncabezados()
+        {
+            cbEncabezado.DataSource = Enum.GetValues(typeof(encabezado));
+            cbEncabezado.SelectedIndex = 0;
+        }
+
+        private void cargarSiguienteFolio(int idEncabezado)
         {
             //cargar el siguiente folio 
             dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
-            txtIDFolio.Text = qta.obtenerSigIDCotizacion().ToString();
+            txtIDFolio.Text = qta.obtenerSigIDCotizacion(idEncabezado).ToString();
 
         }
 
@@ -185,10 +200,11 @@ namespace Haito
                 {
                     //ingresar en bd o hacer la actualizacion dependiendo si se habia guardado anteriormente
                     dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
-                    qta.InsertarCambiarCotizacion(int.Parse(txtIDFolio.Text), idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper());
+                    qta.InsertarCambiarCotizacion(int.Parse(txtIDFolio.Text), idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), cbEncabezado.SelectedIndex);
                     int idProducto = int.Parse(dtProd.Rows[0]["idProducto"].ToString());
                     idCotizacion = int.Parse(txtIDFolio.Text);
-                    qta.InsertarCambiarCotizacionDetalle(int.Parse(txtIDFolio.Text), idProducto, cantidad, precio, cbUnidadMedida.Text, false);
+                    qta.InsertarCambiarCotizacionDetalle(int.Parse(txtIDFolio.Text), idProducto, cantidad, precio, cbUnidadMedida.Text 
+                        , cbEncabezado.SelectedIndex, false);
                     cargarDatosCotizacion();
                     btnBuscarProducto.Focus();
                 }
@@ -274,7 +290,7 @@ namespace Haito
             if (response == DialogResult.Yes)
             {
                 dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
-                qta.InsertarCambiarCotizacionDetalle(idcotizacionDetalle, null, null,null,null, true);
+                qta.InsertarCambiarCotizacionDetalle(idcotizacionDetalle, null, null,null,null,null, true);
                 AutoClosingMessageBox.Show("Eliminado con éxito", "Éxito", 3000);
                 cargarDatosCotizacion();
             }
@@ -297,6 +313,7 @@ namespace Haito
             {
                 txtIDFolio.Text = buscar.resultado.ToString();
                 idCotizacion = buscar.resultado;
+                idEncabezado = buscar.idEncabezado;
                 cargarDatosCotizacion();
             }
             buscar.Close();
@@ -305,7 +322,7 @@ namespace Haito
         private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if ( idCotizacion != 0){
-                reporte report = new reporte("cotizacion", idCotizacion);
+                reporte report = new reporte("cotizacion", idCotizacion, (int) cbEncabezado.SelectedValue);
                 report.Show();
 
             }
@@ -340,7 +357,7 @@ namespace Haito
                 {
                     //ingresar en bd o hacer la actualizacion dependiendo si se habia guardado anteriormente
                     dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
-                    qta.InsertarCambiarCotizacion(int.Parse(txtIDFolio.Text), idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper());
+                    qta.InsertarCambiarCotizacion(int.Parse(txtIDFolio.Text), idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), (int) cbEncabezado.SelectedValue);
 
                     AutoClosingMessageBox.Show("Ingreso correcto", "Cotización", 2000);
                 }
@@ -349,6 +366,31 @@ namespace Haito
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void tbObservaciones_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cbEncabezado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //cambia el folio por encabezado solo si es nuevo 
+            if (idCotizacion == 0)
+            {
+                dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
+                txtIDFolio.Text = qta.obtenerSigIDCotizacion((int)cbEncabezado.SelectedValue).ToString();
+            }
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
         }
         
     }

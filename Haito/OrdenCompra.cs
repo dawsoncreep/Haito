@@ -17,7 +17,7 @@ namespace Haito
         DateTime fecha = DateTime.Now;
         int idUsuario = 1;
         int idOrdenCompra = 0;
-
+        int idEncabezado = 0;
         public OrdenCompra(int _idOrdenCompra, int _idusuario)
         {
             InitializeComponent();
@@ -34,7 +34,7 @@ namespace Haito
         private void cargarDatosOrdenCompra()
         {
             dsHaitoTableAdapters.obtenerDatosOrdenCompraTableAdapter dcta = new dsHaitoTableAdapters.obtenerDatosOrdenCompraTableAdapter();
-            DataTable dtOrdenCompra = dcta.GetData(idOrdenCompra);
+            DataTable dtOrdenCompra = dcta.GetData(idOrdenCompra, cbEncabezado.SelectedIndex);
 
             //agregar todo al datagrid y ocultar las columnas que no se ocupan solo mostrar las que se ocupan
             dgvProductos.DataSource = null;
@@ -42,6 +42,8 @@ namespace Haito
             if (dtOrdenCompra.Rows.Count == 0)
                 return;
 
+
+            cbEncabezado.SelectedIndex = (int)dtOrdenCompra.Rows[0]["idEncabezado"];
             //encabezado
             cbEmpresa.SelectedValue = (int)dtOrdenCompra.Rows[0]["idEmpresa"];
             cbAtencion.SelectedValue = (int) dtOrdenCompra.Rows[0]["idProveedor"];
@@ -61,8 +63,10 @@ namespace Haito
             dgvProductos.Columns[2].Visible = false;
             dgvProductos.Columns[3].Visible = false;
             dgvProductos.Columns[4].Visible = false;
-            dgvProductos.Columns[9].Visible = false;
-            dgvProductos.Columns[11].Visible = false;
+
+            dgvProductos.Columns[5].Visible = false;
+            dgvProductos.Columns[10].Visible = false;
+
             dgvProductos.Columns[12].Visible = false;
             dgvProductos.Columns[13].Visible = false;
             dgvProductos.Columns[14].Visible = false;
@@ -70,6 +74,8 @@ namespace Haito
             dgvProductos.Columns[16].Visible = false;
             dgvProductos.Columns[17].Visible = false;
             dgvProductos.Columns[18].Visible = false;
+
+            dgvProductos.Columns[19].Visible = false;
             dgvProductos.Refresh();
 
         }
@@ -80,6 +86,7 @@ namespace Haito
             cargarEmpresas();
             cargarContactos(idEmpresa);
             cargarUM();
+            cargarEncabezado();
             if (idOrdenCompra != 0)
             {
                 cargarDatosOrdenCompra();
@@ -88,11 +95,17 @@ namespace Haito
             cargarSiguienteFolio();
         }
 
+        private void cargarEncabezado()
+        {
+            cbEncabezado.DataSource = Enum.GetValues(typeof(encabezado));
+            cbEncabezado.SelectedIndex = 0;
+        }
+
         private void cargarSiguienteFolio()
         {
             //cargar el siguiente folio 
             dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
-            txtIDFolio.Text = qta.obtenerSigIDOrdenCompra().ToString();
+            txtIDFolio.Text = qta.obtenerSigIDOrdenCompra(cbEncabezado.SelectedIndex).ToString();
 
         }
 
@@ -176,10 +189,10 @@ namespace Haito
                 {
                     //ingresar en bd o hacer la actualizacion dependiendo si se habia guardado anteriormente
                     dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
-                    qta.InsertarCambiarOrdenCompra(int.Parse(txtIDFolio.Text), idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper());
+                    qta.InsertarCambiarOrdenCompra(int.Parse(txtIDFolio.Text), idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), cbEncabezado.SelectedIndex);
                     int idProducto = int.Parse(dtProd.Rows[0]["idProducto"].ToString());
                     idOrdenCompra = int.Parse(txtIDFolio.Text);
-                    qta.InsertarCambiarOrdenCompraDetalle(int.Parse(txtIDFolio.Text), idProducto, cantidad, precio, cbUnidadMedida.Text, false);
+                    qta.InsertarCambiarOrdenCompraDetalle(int.Parse(txtIDFolio.Text), idProducto, cantidad, precio, cbUnidadMedida.Text, false, cbEncabezado.SelectedIndex);
                     cargarDatosOrdenCompra();
                     btnBuscarProducto.Focus();
                 }
@@ -280,7 +293,7 @@ namespace Haito
             if (response == DialogResult.Yes)
             {
                 dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
-                qta.InsertarCambiarOrdenCompraDetalle(idOrdenCompraDetalle, null, null,null,null, true);
+                qta.InsertarCambiarOrdenCompraDetalle(idOrdenCompraDetalle, null, null,null,null, true, null);
                 AutoClosingMessageBox.Show("Eliminado con éxito", "Éxito", 3000);
                 cargarDatosOrdenCompra();
             }
@@ -312,7 +325,7 @@ namespace Haito
         {
             if (idOrdenCompra != 0)
             {
-                reporte report = new reporte("ordenCompra", idOrdenCompra);
+                reporte report = new reporte("ordenCompra", idOrdenCompra, 0);
                 report.Show();
 
             }
@@ -326,6 +339,16 @@ namespace Haito
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cbEncabezado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //cambia el folio por encabezado solo si es nuevo 
+            if (idOrdenCompra == 0)
+            {
+                dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
+                txtIDFolio.Text = qta.obtenerSigIDOrdenCompra((int)cbEncabezado.SelectedValue).ToString();
+            }
         }
 
         

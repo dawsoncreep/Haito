@@ -69,6 +69,8 @@
             this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargarCotizacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cbEncabezado = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -232,6 +234,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.cbEncabezado);
             this.panel1.Controls.Add(this.tbObservaciones);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label4);
@@ -249,20 +253,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(829, 129);
             this.panel1.TabIndex = 41;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // tbObservaciones
             // 
             this.tbObservaciones.AcceptsReturn = true;
-            this.tbObservaciones.Location = new System.Drawing.Point(108, 58);
+            this.tbObservaciones.Location = new System.Drawing.Point(108, 82);
             this.tbObservaciones.Multiline = true;
             this.tbObservaciones.Name = "tbObservaciones";
-            this.tbObservaciones.Size = new System.Drawing.Size(709, 63);
+            this.tbObservaciones.Size = new System.Drawing.Size(709, 42);
             this.tbObservaciones.TabIndex = 6;
+            this.tbObservaciones.TextChanged += new System.EventHandler(this.tbObservaciones_TextChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 61);
+            this.label7.Location = new System.Drawing.Point(12, 85);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 13);
             this.label7.TabIndex = 33;
@@ -454,21 +460,21 @@
             // guardarToolStripMenuItem
             // 
             this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
-            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.guardarToolStripMenuItem.Text = "Guardar";
             this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
             // 
             // imprimirToolStripMenuItem
             // 
             this.imprimirToolStripMenuItem.Name = "imprimirToolStripMenuItem";
-            this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.imprimirToolStripMenuItem.Text = "Imprimir";
             this.imprimirToolStripMenuItem.Click += new System.EventHandler(this.imprimirToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -478,6 +484,25 @@
             this.cargarCotizacionToolStripMenuItem.Size = new System.Drawing.Size(122, 20);
             this.cargarCotizacionToolStripMenuItem.Text = "Cargar Cotizacion...";
             this.cargarCotizacionToolStripMenuItem.Click += new System.EventHandler(this.cargarCotizacionToolStripMenuItem_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(12, 58);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(67, 13);
+            this.label12.TabIndex = 35;
+            this.label12.Text = "Encabezado";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // cbEncabezado
+            // 
+            this.cbEncabezado.FormattingEnabled = true;
+            this.cbEncabezado.Location = new System.Drawing.Point(108, 55);
+            this.cbEncabezado.Name = "cbEncabezado";
+            this.cbEncabezado.Size = new System.Drawing.Size(379, 21);
+            this.cbEncabezado.TabIndex = 34;
+            this.cbEncabezado.SelectedIndexChanged += new System.EventHandler(this.cbEncabezado_SelectedIndexChanged);
             // 
             // Cotizacion
             // 
@@ -550,5 +575,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.ToolStripMenuItem cargarCotizacionToolStripMenuItem;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cbEncabezado;
     }
 }

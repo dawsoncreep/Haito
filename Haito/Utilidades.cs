@@ -97,4 +97,10 @@ namespace Haito
         admin = 1,
         usuario = 2
     }
+
+    enum encabezado
+    {
+        IVAN = 0,
+        HAITO = 1
+    }
 }
