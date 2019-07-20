@@ -74,6 +74,13 @@ namespace Haito
             this.Close();
         }
 
+        private void productoDataGridView_DoubleClick(object sender, EventArgs e)
+        {
+            if (productoDataGridView.SelectedRows.Count == 0)
+                return;
+            btnModificar_Click(sender, e);
+        }
+
 
        
     }

@@ -46,6 +46,8 @@
             this.tbCantidad = new System.Windows.Forms.TextBox();
             this.cbUnidadMedida = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cbEncabezado = new System.Windows.Forms.ComboBox();
             this.tbObservaciones = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -69,8 +71,6 @@
             this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargarCotizacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label12 = new System.Windows.Forms.Label();
-            this.cbEncabezado = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -255,6 +255,25 @@
             this.panel1.TabIndex = 41;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(12, 58);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(67, 13);
+            this.label12.TabIndex = 35;
+            this.label12.Text = "Encabezado";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // cbEncabezado
+            // 
+            this.cbEncabezado.FormattingEnabled = true;
+            this.cbEncabezado.Location = new System.Drawing.Point(108, 55);
+            this.cbEncabezado.Name = "cbEncabezado";
+            this.cbEncabezado.Size = new System.Drawing.Size(379, 21);
+            this.cbEncabezado.TabIndex = 34;
+            this.cbEncabezado.SelectedIndexChanged += new System.EventHandler(this.cbEncabezado_SelectedIndexChanged);
+            // 
             // tbObservaciones
             // 
             this.tbObservaciones.AcceptsReturn = true;
@@ -430,6 +449,7 @@
             this.dgvProductos.MultiSelect = false;
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
+            this.dgvProductos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductos.Size = new System.Drawing.Size(823, 297);
             this.dgvProductos.TabIndex = 0;
@@ -484,25 +504,6 @@
             this.cargarCotizacionToolStripMenuItem.Size = new System.Drawing.Size(122, 20);
             this.cargarCotizacionToolStripMenuItem.Text = "Cargar Cotizacion...";
             this.cargarCotizacionToolStripMenuItem.Click += new System.EventHandler(this.cargarCotizacionToolStripMenuItem_Click);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(12, 58);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(67, 13);
-            this.label12.TabIndex = 35;
-            this.label12.Text = "Encabezado";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
-            // 
-            // cbEncabezado
-            // 
-            this.cbEncabezado.FormattingEnabled = true;
-            this.cbEncabezado.Location = new System.Drawing.Point(108, 55);
-            this.cbEncabezado.Name = "cbEncabezado";
-            this.cbEncabezado.Size = new System.Drawing.Size(379, 21);
-            this.cbEncabezado.TabIndex = 34;
-            this.cbEncabezado.SelectedIndexChanged += new System.EventHandler(this.cbEncabezado_SelectedIndexChanged);
             // 
             // Cotizacion
             // 

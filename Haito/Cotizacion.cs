@@ -53,7 +53,7 @@ namespace Haito
                 cbEncabezado.SelectedIndex = (int)dtCotizacion.Rows[0]["idEncabezado"];
 
                 cbAtencion.SelectedValue = (int)dtCotizacion.Rows[0]["idCliente"];
-                dateFecha.Text = dtCotizacion.Rows[0]["fecha"].ToString();
+                dateFecha.Text = DateTime.Parse( dtCotizacion.Rows[0]["fecha"].ToString()).ToShortDateString();
                 tbObservaciones.Text = dtCotizacion.Rows[0]["observaciones"].ToString();
 
                 //totales
@@ -98,12 +98,17 @@ namespace Haito
             cargarContactos(idEmpresa);
             cargarUM();
             cargarEncabezados();
-            if (idCotizacion != 0)
+            try
             {
-                cargarDatosCotizacion();
-               
-            }else
-            cargarSiguienteFolio((int)cbEncabezado.SelectedValue);
+                if (idCotizacion != 0)
+                {
+                    cargarDatosCotizacion();
+
+                }
+                else
+                    cargarSiguienteFolio((int)cbEncabezado.SelectedValue);
+            }
+            catch (Exception Exception) { AutoClosingMessageBox.Show(Exception.Message,"error",3000); }
         }
 
         private void cargarEncabezados()
@@ -385,6 +390,7 @@ namespace Haito
             {
                 dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
                 txtIDFolio.Text = qta.obtenerSigIDCotizacion((int)cbEncabezado.SelectedValue).ToString();
+                idEncabezado = (int)cbEncabezado.SelectedValue;
             }
         }
 

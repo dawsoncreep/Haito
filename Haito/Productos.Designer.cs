@@ -50,6 +50,7 @@
             this.productoDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.productoDataGridView.Size = new System.Drawing.Size(473, 299);
             this.productoDataGridView.TabIndex = 1;
+            this.productoDataGridView.DoubleClick += new System.EventHandler(this.productoDataGridView_DoubleClick);
             // 
             // btnNuevo
             // 

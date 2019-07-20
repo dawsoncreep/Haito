@@ -27,34 +27,34 @@ namespace Haito
 
         private void clientesProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Clientes().ShowDialog();
+            new Clientes().Show();
 
         }
 
         private void empresasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Empresas().ShowDialog();
+            new Empresas().Show();
         }
 
         private void productosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Productos().ShowDialog();
+            new Productos().Show();
 
         }
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Usuarios().ShowDialog();
+            new Usuarios().Show();
         }
 
         private void nuevaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new OrdenCompra(0, idUsuario).ShowDialog();          
+            new OrdenCompra(0, idUsuario).Show();          
         }
 
         private void nuevaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            new Cotizacion(0, idUsuario).ShowDialog();
+            new Cotizacion(0, idUsuario).Show();
         }
 
         private void salirToolStripMenuItem1_Click(object sender, EventArgs e)

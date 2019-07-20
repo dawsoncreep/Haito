@@ -37,11 +37,31 @@ namespace Haito.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\;Initial Catalog=Haito;Persist Security Info=True;User ID=sa;Passwo" +
-            "rd=Nissan2015")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.1\\;Initial Catalog=Haito;Persist Security Info=True;User ID" +
+            "=sa;Password=Nissan2015")]
         public string HaitoConnectionString1 {
             get {
                 return ((string)(this["HaitoConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.1\\;Initial Catalog=Haito;User ID=sa;Password=Nissan2015")]
+        public string HaitoConnectionString2 {
+            get {
+                return ((string)(this["HaitoConnectionString2"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\;Initial Catalog=Haito;User ID=sa;Password=Nissan2015")]
+        public string HaitoConnectionString3 {
+            get {
+                return ((string)(this["HaitoConnectionString3"]));
             }
         }
     }

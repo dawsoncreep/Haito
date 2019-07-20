@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="Haito.exe" version="1.0.0.6" publicKeyToken="3cbf695c0f24bfc0" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="Haito.exe" version="1.0.0.27" publicKeyToken="3cbf695c0f24bfc0" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="icono.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="Haito" version="1.0.5.0" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="Haito" version="1.0.9.0" language="neutral" processorArchitecture="msil" />
     <commandLine file="Haito.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -80,14 +80,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Haito.exe" size="1559552">
-      <assemblyIdentity name="Haito" version="1.0.5.0" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Haito.exe" size="1566720">
+      <assemblyIdentity name="Haito" version="1.0.9.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>i/JwFVPjpFwUWVAZPanX1C29NRKfStHSirVYBtA58UY=</dsig:DigestValue>
+        <dsig:DigestValue>C+StWtF+qaUkjW+1QdM9lUaTp1Ycq3U06aeHMkzq4ag=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -223,22 +223,22 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="cotizacione.rdl" size="1121425">
+  <file name="cotizacione.rdl" size="1299746">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>+uBpcSWG1S9Twi54xafhnPhZx1WWPb73dXqTaoCm4oI=</dsig:DigestValue>
+      <dsig:DigestValue>8PsGDZBY7pj1iMUff06Ll8Qr0yopj4FXYjfGZRfPv8c=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Haito.exe.config" size="2847">
+  <file name="Haito.exe.config" size="1819">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>8KkDS8UinVUgO5GiHckYeowAX5UiXAgGRru0triUOgU=</dsig:DigestValue>
+      <dsig:DigestValue>WHuCCvuIcIS5y5O3qEgeawWL0EcqurO6arpSDzQwMjM=</dsig:DigestValue>
     </hash>
   </file>
   <file name="icono.ico" size="258110">
@@ -286,4 +286,4 @@
       <dsig:DigestValue>+CcrLyeo6YQD6L2D4bmuxdRpruufrYwdhyyECa4Ps88=</dsig:DigestValue>
     </hash>
   </file>
-<publisherIdentity name="CN=DESKTOP-0TH01UM\user" issuerKeyHash="70b0ce7ce07bf2b8e33034f3f9121bcd8512bf30" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>uk1YCd07QwMhPow5X4m/Y14s8HrDZTpJNZC/Kp0X4lI=</DigestValue></Reference></SignedInfo><SignatureValue>UeY9Y7kbQFPGIeKqZ4qM4LxQAlLQYMw3yhx1VstqzFbjR852aDfB064NwafRs/WVV/BWW/uU+7fxnAsm7rGA7DqmbJHE8WOCnSOGZecal0SoA/2+vu6BbJXXIkoMqhMAQANz5d99zDLAw0rc94GpjSeorvtJQuiH78pgn3TR54U=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>sBsQfrM7CZKM3AKMv8R0VBXE51rqEnZrzsCMkrLCIbLz9Uermcuzkvk9SXwSnplMt04UgmBrV0VK6WrDpTfKCczyDZaBRnGDo8f2Ek/5l3TN6vnd1REMnuyqtDAUPQ4tPRnQ4IsladcfIk/pwMKVht8XJI4Dx9EXH6qdZGJAQUk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="52e2179d2abf9035493a65c37af02c5e63bf895f398c3e2103433bdd09584dba" Description="" Url=""><as:assemblyIdentity name="Haito.exe" version="1.0.0.6" publicKeyToken="3cbf695c0f24bfc0" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-0TH01UM\user</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>dtKWz28C/4M9mHwb1UsYrWeSD+JvP9n2jV3vSb4DYlE=</DigestValue></Reference></SignedInfo><SignatureValue>BXfCdDkMPQaAY+FmmR7ybUMrMCF9b3Yt5CugDlNB28WzYdEeaHeoCKuwuoS78NEzlk60SD1mtIE+KD0W4FtLcrNK7SyIU6tr7dcfVFqRbOEbp1Iz2nOsJfd3koySQgJ5JF3IjlBQCLYw3ZJX3pBKDnhaMfl+qPx5xHmztYi/ktU=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>sBsQfrM7CZKM3AKMv8R0VBXE51rqEnZrzsCMkrLCIbLz9Uermcuzkvk9SXwSnplMt04UgmBrV0VK6WrDpTfKCczyDZaBRnGDo8f2Ek/5l3TN6vnd1REMnuyqtDAUPQ4tPRnQ4IsladcfIk/pwMKVht8XJI4Dx9EXH6qdZGJAQUk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB6TCCAVKgAwIBAgIQPy6Yyb5hL5dI1oOCm0PXqDANBgkqhkiG9w0BAQsFADAzMTEwLwYDVQQDHigARABFAFMASwBUAE8AUAAtADAAVABIADAAMQBVAE0AXAB1AHMAZQByMB4XDTE5MDcwNTAwMDIyNFoXDTIwMDcwNDA2MDIyNFowMzExMC8GA1UEAx4oAEQARQBTAEsAVABPAFAALQAwAFQASAAwADEAVQBNAFwAdQBzAGUAcjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAsBsQfrM7CZKM3AKMv8R0VBXE51rqEnZrzsCMkrLCIbLz9Uermcuzkvk9SXwSnplMt04UgmBrV0VK6WrDpTfKCczyDZaBRnGDo8f2Ek/5l3TN6vnd1REMnuyqtDAUPQ4tPRnQ4IsladcfIk/pwMKVht8XJI4Dx9EXH6qdZGJAQUkCAwEAATANBgkqhkiG9w0BAQsFAAOBgQBkw/9/Yy9oVwBiJxGA58RBJ9wcHFtHYhkXvaNYYxC0Bx9l2P0vwI/Q5VHawfvs83dpEaM4F5+tw3AoZWeryidmMfA4acNkcXUl7HknMFjs2lr4nhp/ldg4Bv0Ak3Bxo9qLmATbh1eLfHu0FQA7B+aTpZvpnR30FSXAX7/SmRH0hQ==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
+<publisherIdentity name="CN=DESKTOP-0TH01UM\user" issuerKeyHash="70b0ce7ce07bf2b8e33034f3f9121bcd8512bf30" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>iiRxt3iS4Pp9SuETMV8MO0oZx92TnDSTLpMJe4g+1JU=</DigestValue></Reference></SignedInfo><SignatureValue>XYD44XTR6/7d/H8XRmhl4j1RLqwNX3Bkv6t0Vz5+EsDH2CGDm4JVmpOeipkIf8a0r84NFwSy6gm9N49dIcxach/0j5uK3T/hshPjJCGbeGkV/ATtkSiyiYTAJw8MM8FAJQNqyjkSVDGhkm/j3blOND1rmcBkfc28z9OpGw2cJGQ=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>sBsQfrM7CZKM3AKMv8R0VBXE51rqEnZrzsCMkrLCIbLz9Uermcuzkvk9SXwSnplMt04UgmBrV0VK6WrDpTfKCczyDZaBRnGDo8f2Ek/5l3TN6vnd1REMnuyqtDAUPQ4tPRnQ4IsladcfIk/pwMKVht8XJI4Dx9EXH6qdZGJAQUk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="95d43e887b09932e93349c93ddc7194a3b0c5f3113e14a7dfae09278b771248a" Description="" Url=""><as:assemblyIdentity name="Haito.exe" version="1.0.0.27" publicKeyToken="3cbf695c0f24bfc0" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-0TH01UM\user</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>XqDYfTqLiFozEEEW2cLhU9ivoJU6zXdh7DaJ70i1T1E=</DigestValue></Reference></SignedInfo><SignatureValue>C9y6D+9zHnSCNILDRd4cIpM2nyh+GUoU+QYTD8yLwIVNywS6Se6rFmeSychRdQpAMP8YmhjwLNDJbRDwqcUgWOT/ERQarKAk2VAv7oK0i+NjaYdUXat9ApGTb2e+Fi5WLaqlMz5Wxk6Q0ogogkAhZMgk0p6HK1IPk3J6uumxvcQ=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>sBsQfrM7CZKM3AKMv8R0VBXE51rqEnZrzsCMkrLCIbLz9Uermcuzkvk9SXwSnplMt04UgmBrV0VK6WrDpTfKCczyDZaBRnGDo8f2Ek/5l3TN6vnd1REMnuyqtDAUPQ4tPRnQ4IsladcfIk/pwMKVht8XJI4Dx9EXH6qdZGJAQUk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB6TCCAVKgAwIBAgIQPy6Yyb5hL5dI1oOCm0PXqDANBgkqhkiG9w0BAQsFADAzMTEwLwYDVQQDHigARABFAFMASwBUAE8AUAAtADAAVABIADAAMQBVAE0AXAB1AHMAZQByMB4XDTE5MDcwNTAwMDIyNFoXDTIwMDcwNDA2MDIyNFowMzExMC8GA1UEAx4oAEQARQBTAEsAVABPAFAALQAwAFQASAAwADEAVQBNAFwAdQBzAGUAcjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAsBsQfrM7CZKM3AKMv8R0VBXE51rqEnZrzsCMkrLCIbLz9Uermcuzkvk9SXwSnplMt04UgmBrV0VK6WrDpTfKCczyDZaBRnGDo8f2Ek/5l3TN6vnd1REMnuyqtDAUPQ4tPRnQ4IsladcfIk/pwMKVht8XJI4Dx9EXH6qdZGJAQUkCAwEAATANBgkqhkiG9w0BAQsFAAOBgQBkw/9/Yy9oVwBiJxGA58RBJ9wcHFtHYhkXvaNYYxC0Bx9l2P0vwI/Q5VHawfvs83dpEaM4F5+tw3AoZWeryidmMfA4acNkcXUl7HknMFjs2lr4nhp/ldg4Bv0Ak3Bxo9qLmATbh1eLfHu0FQA7B+aTpZvpnR30FSXAX7/SmRH0hQ==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

@@ -8,18 +8,13 @@
     <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.6.1" />
   </startup>
   <connectionStrings>
-    <!--<add name="Haito.Properties.Settings.HaitoConnectionString" connectionString="Data Source=.\;Initial Catalog=Haito;Integrated Security=False;uid=sa; pwd=Nissan2015;"
-      providerName="System.Data.SqlClient" />
-    <add name="HaitoEntities" connectionString="metadata=res://*/datosHaito.csdl|res://*/datosHaito.ssdl|res://*/datosHaito.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\sqlexpress;initial catalog=Haito; uid= sa; pdw= Nissan2015;integrated security=False;MultipleActiveResultSets=True;App=EntityFramework&quot;"
-      providerName="System.Data.EntityClient" />
-    <add name="HaitoEntities1" connectionString="metadata=res://*/HaitoEntities.csdl|res://*/HaitoEntities.ssdl|res://*/HaitoEntities.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\sqlexpress;initial catalog=Haito;uid=sa; pwd=Nissan2015;integrated security=False;MultipleActiveResultSets=True;App=EntityFramework&quot;"
-      providerName="System.Data.EntityClient" />-->
     <add name="Haito.Properties.Settings.HaitoConnectionString" connectionString="Data Source=192.168.1.1\;Initial Catalog=Haito;Integrated Security=False;uid=sa; pwd=Nissan2015;"
       providerName="System.Data.SqlClient" />
     <add name="HaitoEntities" connectionString="metadata=res://*/datosHaito.csdl|res://*/datosHaito.ssdl|res://*/datosHaito.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=192.168.1.1\sqlexpress;initial catalog=Haito; uid= sa; pdw= Nissan2015;integrated security=False;MultipleActiveResultSets=True;App=EntityFramework&quot;"
       providerName="System.Data.EntityClient" />
     <add name="HaitoEntities1" connectionString="metadata=res://*/HaitoEntities.csdl|res://*/HaitoEntities.ssdl|res://*/HaitoEntities.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=192.168.1.1\sqlexpress;initial catalog=Haito;uid=sa; pwd=Nissan2015;integrated security=Flase;MultipleActiveResultSets=True;App=EntityFramework&quot;"
       providerName="System.Data.EntityClient" />
+
   </connectionStrings>
   <entityFramework>
     <defaultConnectionFactory type="System.Data.Entity.Infrastructure.SqlConnectionFactory, EntityFramework" />
