@@ -20,9 +20,13 @@
           <QueryParameter Name="@idOrdenCompra">
             <Value>=Parameters!idOrdenCompra.Value</Value>
           </QueryParameter>
+          <QueryParameter Name="@idEncabezado">
+            <Value>=Parameters!idEncabezado.Value</Value>
+          </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
         <CommandText>obtenerDatosOrdenCompra</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
         <Field Name="idOrdenCompra">
@@ -48,6 +52,10 @@
         <Field Name="nombre">
           <DataField>nombre</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="idEncabezado">
+          <DataField>idEncabezado</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="idUnidadMedida">
           <DataField>idUnidadMedida</DataField>
@@ -984,7 +992,6 @@
         </PageHeader>
         <PageFooter>
           <Height>42.033mm</Height>
-          <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
             <Textbox Name="ExecutionTime">
@@ -1104,7 +1111,7 @@
                       </Style>
                     </TextRun>
                     <TextRun>
-                      <Value>=Sum(Fields!subtotal.Value, "DataSet1")</Value>
+                      <Value>=First(Fields!subtotal.Value, "DataSet1")</Value>
                       <Style>
                         <FontFamily>Bahnschrift</FontFamily>
                         <Format>'$'#,0.00;('$'#,0.00)</Format>
@@ -1124,7 +1131,7 @@
                       </Style>
                     </TextRun>
                     <TextRun>
-                      <Value>=Sum(Fields!iva.Value, "DataSet1")</Value>
+                      <Value>=First(Fields!iva.Value, "DataSet1")</Value>
                       <Style>
                         <FontFamily>Bahnschrift</FontFamily>
                         <Format>'$'#,0.00;('$'#,0.00)</Format>
@@ -1145,7 +1152,7 @@
                       </Style>
                     </TextRun>
                     <TextRun>
-                      <Value>=Sum(Fields!total.Value, "DataSet1")</Value>
+                      <Value>=First(Fields!total.Value, "DataSet1")</Value>
                       <Style>
                         <FontFamily>Bahnschrift</FontFamily>
                         <FontWeight>Bold</FontWeight>
@@ -1400,6 +1407,10 @@
     <ReportParameter Name="idOrdenCompra">
       <DataType>Integer</DataType>
       <Prompt>id Orden Compra</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="idEncabezado">
+      <DataType>Integer</DataType>
+      <Prompt>id Encabezado</Prompt>
     </ReportParameter>
   </ReportParameters>
   <EmbeddedImages>
