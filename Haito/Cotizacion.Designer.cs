@@ -71,6 +71,8 @@
             this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargarCotizacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cbMoneda = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -234,6 +236,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.cbMoneda);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.cbEncabezado);
             this.panel1.Controls.Add(this.tbObservaciones);
@@ -443,15 +447,13 @@
             // 
             this.dgvProductos.AllowDrop = true;
             this.dgvProductos.AllowUserToAddRows = false;
-            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProductos.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvProductos.Location = new System.Drawing.Point(0, 0);
             this.dgvProductos.MultiSelect = false;
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
-            this.dgvProductos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductos.Size = new System.Drawing.Size(823, 297);
+            this.dgvProductos.Size = new System.Drawing.Size(823, 176);
             this.dgvProductos.TabIndex = 0;
             this.dgvProductos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentDoubleClick);
             this.dgvProductos.DoubleClick += new System.EventHandler(this.dgvProductos_DoubleClick);
@@ -504,6 +506,23 @@
             this.cargarCotizacionToolStripMenuItem.Size = new System.Drawing.Size(122, 20);
             this.cargarCotizacionToolStripMenuItem.Text = "Cargar Cotizacion...";
             this.cargarCotizacionToolStripMenuItem.Click += new System.EventHandler(this.cargarCotizacionToolStripMenuItem_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(544, 58);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(46, 13);
+            this.label13.TabIndex = 37;
+            this.label13.Text = "Moneda";
+            // 
+            // cbMoneda
+            // 
+            this.cbMoneda.FormattingEnabled = true;
+            this.cbMoneda.Location = new System.Drawing.Point(617, 55);
+            this.cbMoneda.Name = "cbMoneda";
+            this.cbMoneda.Size = new System.Drawing.Size(200, 21);
+            this.cbMoneda.TabIndex = 36;
             // 
             // Cotizacion
             // 
@@ -578,5 +597,7 @@
         private System.Windows.Forms.ToolStripMenuItem cargarCotizacionToolStripMenuItem;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox cbEncabezado;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox cbMoneda;
     }
 }

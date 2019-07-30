@@ -46,6 +46,8 @@
             this.tbCantidad = new System.Windows.Forms.TextBox();
             this.cbUnidadMedida = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cbEncabezado = new System.Windows.Forms.ComboBox();
             this.tbObservaciones = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -69,8 +71,8 @@
             this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargarCotizacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label12 = new System.Windows.Forms.Label();
-            this.cbEncabezado = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cbMoneda = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -236,6 +238,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.cbMoneda);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.cbEncabezado);
             this.panel1.Controls.Add(this.tbObservaciones);
@@ -255,6 +259,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(829, 129);
             this.panel1.TabIndex = 41;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(12, 58);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(67, 13);
+            this.label12.TabIndex = 37;
+            this.label12.Text = "Encabezado";
+            // 
+            // cbEncabezado
+            // 
+            this.cbEncabezado.FormattingEnabled = true;
+            this.cbEncabezado.Location = new System.Drawing.Point(108, 55);
+            this.cbEncabezado.Name = "cbEncabezado";
+            this.cbEncabezado.Size = new System.Drawing.Size(379, 21);
+            this.cbEncabezado.TabIndex = 36;
+            this.cbEncabezado.SelectedIndexChanged += new System.EventHandler(this.cbEncabezado_SelectedIndexChanged);
             // 
             // tbObservaciones
             // 
@@ -425,13 +447,13 @@
             this.dgvProductos.AllowDrop = true;
             this.dgvProductos.AllowUserToAddRows = false;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProductos.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvProductos.Location = new System.Drawing.Point(0, 0);
             this.dgvProductos.MultiSelect = false;
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductos.Size = new System.Drawing.Size(823, 297);
+            this.dgvProductos.Size = new System.Drawing.Size(823, 171);
             this.dgvProductos.TabIndex = 0;
             this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
             this.dgvProductos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentDoubleClick);
@@ -485,23 +507,22 @@
             this.cargarCotizacionToolStripMenuItem.Text = "Cargar Orden de Compra...";
             this.cargarCotizacionToolStripMenuItem.Click += new System.EventHandler(this.cargarCotizacionToolStripMenuItem_Click);
             // 
-            // label12
+            // label13
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(12, 58);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(67, 13);
-            this.label12.TabIndex = 37;
-            this.label12.Text = "Encabezado";
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(565, 58);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(46, 13);
+            this.label13.TabIndex = 39;
+            this.label13.Text = "Moneda";
             // 
-            // cbEncabezado
+            // cbMoneda
             // 
-            this.cbEncabezado.FormattingEnabled = true;
-            this.cbEncabezado.Location = new System.Drawing.Point(108, 55);
-            this.cbEncabezado.Name = "cbEncabezado";
-            this.cbEncabezado.Size = new System.Drawing.Size(379, 21);
-            this.cbEncabezado.TabIndex = 36;
-            this.cbEncabezado.SelectedIndexChanged += new System.EventHandler(this.cbEncabezado_SelectedIndexChanged);
+            this.cbMoneda.FormattingEnabled = true;
+            this.cbMoneda.Location = new System.Drawing.Point(617, 55);
+            this.cbMoneda.Name = "cbMoneda";
+            this.cbMoneda.Size = new System.Drawing.Size(200, 21);
+            this.cbMoneda.TabIndex = 38;
             // 
             // OrdenCompra
             // 
@@ -576,5 +597,7 @@
         private System.Windows.Forms.ToolStripMenuItem cargarCotizacionToolStripMenuItem;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox cbEncabezado;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox cbMoneda;
     }
 }

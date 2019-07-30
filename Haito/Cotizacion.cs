@@ -37,7 +37,7 @@ namespace Haito
             try
             {
                 dsHaitoTableAdapters.obtenerDatosCotizacionTableAdapter dcta = new dsHaitoTableAdapters.obtenerDatosCotizacionTableAdapter();
-                DataTable dtCotizacion = dcta.GetData(idCotizacion, idEncabezado);
+                DataTable dtCotizacion = dcta.GetData(idCotizacion, idEncabezado, cbMoneda.SelectedIndex);
 
                 //agregar todo al datagrid y ocultar las columnas que no se ocupan solo mostrar las que se ocupan
                 dgvProductos.DataSource = null;
@@ -98,6 +98,7 @@ namespace Haito
             cargarContactos(idEmpresa);
             cargarUM();
             cargarEncabezados();
+            cargarMonedas();
             try
             {
                 if (idCotizacion != 0)
@@ -109,6 +110,12 @@ namespace Haito
                     cargarSiguienteFolio((int)cbEncabezado.SelectedValue);
             }
             catch (Exception Exception) { AutoClosingMessageBox.Show(Exception.Message,"error",3000); }
+        }
+
+        private void cargarMonedas()
+        {
+            cbMoneda.DataSource = Enum.GetValues(typeof(moneda));
+            cbMoneda.SelectedIndex = 0;
         }
 
         private void cargarEncabezados()
@@ -205,7 +212,7 @@ namespace Haito
                 {
                     //ingresar en bd o hacer la actualizacion dependiendo si se habia guardado anteriormente
                     dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
-                    qta.InsertarCambiarCotizacion(int.Parse(txtIDFolio.Text), idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), cbEncabezado.SelectedIndex);
+                    qta.InsertarCambiarCotizacion(int.Parse(txtIDFolio.Text), idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), cbEncabezado.SelectedIndex, cbMoneda.SelectedIndex);
                     int idProducto = int.Parse(dtProd.Rows[0]["idProducto"].ToString());
                     idCotizacion = int.Parse(txtIDFolio.Text);
                     qta.InsertarCambiarCotizacionDetalle(int.Parse(txtIDFolio.Text), idProducto, cantidad, precio, cbUnidadMedida.Text 
@@ -327,7 +334,7 @@ namespace Haito
         private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if ( idCotizacion != 0){
-                reporte report = new reporte("cotizacion", idCotizacion, (int) cbEncabezado.SelectedValue);
+                reporte report = new reporte("cotizacion", idCotizacion, (int) cbEncabezado.SelectedValue, cbMoneda.SelectedIndex);
                 report.Show();
 
             }
@@ -362,7 +369,7 @@ namespace Haito
                 {
                     //ingresar en bd o hacer la actualizacion dependiendo si se habia guardado anteriormente
                     dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
-                    qta.InsertarCambiarCotizacion(int.Parse(txtIDFolio.Text), idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), (int) cbEncabezado.SelectedValue);
+                    qta.InsertarCambiarCotizacion(int.Parse(txtIDFolio.Text), idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), (int) cbEncabezado.SelectedValue, cbMoneda.SelectedIndex);
 
                     AutoClosingMessageBox.Show("Ingreso correcto", "Cotización", 2000);
                 }

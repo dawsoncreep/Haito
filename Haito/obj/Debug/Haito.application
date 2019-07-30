@@ -14,14 +14,14 @@
     <framework targetVersion="4.0" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Haito.exe.manifest" size="15934">
+    <dependentAssembly dependencyType="install" codebase="Haito.exe.manifest" size="15236">
       <assemblyIdentity name="Haito.exe" version="1.0.0.33" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>V2XWF+PZ7E5AAsMv3B3E/q5r3yg=</dsig:DigestValue>
+        <dsig:DigestValue>bIJagrMEPZ8mlpLwGgy5Dta0sMk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

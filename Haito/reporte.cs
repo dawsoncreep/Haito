@@ -16,12 +16,14 @@ namespace Haito
         string report;
         int id;
         int idEncabezado;
-        public reporte(string _reporte, int _id, int _idEncabezado)
+        int idMoneda;
+        public reporte(string _reporte, int _id, int _idEncabezado, int _idMoneda)
         {
             InitializeComponent();
             report = _reporte;
             id = _id;
             idEncabezado = _idEncabezado;
+            idMoneda = _idMoneda;
         }
 
         private void reporte_Load(object sender, EventArgs e)
@@ -39,7 +41,7 @@ namespace Haito
 
                 dsHaitoTableAdapters.obtenerDatosOrdenCompraTableAdapter dcta = new dsHaitoTableAdapters.obtenerDatosOrdenCompraTableAdapter();
                 dsHaito.obtenerDatosOrdenCompraDataTable dt = new dsHaito.obtenerDatosOrdenCompraDataTable();
-                dcta.Fill(dt, id, idEncabezado );
+                dcta.Fill(dt, id, idEncabezado, idMoneda);
                 reportViewer1.LocalReport.DataSources.Clear();
                 ReportDataSource datasource = new ReportDataSource("DataSet1", (DataTable)dt);
                 reportViewer1.LocalReport.DataSources.Add(datasource);
@@ -62,7 +64,7 @@ namespace Haito
                 localReport.ReportPath = "cotizacione.rdl";
                 dsHaitoTableAdapters.obtenerDatosCotizacionTableAdapter dcta = new dsHaitoTableAdapters.obtenerDatosCotizacionTableAdapter();
                 dsHaito.obtenerDatosCotizacionDataTable dt = new dsHaito.obtenerDatosCotizacionDataTable();
-                dcta.Fill(dt, id, idEncabezado);
+                dcta.Fill(dt, id, idEncabezado, idMoneda);
                 reportViewer1.LocalReport.DataSources.Clear();
                 ReportDataSource datasource = new ReportDataSource("DataSet1", (DataTable)dt);
                 reportViewer1.LocalReport.DataSources.Add(datasource);

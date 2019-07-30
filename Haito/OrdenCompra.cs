@@ -34,7 +34,7 @@ namespace Haito
         private void cargarDatosOrdenCompra()
         {
             dsHaitoTableAdapters.obtenerDatosOrdenCompraTableAdapter dcta = new dsHaitoTableAdapters.obtenerDatosOrdenCompraTableAdapter();
-            DataTable dtOrdenCompra = dcta.GetData(idOrdenCompra, cbEncabezado.SelectedIndex);
+            DataTable dtOrdenCompra = dcta.GetData(idOrdenCompra, cbEncabezado.SelectedIndex, cbMoneda.SelectedIndex);
 
             //agregar todo al datagrid y ocultar las columnas que no se ocupan solo mostrar las que se ocupan
             dgvProductos.DataSource = null;
@@ -87,12 +87,19 @@ namespace Haito
             cargarContactos(idEmpresa);
             cargarUM();
             cargarEncabezado();
+            cargarMoneda();
             if (idOrdenCompra != 0)
             {
                 cargarDatosOrdenCompra();
                
             }else
             cargarSiguienteFolio();
+        }
+
+        private void cargarMoneda()
+        {
+            cbMoneda.DataSource = Enum.GetValues(typeof(moneda));
+            cbMoneda.SelectedIndex = 0;
         }
 
         private void cargarEncabezado()
@@ -189,7 +196,7 @@ namespace Haito
                 {
                     //ingresar en bd o hacer la actualizacion dependiendo si se habia guardado anteriormente
                     dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
-                    qta.InsertarCambiarOrdenCompra(int.Parse(txtIDFolio.Text), idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), cbEncabezado.SelectedIndex);
+                    qta.InsertarCambiarOrdenCompra(int.Parse(txtIDFolio.Text), idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), cbEncabezado.SelectedIndex, cbMoneda.SelectedIndex);
                     int idProducto = int.Parse(dtProd.Rows[0]["idProducto"].ToString());
                     idOrdenCompra = int.Parse(txtIDFolio.Text);
                     qta.InsertarCambiarOrdenCompraDetalle(int.Parse(txtIDFolio.Text), idProducto, cantidad, precio, cbUnidadMedida.Text, false, cbEncabezado.SelectedIndex);
@@ -325,7 +332,7 @@ namespace Haito
         {
             if (idOrdenCompra != 0)
             {
-                reporte report = new reporte("ordenCompra", idOrdenCompra, (int)cbEncabezado.SelectedValue);
+                reporte report = new reporte("ordenCompra", idOrdenCompra, (int)cbEncabezado.SelectedValue, cbMoneda.SelectedIndex);
                 report.Show();
 
             }

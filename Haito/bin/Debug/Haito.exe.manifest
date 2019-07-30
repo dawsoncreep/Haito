@@ -4,7 +4,7 @@
   <description asmv2:iconFile="icono.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="Haito" version="1.0.11.0" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="Haito" version="1.1.0.29562" language="neutral" processorArchitecture="msil" />
     <commandLine file="Haito.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -80,14 +80,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Haito.exe" size="1567232">
-      <assemblyIdentity name="Haito" version="1.0.11.0" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Haito.exe" size="1568256">
+      <assemblyIdentity name="Haito" version="1.1.0.29562" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>hqfXDC8F3lNxOs6HClG8INCZvzo=</dsig:DigestValue>
+        <dsig:DigestValue>2uyKtn4t21EbXoK4nUlZ4fIp0XU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -211,34 +211,22 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="es\Microsoft.SqlServer.Types.resources.dll" size="48216">
-      <assemblyIdentity name="Microsoft.SqlServer.Types.resources" version="11.0.0.0" publicKeyToken="89845DCD8080CC91" language="es" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>ZP6QbH4uil6EgZt/Ab6LuWbJfDQ=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <file name="cotizacione.rdl" size="1300334">
+  <file name="cotizacione.rdl" size="803371">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>w+DRmB4RBu1anyZUriPBJRHgxaM=</dsig:DigestValue>
+      <dsig:DigestValue>lJyedaTxrHuJ6u+3PBg+bXtlpYs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Haito.exe.config" size="1775">
+  <file name="Haito.exe.config" size="1725">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>UoUplEimgg1UX6pbee3rWkUrJP0=</dsig:DigestValue>
+      <dsig:DigestValue>5bBhnJ3kAyqiJ906C4dHbOVozUc=</dsig:DigestValue>
     </hash>
   </file>
   <file name="icono.ico" size="258110">
@@ -277,13 +265,13 @@
       <dsig:DigestValue>dLu1nSGeM7tTW2lJbv9jJfsUp+4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="ordenCompra.rdl" size="1121556">
+  <file name="ordenCompra.rdl" size="1675128">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>lYvYqoeK0arxo1nQZjRdSh1XBzI=</dsig:DigestValue>
+      <dsig:DigestValue>CEguUy2QPOSzddW2eS5u7n/kI18=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

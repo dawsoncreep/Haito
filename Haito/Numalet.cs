@@ -17,11 +17,11 @@ namespace Haito
 
         private Regex r;
 
-        public String Convertir(String numero, bool mayusculas)
+        public String Convertir(String numero, bool mayusculas, int moneda)
         {
 
             String literal = "";
-            String parte_decimal;
+            String parte_decimal = "";
             //si el numero utiliza (.) en lugar de (,) -> se reemplaza
             numero = numero.Replace(".", ",");
 
@@ -38,9 +38,17 @@ namespace Haito
                 //se divide el numero 0000000,00 -> entero y decimal
                 String[] Num = numero.Split(',');
 
-                //de da formato al numero decimal
-                parte_decimal = "Pesos " +Num[1] + "/100 M.N.";
-                //se convierte el numero a literal
+                if (moneda == 0)
+                {
+                    //de da formato al numero decimal
+                    parte_decimal = "PESOS " + Num[1] + "/100 MXN";
+                    //se convierte el numero a literal
+                }
+                else if (moneda == 1)
+                {
+                    parte_decimal = "DÓLARES  " + Num[1] + "/100 USD";
+
+                }
                 if (int.Parse(Num[0]) == 0)
                 {//si el valor es cero                
                     literal = "cero ";
