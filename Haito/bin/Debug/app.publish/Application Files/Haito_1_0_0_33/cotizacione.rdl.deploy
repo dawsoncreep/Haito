@@ -20,6 +20,9 @@
           <QueryParameter Name="@idCotizacion">
             <Value>=Parameters!idCotizacion.Value</Value>
           </QueryParameter>
+          <QueryParameter Name="@idEncabezado">
+            <Value>=Parameters!idEncabezado.Value</Value>
+          </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
         <CommandText>obtenerDatosCotizacion</CommandText>
@@ -49,6 +52,10 @@
         <Field Name="nombre">
           <DataField>nombre</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="idEncabezado">
+          <DataField>idEncabezado</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="idUnidadMedida">
           <DataField>idUnidadMedida</DataField>
@@ -700,7 +707,7 @@
             <Top>2.02292mm</Top>
             <Left>1.56013mm</Left>
             <Height>11.86413mm</Height>
-            <Width>183.12341mm</Width>
+            <Width>183.1234mm</Width>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -1390,6 +1397,10 @@
         </Values>
       </DefaultValue>
       <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="idEncabezado">
+      <DataType>Integer</DataType>
+      <Prompt>id Encabezado</Prompt>
     </ReportParameter>
   </ReportParameters>
   <EmbeddedImages>

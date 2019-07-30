@@ -27,7 +27,7 @@
     <ProductName>Cotizaciones</ProductName>
     <PublisherName>Jaime Castorena</PublisherName>
     <SuiteName>Haito</SuiteName>
-    <ApplicationRevision>32</ApplicationRevision>
+    <ApplicationRevision>33</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
