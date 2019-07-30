@@ -37,8 +37,8 @@
             this.tpPROVEEDORES = new System.Windows.Forms.TabPage();
             this.proveedoresDataGridView = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.bSalir = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.clienteDataGridView)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tpClientes.SuspendLayout();
@@ -91,6 +91,7 @@
             this.clienteDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.clienteDataGridView.Size = new System.Drawing.Size(1148, 380);
             this.clienteDataGridView.TabIndex = 5;
+            this.clienteDataGridView.DoubleClick += new System.EventHandler(this.clienteDataGridView_DoubleClick);
             // 
             // tabControl1
             // 
@@ -138,6 +139,7 @@
             this.proveedoresDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.proveedoresDataGridView.Size = new System.Drawing.Size(1148, 380);
             this.proveedoresDataGridView.TabIndex = 6;
+            this.proveedoresDataGridView.DoubleClick += new System.EventHandler(this.proveedoresDataGridView_DoubleClick);
             // 
             // panel1
             // 
@@ -152,16 +154,6 @@
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.tabControl1);
-            this.panel2.Controls.Add(this.panel1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1162, 452);
-            this.panel2.TabIndex = 16;
-            // 
             // bSalir
             // 
             this.bSalir.Location = new System.Drawing.Point(763, 3);
@@ -171,6 +163,16 @@
             this.bSalir.Text = "Salir";
             this.bSalir.UseVisualStyleBackColor = true;
             this.bSalir.Click += new System.EventHandler(this.bSalir_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.tabControl1);
+            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1162, 452);
+            this.panel2.TabIndex = 16;
             // 
             // Clientes
             // 

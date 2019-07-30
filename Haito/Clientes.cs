@@ -141,5 +141,15 @@ namespace Haito
         {
             this.Close();
         }
+
+        private void clienteDataGridView_DoubleClick(object sender, EventArgs e)
+        {
+            btnModificar_Click(sender, e);
+        }
+
+        private void proveedoresDataGridView_DoubleClick(object sender, EventArgs e)
+        {
+            btnModificar_Click(sender, e);
+        }
     }
 }

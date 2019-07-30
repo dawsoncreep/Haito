@@ -39,9 +39,7 @@
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cotizacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cotizaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +59,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.ordenDeCompraToolStripMenuItem,
-            this.cotizacionToolStripMenuItem});
+            this.cotizaciónToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(506, 24);
@@ -125,33 +123,17 @@
             // 
             // ordenDeCompraToolStripMenuItem
             // 
-            this.ordenDeCompraToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nuevaToolStripMenuItem});
             this.ordenDeCompraToolStripMenuItem.Name = "ordenDeCompraToolStripMenuItem";
             this.ordenDeCompraToolStripMenuItem.Size = new System.Drawing.Size(114, 20);
             this.ordenDeCompraToolStripMenuItem.Text = "Orden de Compra";
+            this.ordenDeCompraToolStripMenuItem.Click += new System.EventHandler(this.ordenDeCompraToolStripMenuItem_Click);
             // 
-            // nuevaToolStripMenuItem
+            // cotizaciónToolStripMenuItem
             // 
-            this.nuevaToolStripMenuItem.Name = "nuevaToolStripMenuItem";
-            this.nuevaToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
-            this.nuevaToolStripMenuItem.Text = "Nueva";
-            this.nuevaToolStripMenuItem.Click += new System.EventHandler(this.nuevaToolStripMenuItem_Click);
-            // 
-            // cotizacionToolStripMenuItem
-            // 
-            this.cotizacionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nuevaToolStripMenuItem1});
-            this.cotizacionToolStripMenuItem.Name = "cotizacionToolStripMenuItem";
-            this.cotizacionToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
-            this.cotizacionToolStripMenuItem.Text = "Cotizacion";
-            // 
-            // nuevaToolStripMenuItem1
-            // 
-            this.nuevaToolStripMenuItem1.Name = "nuevaToolStripMenuItem1";
-            this.nuevaToolStripMenuItem1.Size = new System.Drawing.Size(108, 22);
-            this.nuevaToolStripMenuItem1.Text = "Nueva";
-            this.nuevaToolStripMenuItem1.Click += new System.EventHandler(this.nuevaToolStripMenuItem1_Click);
+            this.cotizaciónToolStripMenuItem.Name = "cotizaciónToolStripMenuItem";
+            this.cotizaciónToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.cotizaciónToolStripMenuItem.Text = "Cotización";
+            this.cotizaciónToolStripMenuItem.Click += new System.EventHandler(this.cotizaciónToolStripMenuItem_Click);
             // 
             // fMenu
             // 
@@ -180,13 +162,11 @@
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ordenDeCompraToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cotizacionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem empresasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem nuevaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nuevaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem clientesProveedoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cotizaciónToolStripMenuItem;
     }
 }

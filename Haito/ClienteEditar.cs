@@ -24,7 +24,11 @@ namespace Haito
   
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
+            if (cbEmpresa.SelectedValue == null)
+            {
+                AutoClosingMessageBox.Show("Debe seleccionar una empresa dada de alta.", "ERROR", 3000);
+                return;
+            }
             
             dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
             qta.InsertarCambiarClienteProveedor(idCliente, (int)cbEmpresa.SelectedValue, tbAtencion.Text.ToUpper(), tbCelular.Text.ToUpper(),

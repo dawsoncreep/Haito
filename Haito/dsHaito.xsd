@@ -353,7 +353,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="HaitoConnectionString (Settings)" DbObjectName="Haito.dbo.InsertarCambiarClienteProveedor" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="InsertarCambiarClienteProveedor" MethodsParameterType="CLR" Modifier="Public" Name="InsertarCambiarClienteProveedor" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="InsertarCambiarClienteProveedor">
+          <DbSource ConnectionRef="HaitoConnectionString (Settings)" DbObjectName="Haito.dbo.InsertarCambiarClienteProveedor" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="InsertarCambiarClienteProveedor" MethodsParameterType="CLR" Modifier="Public" Name="InsertarCambiarClienteProveedor" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="InsertarCambiarClienteProveedor">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.InsertarCambiarClienteProveedor</CommandText>

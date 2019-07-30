@@ -46,7 +46,12 @@ namespace Haito
                 reportViewer1.ShowParameterPrompts = false;
 
                 ReportParameter parametro = new ReportParameter("idOrdenCompra", id.ToString());
+
+
+                ReportParameter parametro2 = new ReportParameter("idEncabezado", idEncabezado.ToString());
                 reportViewer1.LocalReport.SetParameters(parametro);
+                reportViewer1.LocalReport.SetParameters(parametro2);
+
                
               
             }
@@ -64,7 +69,9 @@ namespace Haito
                 reportViewer1.ShowParameterPrompts = false;
 
                 ReportParameter parametro = new ReportParameter("idCotizacion", id.ToString());
+                ReportParameter parametro2 = new ReportParameter("idEncabezado", idEncabezado.ToString());
                 reportViewer1.LocalReport.SetParameters(parametro);
+                reportViewer1.LocalReport.SetParameters(parametro2);
             }
             this.reportViewer1.RefreshReport();
         }

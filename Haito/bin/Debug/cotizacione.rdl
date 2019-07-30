@@ -1189,6 +1189,7 @@
                       <Value xml:space="preserve"> </Value>
                       <Style>
                         <FontFamily>Bahnschrift</FontFamily>
+                        <Format>'$'#,0.00;('$'#,0.00)</Format>
                       </Style>
                     </TextRun>
                     <TextRun>
@@ -1253,6 +1254,7 @@
                       <Value />
                       <Style>
                         <FontFamily>Bahnschrift</FontFamily>
+                        <Format>'$'#,0.00;('$'#,0.00)</Format>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2645,6 +2647,7 @@ gAoX5vaihvm9qACiiigAooX5vaigAooooAKKKKACiiigAooooAKKKKACiiigAob5vaiigAooooAKKKKA
 NtG2hW3deKAFpd1JRQAm2loooAKKKKAE3evFLTZF8zvik8w+lAD6KKKAChvm9qKKACjj1opmw+tAD6KKKABvm9qKKKACiiigAooooAKKKRW3deKAFooooAKKKKACk20tFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABQvzUUL8tABRRRQAUUUUAIrbuvFLSMu7pxS0AFFFIrbuvFAC0UUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFC/N7UAFFFFABRRRQAUUUUAFFFFACbqWk20tABRRRQAfXimrIGGRk/QVHe3At4txqjJfXdi4F4sTRN/HExBH4Y/rQBqUL81FC/LQAUUUUAFFFFABRRQvzUAFFFFABRUUc5eSRCACnoaloAKKKKACiiigAooooAKKF+aigAooooAKKKKACiiigAopFYt2xS0AFFFFABRRRQAUUUUAFFFFABRRRQAN83tRRRQAUjLu9qVfm9qRXEnQ5oAWiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAoopN1AC0UUUAFFFC/N7UAFFFFAH//Z</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
+  <Language>es-MX</Language>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>6186b776-2132-40bb-9245-36caa48e6315</rd:ReportID>
 </Report>

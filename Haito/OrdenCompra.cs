@@ -325,7 +325,7 @@ namespace Haito
         {
             if (idOrdenCompra != 0)
             {
-                reporte report = new reporte("ordenCompra", idOrdenCompra, 0);
+                reporte report = new reporte("ordenCompra", idOrdenCompra, (int)cbEncabezado.SelectedValue);
                 report.Show();
 
             }

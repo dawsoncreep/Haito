@@ -9376,7 +9376,7 @@ namespace Haito.dsHaitoTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int InsertarCambiarClienteProveedor(global::System.Nullable<int> idClienteProveedor, global::System.Nullable<int> idEmpresa, string atencion, string celular, string telefono, string telefono2, string correo, string diasCredito, string domicilio, string puestoArea, string RFC, global::System.Nullable<bool> cliente, string codigoPostal, global::System.Nullable<bool> eliminar) {
+        public virtual object InsertarCambiarClienteProveedor(global::System.Nullable<int> idClienteProveedor, global::System.Nullable<int> idEmpresa, string atencion, string celular, string telefono, string telefono2, string correo, string diasCredito, string domicilio, string puestoArea, string RFC, global::System.Nullable<bool> cliente, string codigoPostal, global::System.Nullable<bool> eliminar) {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[5]));
             if ((idClienteProveedor.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(idClienteProveedor.Value));
@@ -9467,16 +9467,22 @@ namespace Haito.dsHaitoTableAdapters {
                         != global::System.Data.ConnectionState.Open)) {
                 command.Connection.Open();
             }
-            int returnValue;
+            object returnValue;
             try {
-                returnValue = command.ExecuteNonQuery();
+                returnValue = command.ExecuteScalar();
             }
             finally {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
                     command.Connection.Close();
                 }
             }
-            return returnValue;
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -47,16 +47,6 @@ namespace Haito
             new Usuarios().Show();
         }
 
-        private void nuevaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new OrdenCompra(0, idUsuario).Show();          
-        }
-
-        private void nuevaToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            new Cotizacion(0, idUsuario).Show();
-        }
-
         private void salirToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             cerrar();
@@ -70,6 +60,16 @@ namespace Haito
         private void fMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
             cerrar();
+        }
+
+        private void ordenDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new OrdenCompra(0, idUsuario).Show();       
+        }
+
+        private void cotizaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Cotizacion(0, idUsuario).Show();
         }
 
         
