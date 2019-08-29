@@ -51,8 +51,11 @@ namespace Haito
 
 
                 ReportParameter parametro2 = new ReportParameter("idEncabezado", idEncabezado.ToString());
+                ReportParameter parametro3 = new ReportParameter("idMoneda", idMoneda.ToString());
                 reportViewer1.LocalReport.SetParameters(parametro);
                 reportViewer1.LocalReport.SetParameters(parametro2);
+                reportViewer1.LocalReport.SetParameters(parametro3);
+
 
                
               
@@ -72,8 +75,11 @@ namespace Haito
 
                 ReportParameter parametro = new ReportParameter("idCotizacion", id.ToString());
                 ReportParameter parametro2 = new ReportParameter("idEncabezado", idEncabezado.ToString());
+                ReportParameter parametro3 = new ReportParameter("idMoneda", idMoneda.ToString());
                 reportViewer1.LocalReport.SetParameters(parametro);
                 reportViewer1.LocalReport.SetParameters(parametro2);
+                reportViewer1.LocalReport.SetParameters(parametro3);
+
             }
             this.reportViewer1.RefreshReport();
         }

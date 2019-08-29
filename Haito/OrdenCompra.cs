@@ -44,6 +44,8 @@ namespace Haito
 
 
             cbEncabezado.SelectedIndex = (int)dtOrdenCompra.Rows[0]["idEncabezado"];
+
+            cbMoneda.SelectedIndex = (int)dtOrdenCompra.Rows[0]["idMoneda"];
             //encabezado
             cbEmpresa.SelectedValue = (int)dtOrdenCompra.Rows[0]["idEmpresa"];
             cbAtencion.SelectedValue = (int) dtOrdenCompra.Rows[0]["idProveedor"];
@@ -76,6 +78,7 @@ namespace Haito
             dgvProductos.Columns[18].Visible = false;
 
             dgvProductos.Columns[19].Visible = false;
+            dgvProductos.Columns[20].Visible = false;
             dgvProductos.Refresh();
 
         }
@@ -300,7 +303,7 @@ namespace Haito
             if (response == DialogResult.Yes)
             {
                 dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
-                qta.InsertarCambiarOrdenCompraDetalle(idOrdenCompraDetalle, null, null,null,null, true, null);
+                qta.InsertarCambiarOrdenCompraDetalle(idOrdenCompraDetalle, null, null,null,null, true, idEncabezado);
                 AutoClosingMessageBox.Show("Eliminado con éxito", "Éxito", 3000);
                 cargarDatosOrdenCompra();
             }

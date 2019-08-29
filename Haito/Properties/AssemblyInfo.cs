@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // conjunto de atributos. Cambie estos atributos para modificar la información
 // asociada con un ensamblado.
 [assembly: AssemblyTitle("Haito")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Cotizaciones")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Haito")]
 [assembly: AssemblyProduct("Haito")]
-[assembly: AssemblyCopyright("Copyright ©  2019")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCopyright("Copyright Haito©  2019")]
+[assembly: AssemblyTrademark("Haito")]
 [assembly: AssemblyCulture("")]
 
 // Si establece ComVisible como false, los tipos de este ensamblado no estarán visibles 

@@ -23,6 +23,9 @@
           <QueryParameter Name="@idEncabezado">
             <Value>=Parameters!idEncabezado.Value</Value>
           </QueryParameter>
+          <QueryParameter Name="@idMoneda">
+            <Value>=Parameters!idMoneda.Value</Value>
+          </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
         <CommandText>obtenerDatosCotizacion</CommandText>
@@ -55,6 +58,10 @@
         </Field>
         <Field Name="idEncabezado">
           <DataField>idEncabezado</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="idMoneda">
+          <DataField>idMoneda</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="idUnidadMedida">
@@ -1509,6 +1516,10 @@
         </Values>
       </DefaultValue>
       <Prompt>id Encabezado</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="idMoneda">
+      <DataType>Integer</DataType>
+      <Prompt>id Moneda</Prompt>
     </ReportParameter>
   </ReportParameters>
   <EmbeddedImages>

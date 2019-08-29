@@ -50,6 +50,9 @@ namespace Haito
                 }
                 catch { }
 
+
+
+                cbMoneda.SelectedIndex = (int)dtCotizacion.Rows[0]["idMoneda"];
                 cbEncabezado.SelectedIndex = (int)dtCotizacion.Rows[0]["idEncabezado"];
 
                 cbAtencion.SelectedValue = (int)dtCotizacion.Rows[0]["idCliente"];
@@ -82,6 +85,7 @@ namespace Haito
                 dgvProductos.Columns[18].Visible = false;
 
                 dgvProductos.Columns[19].Visible = false;
+                dgvProductos.Columns[20].Visible = false;
                 dgvProductos.Refresh();
             }
             catch (Exception ex)
@@ -189,7 +193,7 @@ namespace Haito
         private void dgvProductos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             //eliminar elemento seleccionado
-
+            eliminar();
         }
 
        
