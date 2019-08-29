@@ -18,6 +18,9 @@ namespace Haito
         int idUsuario = 1;
         int idOrdenCompra = 0;
         int idEncabezado = 0;
+
+        bool nueva = true;
+
         public OrdenCompra(int _idOrdenCompra, int _idusuario)
         {
             InitializeComponent();
@@ -199,10 +202,24 @@ namespace Haito
                 {
                     //ingresar en bd o hacer la actualizacion dependiendo si se habia guardado anteriormente
                     dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
-                    qta.InsertarCambiarOrdenCompra(int.Parse(txtIDFolio.Text), idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), cbEncabezado.SelectedIndex, cbMoneda.SelectedIndex);
+                    int idFolio;
+                    if (nueva)
+                    {//obtiene el siguiente folio
+                        idFolio = int.Parse(qta.siguienteFolio("ordenCompra").ToString());
+                        txtIDFolio.Text = idFolio.ToString();
+                        nueva = false;
+                    }
+                    else
+                    {
+                        idFolio = int.Parse(txtIDFolio.Text);
+                    }
+
+
+                   
+                    qta.InsertarCambiarOrdenCompra(idFolio, idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), cbEncabezado.SelectedIndex, cbMoneda.SelectedIndex);
                     int idProducto = int.Parse(dtProd.Rows[0]["idProducto"].ToString());
-                    idOrdenCompra = int.Parse(txtIDFolio.Text);
-                    qta.InsertarCambiarOrdenCompraDetalle(int.Parse(txtIDFolio.Text), idProducto, cantidad, precio, cbUnidadMedida.Text, false, cbEncabezado.SelectedIndex);
+                    idOrdenCompra = idFolio;
+                    qta.InsertarCambiarOrdenCompraDetalle(idFolio, idProducto, cantidad, precio, cbUnidadMedida.Text, false, cbEncabezado.SelectedIndex);
                     cargarDatosOrdenCompra();
                     btnBuscarProducto.Focus();
                 }
@@ -359,6 +376,28 @@ namespace Haito
                 dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
                 txtIDFolio.Text = qta.obtenerSigIDOrdenCompra((int)cbEncabezado.SelectedValue).ToString();
             }
+        }
+
+        private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //ingresar en bd o hacer la actualizacion dependiendo si se habia guardado anteriormente
+            dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
+            int idFolio;
+            if (nueva)
+            {//obtiene el siguiente folio
+                idFolio = int.Parse(qta.siguienteFolio("ordenCompra").ToString());
+                txtIDFolio.Text = idFolio.ToString();
+                nueva = false;
+            }
+            else
+            {
+                idFolio = int.Parse(txtIDFolio.Text);
+            }
+
+
+
+            qta.InsertarCambiarOrdenCompra(idFolio, idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), cbEncabezado.SelectedIndex, cbMoneda.SelectedIndex);
+         
         }
 
         

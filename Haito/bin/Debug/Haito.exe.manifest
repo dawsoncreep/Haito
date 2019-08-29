@@ -4,7 +4,7 @@
   <description asmv2:iconFile="icono.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="Haito" version="1.1.0.26312" publicKeyToken="25408EF82514B5F0" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="Haito" version="1.1.0.27923" publicKeyToken="25408EF82514B5F0" language="neutral" processorArchitecture="msil" />
     <commandLine file="Haito.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -80,14 +80,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Haito.exe" size="1569280">
-      <assemblyIdentity name="Haito" version="1.1.0.26312" publicKeyToken="25408EF82514B5F0" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Haito.exe" size="1570816">
+      <assemblyIdentity name="Haito" version="1.1.0.27923" publicKeyToken="25408EF82514B5F0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>BtZ2YjeC9/h+GEi6wB52+3yRo4M=</dsig:DigestValue>
+        <dsig:DigestValue>HLukrg5L4/YN8Yw9HOAVoGkBFlc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -211,13 +211,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="cotizacione.rdl" size="803778">
+  <file name="cotizacione.rdl" size="1288609">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>45LKFgmicO2gpBW53BNpucEVyg4=</dsig:DigestValue>
+      <dsig:DigestValue>OuB9kkI363hKpzWrr2N92MA8KTk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Haito.exe.config" size="1755">
@@ -265,13 +265,13 @@
       <dsig:DigestValue>dLu1nSGeM7tTW2lJbv9jJfsUp+4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="ordenCompra.rdl" size="1675128">
+  <file name="ordenCompra.rdl" size="2121162">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>CEguUy2QPOSzddW2eS5u7n/kI18=</dsig:DigestValue>
+      <dsig:DigestValue>JCzF/UMIKh/RwAqSW2L/JNvzc0A=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

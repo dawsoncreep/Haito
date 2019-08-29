@@ -19,6 +19,8 @@ namespace Haito
         int idCotizacion = 0;
         int idEncabezado = 0;
 
+        bool nueva = true;
+
         public Cotizacion(int _idCotizacion, int _idUsuario)
         {
             InitializeComponent();
@@ -204,6 +206,7 @@ namespace Haito
             //que las cantidades sean decimales validos
             //que el precio sea valido y que se haya seleccionado una unidad de medida.
             //se van a guardar con el numero de cotizacion que se haya mostrado en el folio superior
+            
 
             try
             {
@@ -214,12 +217,25 @@ namespace Haito
                 }
                 else
                 {
+
                     //ingresar en bd o hacer la actualizacion dependiendo si se habia guardado anteriormente
                     dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
-                    qta.InsertarCambiarCotizacion(int.Parse(txtIDFolio.Text), idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), cbEncabezado.SelectedIndex, cbMoneda.SelectedIndex);
+                    int idFolio;
+                    if (nueva)
+                    {//obtiene el siguiente folio
+                        idFolio = int.Parse( qta.siguienteFolio("cotizacion").ToString());
+                        txtIDFolio.Text = idFolio.ToString();
+                    }
+                    else
+                    {
+                        idFolio = int.Parse(txtIDFolio.Text);
+                    }
+
+
+                    qta.InsertarCambiarCotizacion(idFolio, idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), cbEncabezado.SelectedIndex, cbMoneda.SelectedIndex);
                     int idProducto = int.Parse(dtProd.Rows[0]["idProducto"].ToString());
                     idCotizacion = int.Parse(txtIDFolio.Text);
-                    qta.InsertarCambiarCotizacionDetalle(int.Parse(txtIDFolio.Text), idProducto, cantidad, precio, cbUnidadMedida.Text 
+                    qta.InsertarCambiarCotizacionDetalle(idFolio, idProducto, cantidad, precio, cbUnidadMedida.Text 
                         , cbEncabezado.SelectedIndex, false);
                     cargarDatosCotizacion();
                     btnBuscarProducto.Focus();
@@ -371,9 +387,24 @@ namespace Haito
 
                 else
                 {
+
                     //ingresar en bd o hacer la actualizacion dependiendo si se habia guardado anteriormente
                     dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
-                    qta.InsertarCambiarCotizacion(int.Parse(txtIDFolio.Text), idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), (int) cbEncabezado.SelectedValue, cbMoneda.SelectedIndex);
+                    int idFolio;
+                    if (nueva)
+                    {//obtiene el siguiente folio
+                        idFolio = int.Parse(qta.siguienteFolio("ordenCompra").ToString());
+                        txtIDFolio.Text = idFolio.ToString();
+                        nueva = false;
+                    }
+                    else
+                    {
+                        idFolio = int.Parse(txtIDFolio.Text);
+                    }
+
+
+
+            qta.InsertarCambiarCotizacion(idFolio, idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), (int) cbEncabezado.SelectedValue, cbMoneda.SelectedIndex);
 
                     AutoClosingMessageBox.Show("Ingreso correcto", "Cotización", 2000);
                 }
