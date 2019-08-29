@@ -64,7 +64,7 @@ namespace Haito
             if (response == DialogResult.Yes)
             {
                 dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
-                qta.InsertarCambiarUsuario(idUsuarioEliminar, null, "","", true);
+                qta.InsertarCambiarUsuario(idUsuarioEliminar, null, "","", true,"");
                 AutoClosingMessageBox.Show("Eliminado con éxito", "Éxito", 3000);
                 cargarUsuarios();
             }

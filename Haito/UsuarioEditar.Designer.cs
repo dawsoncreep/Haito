@@ -38,6 +38,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtContrasenia = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtFirma = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -76,7 +78,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(193, 113);
+            this.btnGuardar.Location = new System.Drawing.Point(193, 141);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 10;
@@ -86,7 +88,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(274, 113);
+            this.btnCancelar.Location = new System.Drawing.Point(274, 141);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 20;
@@ -97,7 +99,7 @@
             // cbRol
             // 
             this.cbRol.FormattingEnabled = true;
-            this.cbRol.Location = new System.Drawing.Point(124, 80);
+            this.cbRol.Location = new System.Drawing.Point(124, 108);
             this.cbRol.Name = "cbRol";
             this.cbRol.Size = new System.Drawing.Size(225, 21);
             this.cbRol.TabIndex = 5;
@@ -105,7 +107,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(37, 83);
+            this.label4.Location = new System.Drawing.Point(37, 111);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(23, 13);
             this.label4.TabIndex = 9;
@@ -115,6 +117,7 @@
             // 
             this.txtContrasenia.AcceptsReturn = true;
             this.txtContrasenia.Location = new System.Drawing.Point(124, 56);
+            this.txtContrasenia.MaxLength = 10;
             this.txtContrasenia.Name = "txtContrasenia";
             this.txtContrasenia.Size = new System.Drawing.Size(225, 20);
             this.txtContrasenia.TabIndex = 4;
@@ -128,11 +131,30 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Contraseña";
             // 
+            // txtFirma
+            // 
+            this.txtFirma.AcceptsReturn = true;
+            this.txtFirma.Location = new System.Drawing.Point(124, 82);
+            this.txtFirma.Name = "txtFirma";
+            this.txtFirma.Size = new System.Drawing.Size(225, 20);
+            this.txtFirma.TabIndex = 21;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(37, 89);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 13);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Firma";
+            // 
             // UsuarioEditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(371, 150);
+            this.ClientSize = new System.Drawing.Size(371, 172);
+            this.Controls.Add(this.txtFirma);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtContrasenia);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
@@ -163,5 +185,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtContrasenia;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtFirma;
+        private System.Windows.Forms.Label label5;
     }
 }

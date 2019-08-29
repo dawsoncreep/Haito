@@ -40,6 +40,8 @@ namespace Haito
                 txtNombre.Text = dt.Rows[0]["nombre"].ToString();
                 txtContrasenia.Text = dt.Rows[0]["pass"].ToString();
                 cbRol.SelectedItem = int.Parse(dt.Rows[0]["idRol"].ToString());
+
+                txtFirma.Text = dt.Rows[0]["firma"].ToString();
             }
         }
         private void cargarRol()
@@ -58,9 +60,13 @@ namespace Haito
             {
                 return;
             }
+            if (txtFirma.Text.Trim() == "")
+            {
+                return;
+            }
 
             dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
-            qta.InsertarCambiarUsuario(idUsuario, (int)cbRol.SelectedValue, txtNombre.Text, txtContrasenia.Text, false);
+            qta.InsertarCambiarUsuario(idUsuario, (int)cbRol.SelectedValue, txtNombre.Text, txtContrasenia.Text, false, txtFirma.Text);
             AutoClosingMessageBox.Show("Insertado con exito", "Éxito", 3000);
             this.Hide();
         }
