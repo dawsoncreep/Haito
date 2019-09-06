@@ -38,6 +38,7 @@ namespace Haito
         {
             try
             {
+                nueva = false;
                 dsHaitoTableAdapters.obtenerDatosCotizacionTableAdapter dcta = new dsHaitoTableAdapters.obtenerDatosCotizacionTableAdapter();
                 DataTable dtCotizacion = dcta.GetData(idCotizacion, idEncabezado, cbMoneda.SelectedIndex);
 
@@ -110,7 +111,7 @@ namespace Haito
                 if (idCotizacion != 0)
                 {
                     cargarDatosCotizacion();
-
+                    nueva = false;
                 }
                 else
                     cargarSiguienteFolio((int)cbEncabezado.SelectedValue);
@@ -225,6 +226,7 @@ namespace Haito
                     {//obtiene el siguiente folio
                         idFolio = int.Parse( qta.siguienteFolio("cotizacion").ToString());
                         txtIDFolio.Text = idFolio.ToString();
+                        nueva = false;
                     }
                     else
                     {
