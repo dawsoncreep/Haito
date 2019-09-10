@@ -170,7 +170,7 @@ namespace Haito
             //se obtiene los millones
             String millon = numero.Substring(0, numero.Length - 6);
             String n = "";
-            if (millon.Length > 1)
+            if (int.Parse(millon) > 1)
             {
                 n = getCentenas(millon) + "millones ";
             }
