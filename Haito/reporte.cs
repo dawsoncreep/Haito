@@ -81,6 +81,28 @@ namespace Haito
                 reportViewer1.LocalReport.SetParameters(parametro3);
 
             }
+
+            if (report == "remision")
+            {
+                localReport.ReportPath = "remision.rdl";
+                dsHaitoTableAdapters.obtenerDatosRemisionTableAdapter dcta = new dsHaitoTableAdapters.obtenerDatosRemisionTableAdapter();
+                dsHaito.obtenerDatosRemisionDataTable dt = new dsHaito.obtenerDatosRemisionDataTable();
+                dcta.Fill(dt, id, idEncabezado, idMoneda);
+                reportViewer1.LocalReport.DataSources.Clear();
+                ReportDataSource datasource = new ReportDataSource("DataSet1", (DataTable)dt);
+                reportViewer1.LocalReport.DataSources.Add(datasource);
+                reportViewer1.ShowParameterPrompts = false;
+
+                ReportParameter parametro = new ReportParameter("idRemision", id.ToString());
+                ReportParameter parametro2 = new ReportParameter("idEncabezado", idEncabezado.ToString());
+                ReportParameter parametro3 = new ReportParameter("idMoneda", idMoneda.ToString());
+                reportViewer1.LocalReport.SetParameters(parametro);
+                reportViewer1.LocalReport.SetParameters(parametro2);
+                reportViewer1.LocalReport.SetParameters(parametro3);
+
+            }
+
+
             this.reportViewer1.RefreshReport();
         }
     }

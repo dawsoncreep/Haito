@@ -72,6 +72,11 @@ namespace Haito
             new Cotizacion(0, idUsuario).Show();
         }
 
+        private void remisiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Remision(0, idUsuario).Show();
+        }
+
         
     }
 }

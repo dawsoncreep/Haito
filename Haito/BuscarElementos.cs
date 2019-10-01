@@ -70,10 +70,25 @@ namespace Haito
                 case "cotizacion":
                     cargarCotizacion();
                     break;
+                case "remision":
+                    cargarRemision();
+                    break;
+
+
                 default:
                     break;
             }
         }
+
+        private void cargarRemision()
+        {
+            dsHaitoTableAdapters.busquedaRemisionTableAdapter bcta = new dsHaitoTableAdapters.busquedaRemisionTableAdapter();
+            dgvBusqueda.DataSource = bcta.GetData(txtBuscar.Text);
+            dgvBusqueda.Columns[4].Visible = false;
+            dgvBusqueda.Refresh();
+        }
+
+
 
         private void cargarOrdenCompra()
         {
