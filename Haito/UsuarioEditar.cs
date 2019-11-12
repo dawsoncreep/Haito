@@ -113,6 +113,7 @@ namespace Haito
             if (BuscarImagen.ShowDialog() == DialogResult.OK)
             {
                 pbFirma.Image = Image.FromFile(BuscarImagen.FileName);
+                
             }
             imagen = System.IO.File.ReadAllBytes(BuscarImagen.FileName);
             //txtUrl.Text = BuscarImagen.FileName;

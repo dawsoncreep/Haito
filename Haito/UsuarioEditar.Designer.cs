@@ -166,6 +166,7 @@
             this.pbFirma.Location = new System.Drawing.Point(124, 136);
             this.pbFirma.Name = "pbFirma";
             this.pbFirma.Size = new System.Drawing.Size(128, 50);
+            this.pbFirma.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbFirma.TabIndex = 24;
             this.pbFirma.TabStop = false;
             // 
