@@ -1,9 +1,9 @@
 ﻿using System;
-
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +20,27 @@ namespace Haito
             idUsuario = _idUsuario;
         }
 
+
+        private Image convertirByteImagen(byte[] imageSQL)
+        {
+            Image newImage = null;
+            // Obtiene los resultados de la búsqueda
+
+            byte[] imgData = imageSQL;
+
+            // Trata la información de la imagen para poder trasladarla al picturebox
+            using (MemoryStream ms = new MemoryStream(imgData, 0, imgData.Length))
+            {
+                ms.Write(imgData, 0, imgData.Length);
+                newImage = Image.FromStream(ms, true);
+            }
+
+            pbFirma.Image = newImage;
+            newImage = null;
+
+            return newImage;
+        }
+
         private void ProductoEditar_Load(object sender, EventArgs e)
         {
             //carga los datos que esten en las empresas
@@ -31,6 +52,7 @@ namespace Haito
                 dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
                 idUsuario = (int)qta.obtenerSigIDUsuario();
                 txtID.Text = idUsuario.ToString();
+               
             }
             else //carga los datos del producto que se va a modificar
             {
@@ -40,7 +62,9 @@ namespace Haito
                 txtNombre.Text = dt.Rows[0]["nombre"].ToString();
                 txtContrasenia.Text = dt.Rows[0]["pass"].ToString();
                 cbRol.SelectedItem = int.Parse(dt.Rows[0]["idRol"].ToString());
-
+                try{
+                    convertirByteImagen((Byte[]) dt.Rows[0]["imagenFirma"]);
+                }catch{}
                 txtFirma.Text = dt.Rows[0]["firma"].ToString();
             }
         }
@@ -66,7 +90,8 @@ namespace Haito
             }
 
             dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
-            qta.InsertarCambiarUsuario(idUsuario, (int)cbRol.SelectedValue, txtNombre.Text, txtContrasenia.Text, false, txtFirma.Text);
+           
+            qta.InsertarCambiarUsuario(idUsuario, (int)cbRol.SelectedValue, txtNombre.Text, txtContrasenia.Text, false, txtFirma.Text, imagen);
             AutoClosingMessageBox.Show("Insertado con exito", "Éxito", 3000);
             this.Hide();
         }
@@ -75,6 +100,23 @@ namespace Haito
         {
             this.idUsuario = 0;
             this.Close();
+        }
+
+        byte[] imagen;
+
+        private void btnCargar_Click(object sender, EventArgs e)
+        {
+            //carga la imagen de la firma para el usuario y agregarlo a la bd
+            OpenFileDialog BuscarImagen = new OpenFileDialog();
+            BuscarImagen.Filter = "Archivo PNG|*.png";
+
+            if (BuscarImagen.ShowDialog() == DialogResult.OK)
+            {
+                pbFirma.Image = Image.FromFile(BuscarImagen.FileName);
+            }
+            imagen = System.IO.File.ReadAllBytes(BuscarImagen.FileName);
+            //txtUrl.Text = BuscarImagen.FileName;
+
         }
 
         

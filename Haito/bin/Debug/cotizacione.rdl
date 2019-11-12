@@ -120,6 +120,10 @@
           <DataField>firma</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="imagenFirma">
+          <DataField>imagenFirma</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
       </Fields>
     </DataSet>
   </DataSets>
@@ -1457,54 +1461,16 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Image Name="Image1">
-              <Source>Embedded</Source>
-              <Value>firmaJenny</Value>
-              <Sizing>FitProportional</Sizing>
-              <Top>2.66519cm</Top>
-              <Left>15.38012cm</Left>
-              <Height>0.3958cm</Height>
-              <Width>2.56605cm</Width>
-              <ZIndex>5</ZIndex>
-              <Visibility>
-                <Hidden>=IIF(First(Fields!idUsuario.Value, "DataSet1")=3,False,True)</Hidden>
-              </Visibility>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-              </Style>
-            </Image>
             <Image Name="Image3">
-              <Source>Embedded</Source>
-              <Value>firmabrenda</Value>
-              <Sizing>FitProportional</Sizing>
-              <Top>2.18003cm</Top>
-              <Left>15.99022cm</Left>
-              <Height>1.02375cm</Height>
-              <Width>1.5cm</Width>
-              <ZIndex>6</ZIndex>
-              <Visibility>
-                <Hidden>=IIF(First(Fields!idUsuario.Value, "DataSet1")=4,False,True)</Hidden>
-              </Visibility>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-              </Style>
-            </Image>
-            <Image Name="Image4">
-              <Source>Embedded</Source>
-              <Value>firmasandra</Value>
-              <Sizing>FitProportional</Sizing>
-              <Top>2.14475cm</Top>
-              <Left>16.28489cm</Left>
-              <Height>0.94437cm</Height>
-              <Width>1.05315cm</Width>
-              <ZIndex>7</ZIndex>
-              <Visibility>
-                <Hidden>=IIF(First(Fields!idUsuario.Value, "DataSet1")=5,False,True)</Hidden>
-              </Visibility>
+              <Source>Database</Source>
+              <Value>=First(Fields!imagenFirma.Value, "DataSet1")</Value>
+              <MIMEType>image/png</MIMEType>
+              <Sizing>Fit</Sizing>
+              <Top>2.23692cm</Top>
+              <Left>14.97224cm</Left>
+              <Height>0.82407cm</Height>
+              <Width>3.41187cm</Width>
+              <ZIndex>5</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>

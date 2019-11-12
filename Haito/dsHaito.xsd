@@ -5,9 +5,6 @@
       <DataSource DefaultConnectionIndex="3" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="HaitoConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HaitoConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Haito.Properties.Settings.GlobalReference.Default.HaitoConnectionString" Provider="System.Data.SqlClient" />
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="HaitoConnectionString1" IsAppSettingsProperty="true" Modifier="Assembly" Name="HaitoConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Haito.Properties.Settings.GlobalReference.Default.HaitoConnectionString1" Provider="System.Data.SqlClient" />
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="HaitoConnectionString2" IsAppSettingsProperty="true" Modifier="Assembly" Name="HaitoConnectionString2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Haito.Properties.Settings.GlobalReference.Default.HaitoConnectionString2" Provider="System.Data.SqlClient" />
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="HaitoConnectionString3" IsAppSettingsProperty="true" Modifier="Assembly" Name="HaitoConnectionString3 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Haito.Properties.Settings.GlobalReference.Default.HaitoConnectionString2" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="obtenerClientesActivosTableAdapter" GeneratorDataComponentClassName="obtenerClientesActivosTableAdapter" Name="obtenerClientesActivos" UserDataComponentName="obtenerClientesActivosTableAdapter">
@@ -68,7 +65,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="obtenerUsuariosActivosTableAdapter" GeneratorDataComponentClassName="obtenerUsuariosActivosTableAdapter" Name="obtenerUsuariosActivos" UserDataComponentName="obtenerUsuariosActivosTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="HaitoConnectionString (Settings)" DbObjectName="Haito.dbo.obtenerUsuariosActivos" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="HaitoConnectionString (Settings)" DbObjectName="Haito.dbo.obtenerUsuariosActivos" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.obtenerUsuariosActivos</CommandText>
@@ -86,6 +83,8 @@
               <Mapping SourceColumn="pass" DataSetColumn="pass" />
               <Mapping SourceColumn="idRol" DataSetColumn="idRol" />
               <Mapping SourceColumn="active" DataSetColumn="active" />
+              <Mapping SourceColumn="firma" DataSetColumn="firma" />
+              <Mapping SourceColumn="imagenFirma" DataSetColumn="imagenFirma" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -170,54 +169,6 @@
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="obtenerProductosActivosTableAdapter" GeneratorDataComponentClassName="obtenerProductosActivosTableAdapter" Name="obtenerProductosActivos" UserDataComponentName="obtenerProductosActivosTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="HaitoConnectionString3 (Settings)" DbObjectName="Haito.dbo.obtenerProductosActivos" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                    <CommandText>dbo.obtenerProductosActivos</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idProducto" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="idProducto" DataSetColumn="idProducto" />
-              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
-              <Mapping SourceColumn="idEmpresa" DataSetColumn="idEmpresa" />
-              <Mapping SourceColumn="active" DataSetColumn="active" />
-              <Mapping SourceColumn="empresa" DataSetColumn="empresa" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="busquedaProductosTableAdapter" GeneratorDataComponentClassName="busquedaProductosTableAdapter" Name="busquedaProductos" UserDataComponentName="busquedaProductosTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="HaitoConnectionString3 (Settings)" DbObjectName="Haito.dbo.busquedaProductos" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                    <CommandText>dbo.busquedaProductos</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@buscar" Precision="0" ProviderType="NVarChar" Scale="0" Size="500" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="idProducto" DataSetColumn="idProducto" />
-              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
-              <Mapping SourceColumn="idEmpresa" DataSetColumn="idEmpresa" />
-              <Mapping SourceColumn="active" DataSetColumn="active" />
-              <Mapping SourceColumn="idEmpresa1" DataSetColumn="idEmpresa1" />
-              <Mapping SourceColumn="Nombre1" DataSetColumn="Nombre1" />
-              <Mapping SourceColumn="active1" DataSetColumn="active1" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="obtenerDatosCotizacionTableAdapter" GeneratorDataComponentClassName="obtenerDatosCotizacionTableAdapter" Name="obtenerDatosCotizacion" UserDataComponentName="obtenerDatosCotizacionTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="HaitoConnectionString (Settings)" DbObjectName="Haito.dbo.obtenerDatosCotizacion" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -298,30 +249,6 @@
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="busquedaRemisionTableAdapter" GeneratorDataComponentClassName="busquedaRemisionTableAdapter" Name="busquedaRemision" UserDataComponentName="busquedaRemisionTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="HaitoConnectionString3 (Settings)" DbObjectName="Haito.dbo.busquedaRemision" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                    <CommandText>dbo.busquedaRemision</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@buscar" Precision="0" ProviderType="NVarChar" Scale="0" Size="500" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="idRemision" DataSetColumn="idRemision" />
-              <Mapping SourceColumn="empresa" DataSetColumn="empresa" />
-              <Mapping SourceColumn="atencion" DataSetColumn="atencion" />
-              <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
-              <Mapping SourceColumn="encabezado" DataSetColumn="encabezado" />
-              <Mapping SourceColumn="idEncabezado" DataSetColumn="idEncabezado" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="obtenerDatosRemisionTableAdapter" GeneratorDataComponentClassName="obtenerDatosRemisionTableAdapter" Name="obtenerDatosRemision" UserDataComponentName="obtenerDatosRemisionTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="HaitoConnectionString (Settings)" DbObjectName="Haito.dbo.obtenerDatosRemision" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -361,6 +288,78 @@
               <Mapping SourceColumn="encabezado" DataSetColumn="encabezado" />
               <Mapping SourceColumn="firma" DataSetColumn="firma" />
               <Mapping SourceColumn="cantidadLetra" DataSetColumn="cantidadLetra" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="obtenerProductosActivosTableAdapter" GeneratorDataComponentClassName="obtenerProductosActivosTableAdapter" Name="obtenerProductosActivos" UserDataComponentName="obtenerProductosActivosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HaitoConnectionString (Settings)" DbObjectName="Haito.dbo.obtenerProductosActivos" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.obtenerProductosActivos</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idProducto" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idProducto" DataSetColumn="idProducto" />
+              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+              <Mapping SourceColumn="idEmpresa" DataSetColumn="idEmpresa" />
+              <Mapping SourceColumn="active" DataSetColumn="active" />
+              <Mapping SourceColumn="empresa" DataSetColumn="empresa" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="busquedaProductosTableAdapter" GeneratorDataComponentClassName="busquedaProductosTableAdapter" Name="busquedaProductos" UserDataComponentName="busquedaProductosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HaitoConnectionString (Settings)" DbObjectName="Haito.dbo.busquedaProductos" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.busquedaProductos</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@buscar" Precision="0" ProviderType="NVarChar" Scale="0" Size="500" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idProducto" DataSetColumn="idProducto" />
+              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+              <Mapping SourceColumn="idEmpresa" DataSetColumn="idEmpresa" />
+              <Mapping SourceColumn="active" DataSetColumn="active" />
+              <Mapping SourceColumn="idEmpresa1" DataSetColumn="idEmpresa1" />
+              <Mapping SourceColumn="Nombre1" DataSetColumn="Nombre1" />
+              <Mapping SourceColumn="active1" DataSetColumn="active1" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="busquedaRemisionTableAdapter" GeneratorDataComponentClassName="busquedaRemisionTableAdapter" Name="busquedaRemision" UserDataComponentName="busquedaRemisionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HaitoConnectionString (Settings)" DbObjectName="Haito.dbo.busquedaRemision" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.busquedaRemision</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@buscar" Precision="0" ProviderType="NVarChar" Scale="0" Size="500" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idRemision" DataSetColumn="idRemision" />
+              <Mapping SourceColumn="empresa" DataSetColumn="empresa" />
+              <Mapping SourceColumn="atencion" DataSetColumn="atencion" />
+              <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+              <Mapping SourceColumn="encabezado" DataSetColumn="encabezado" />
+              <Mapping SourceColumn="idEncabezado" DataSetColumn="idEncabezado" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -512,20 +511,6 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="HaitoConnectionString2 (Settings)" DbObjectName="Haito.dbo.InsertarCambiarProducto" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="InsertarCambiarProducto" MethodsParameterType="CLR" Modifier="Public" Name="InsertarCambiarProducto" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="InsertarCambiarProducto">
-            <SelectCommand>
-              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                <CommandText>dbo.InsertarCambiarProducto</CommandText>
-                <Parameters>
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idProducto" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idEmpresa" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@nombre" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumnNullMapping="false" SourceVersion="Current" />
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@eliminar" Precision="1" ProviderType="Bit" Scale="0" Size="1" SourceColumnNullMapping="false" SourceVersion="Current" />
-                </Parameters>
-              </DbCommand>
-            </SelectCommand>
-          </DbSource>
           <DbSource ConnectionRef="HaitoConnectionString (Settings)" DbObjectName="Haito.dbo.InsertarCambiarCotizacion" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="InsertarCambiarCotizacion" MethodsParameterType="CLR" Modifier="Public" Name="InsertarCambiarCotizacion" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy12" UserSourceName="InsertarCambiarCotizacion">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
@@ -571,50 +556,6 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="HaitoConnectionString3 (Settings)" DbObjectName="Haito.dbo.InsertarCambiarUsuario" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="InsertarCambiarUsuario" MethodsParameterType="CLR" Modifier="Public" Name="InsertarCambiarUsuario" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy15" UserSourceName="InsertarCambiarUsuario">
-            <SelectCommand>
-              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                <CommandText>dbo.InsertarCambiarUsuario</CommandText>
-                <Parameters>
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idUsuario" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idRol" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@nombre" Precision="0" ProviderType="NVarChar" Scale="0" Size="20" SourceColumnNullMapping="false" SourceVersion="Current" />
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@contrasenia" Precision="0" ProviderType="NVarChar" Scale="0" Size="10" SourceColumnNullMapping="false" SourceVersion="Current" />
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@eliminar" Precision="1" ProviderType="Bit" Scale="0" Size="1" SourceColumnNullMapping="false" SourceVersion="Current" />
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@firma" Precision="0" ProviderType="NVarChar" Scale="0" Size="100" SourceColumnNullMapping="false" SourceVersion="Current" />
-                </Parameters>
-              </DbCommand>
-            </SelectCommand>
-          </DbSource>
-          <DbSource ConnectionRef="HaitoConnectionString3 (Settings)" DbObjectName="Haito.dbo.siguienteFolio" DbObjectType="Function" GenerateShortCommands="true" GeneratorSourceName="siguienteFolio" MethodsParameterType="CLR" Modifier="Public" Name="siguienteFolio" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy16" UserSourceName="siguienteFolio">
-            <SelectCommand>
-              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                <CommandText>dbo.siguienteFolio</CommandText>
-                <Parameters>
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@tabla" Precision="0" ProviderType="NVarChar" Scale="0" Size="20" SourceColumnNullMapping="false" SourceVersion="Current" />
-                </Parameters>
-              </DbCommand>
-            </SelectCommand>
-          </DbSource>
-          <DbSource ConnectionRef="HaitoConnectionString3 (Settings)" DbObjectName="Haito.dbo.InsertarCambiarRemision" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="InsertarCambiarRemision" MethodsParameterType="CLR" Modifier="Public" Name="InsertarCambiarRemision" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy17" UserSourceName="InsertarCambiarRemision">
-            <SelectCommand>
-              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                <CommandText>dbo.InsertarCambiarRemision</CommandText>
-                <Parameters>
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idRemision" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idCliente" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@fecha" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idUsuario" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@observaciones" Precision="0" ProviderType="NVarChar" Scale="0" Size="500" SourceColumnNullMapping="false" SourceVersion="Current" />
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idEncabezado" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idMoneda" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                </Parameters>
-              </DbCommand>
-            </SelectCommand>
-          </DbSource>
           <DbSource ConnectionRef="HaitoConnectionString (Settings)" DbObjectName="Haito.dbo.InsertarCambiarRemisionDetalle" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="InsertarCambiarRemisionDetalle" MethodsParameterType="CLR" Modifier="Public" Name="InsertarCambiarRemisionDetalle" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy18" UserSourceName="InsertarCambiarRemisionDetalle">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
@@ -633,13 +574,72 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="HaitoConnectionString3 (Settings)" DbObjectName="Haito.dbo.obtenerSigIDRemision" DbObjectType="Function" GenerateShortCommands="true" GeneratorSourceName="obtenerSigIDRemision" MethodsParameterType="CLR" Modifier="Public" Name="obtenerSigIDRemision" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy19" UserSourceName="obtenerSigIDRemision">
+          <DbSource ConnectionRef="HaitoConnectionString (Settings)" DbObjectName="Haito.dbo.siguienteFolio" DbObjectType="Function" GenerateShortCommands="true" GeneratorSourceName="siguienteFolio" MethodsParameterType="CLR" Modifier="Public" Name="siguienteFolio" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy16" UserSourceName="siguienteFolio">
+            <SelectCommand>
+              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                <CommandText>dbo.siguienteFolio</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@tabla" Precision="0" ProviderType="NVarChar" Scale="0" Size="20" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+          <DbSource ConnectionRef="HaitoConnectionString (Settings)" DbObjectName="Haito.dbo.obtenerSigIDRemision" DbObjectType="Function" GenerateShortCommands="true" GeneratorSourceName="obtenerSigIDRemision" MethodsParameterType="CLR" Modifier="Public" Name="obtenerSigIDRemision" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy19" UserSourceName="obtenerSigIDRemision">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.obtenerSigIDRemision</CommandText>
                 <Parameters>
                   <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
                   <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idEncabezado" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+          <DbSource ConnectionRef="HaitoConnectionString (Settings)" DbObjectName="Haito.dbo.InsertarCambiarUsuario" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="InsertarCambiarUsuario" MethodsParameterType="CLR" Modifier="Public" Name="InsertarCambiarUsuario" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy15" UserSourceName="InsertarCambiarUsuario">
+            <SelectCommand>
+              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                <CommandText>dbo.InsertarCambiarUsuario</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idUsuario" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idRol" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@nombre" Precision="0" ProviderType="NVarChar" Scale="0" Size="20" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@contrasenia" Precision="0" ProviderType="NVarChar" Scale="0" Size="10" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@eliminar" Precision="1" ProviderType="Bit" Scale="0" Size="1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@firma" Precision="0" ProviderType="NVarChar" Scale="0" Size="100" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varbinary" DbType="Binary" Direction="Input" ParameterName="@imagenFirma" Precision="0" ProviderType="VarBinary" Scale="0" Size="2147483647" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+          <DbSource ConnectionRef="HaitoConnectionString (Settings)" DbObjectName="Haito.dbo.InsertarCambiarProducto" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="InsertarCambiarProducto" MethodsParameterType="CLR" Modifier="Public" Name="InsertarCambiarProducto" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="InsertarCambiarProducto">
+            <SelectCommand>
+              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                <CommandText>dbo.InsertarCambiarProducto</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idProducto" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idEmpresa" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@nombre" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@eliminar" Precision="1" ProviderType="Bit" Scale="0" Size="1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+          <DbSource ConnectionRef="HaitoConnectionString (Settings)" DbObjectName="Haito.dbo.InsertarCambiarRemision" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="InsertarCambiarRemision" MethodsParameterType="CLR" Modifier="Public" Name="InsertarCambiarRemision" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy17" UserSourceName="InsertarCambiarRemision">
+            <SelectCommand>
+              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                <CommandText>dbo.InsertarCambiarRemision</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idRemision" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idCliente" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@fecha" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idUsuario" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@observaciones" Precision="0" ProviderType="NVarChar" Scale="0" Size="500" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idEncabezado" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idMoneda" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
                 </Parameters>
               </DbCommand>
             </SelectCommand>
@@ -773,6 +773,14 @@
               </xs:element>
               <xs:element name="idRol" msprop:Generator_ColumnVarNameInTable="columnidRol" msprop:Generator_ColumnPropNameInRow="idRol" msprop:Generator_ColumnPropNameInTable="idRolColumn" msprop:Generator_UserColumnName="idRol" type="xs:int" />
               <xs:element name="active" msprop:Generator_ColumnVarNameInTable="columnactive" msprop:Generator_ColumnPropNameInRow="active" msprop:Generator_ColumnPropNameInTable="activeColumn" msprop:Generator_UserColumnName="active" type="xs:boolean" />
+              <xs:element name="firma" msprop:Generator_ColumnVarNameInTable="columnfirma" msprop:Generator_ColumnPropNameInRow="firma" msprop:Generator_ColumnPropNameInTable="firmaColumn" msprop:Generator_UserColumnName="firma" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="imagenFirma" msprop:Generator_ColumnVarNameInTable="columnimagenFirma" msprop:Generator_ColumnPropNameInRow="imagenFirma" msprop:Generator_ColumnPropNameInTable="imagenFirmaColumn" msprop:Generator_UserColumnName="imagenFirma" type="xs:base64Binary" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -916,54 +924,6 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="obtenerProductosActivos" msprop:Generator_TableClassName="obtenerProductosActivosDataTable" msprop:Generator_TableVarName="tableobtenerProductosActivos" msprop:Generator_TablePropName="obtenerProductosActivos" msprop:Generator_RowDeletingName="obtenerProductosActivosRowDeleting" msprop:Generator_RowChangingName="obtenerProductosActivosRowChanging" msprop:Generator_RowEvHandlerName="obtenerProductosActivosRowChangeEventHandler" msprop:Generator_RowDeletedName="obtenerProductosActivosRowDeleted" msprop:Generator_UserTableName="obtenerProductosActivos" msprop:Generator_RowChangedName="obtenerProductosActivosRowChanged" msprop:Generator_RowEvArgName="obtenerProductosActivosRowChangeEvent" msprop:Generator_RowClassName="obtenerProductosActivosRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="idProducto" msprop:Generator_ColumnVarNameInTable="columnidProducto" msprop:Generator_ColumnPropNameInRow="idProducto" msprop:Generator_ColumnPropNameInTable="idProductoColumn" msprop:Generator_UserColumnName="idProducto" type="xs:int" />
-              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2147483647" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="idEmpresa" msprop:Generator_ColumnVarNameInTable="columnidEmpresa" msprop:Generator_ColumnPropNameInRow="idEmpresa" msprop:Generator_ColumnPropNameInTable="idEmpresaColumn" msprop:Generator_UserColumnName="idEmpresa" type="xs:int" minOccurs="0" />
-              <xs:element name="active" msprop:Generator_ColumnVarNameInTable="columnactive" msprop:Generator_ColumnPropNameInRow="active" msprop:Generator_ColumnPropNameInTable="activeColumn" msprop:Generator_UserColumnName="active" type="xs:boolean" />
-              <xs:element name="empresa" msprop:Generator_ColumnVarNameInTable="columnempresa" msprop:Generator_ColumnPropNameInRow="empresa" msprop:Generator_ColumnPropNameInTable="empresaColumn" msprop:Generator_UserColumnName="empresa" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="500" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="busquedaProductos" msprop:Generator_TableClassName="busquedaProductosDataTable" msprop:Generator_TableVarName="tablebusquedaProductos" msprop:Generator_TablePropName="busquedaProductos" msprop:Generator_RowDeletingName="busquedaProductosRowDeleting" msprop:Generator_RowChangingName="busquedaProductosRowChanging" msprop:Generator_RowEvHandlerName="busquedaProductosRowChangeEventHandler" msprop:Generator_RowDeletedName="busquedaProductosRowDeleted" msprop:Generator_UserTableName="busquedaProductos" msprop:Generator_RowChangedName="busquedaProductosRowChanged" msprop:Generator_RowEvArgName="busquedaProductosRowChangeEvent" msprop:Generator_RowClassName="busquedaProductosRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="idProducto" msprop:Generator_ColumnVarNameInTable="columnidProducto" msprop:Generator_ColumnPropNameInRow="idProducto" msprop:Generator_ColumnPropNameInTable="idProductoColumn" msprop:Generator_UserColumnName="idProducto" type="xs:int" />
-              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2147483647" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="idEmpresa" msprop:Generator_ColumnVarNameInTable="columnidEmpresa" msprop:Generator_ColumnPropNameInRow="idEmpresa" msprop:Generator_ColumnPropNameInTable="idEmpresaColumn" msprop:Generator_UserColumnName="idEmpresa" type="xs:int" minOccurs="0" />
-              <xs:element name="active" msprop:Generator_ColumnVarNameInTable="columnactive" msprop:Generator_ColumnPropNameInRow="active" msprop:Generator_ColumnPropNameInTable="activeColumn" msprop:Generator_UserColumnName="active" type="xs:boolean" />
-              <xs:element name="idEmpresa1" msprop:Generator_ColumnVarNameInTable="columnidEmpresa1" msprop:Generator_ColumnPropNameInRow="idEmpresa1" msprop:Generator_ColumnPropNameInTable="idEmpresa1Column" msprop:Generator_UserColumnName="idEmpresa1" type="xs:int" />
-              <xs:element name="Nombre1" msprop:Generator_ColumnVarNameInTable="columnNombre1" msprop:Generator_ColumnPropNameInRow="Nombre1" msprop:Generator_ColumnPropNameInTable="Nombre1Column" msprop:Generator_UserColumnName="Nombre1" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="500" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="active1" msprop:Generator_ColumnVarNameInTable="columnactive1" msprop:Generator_ColumnPropNameInRow="active1" msprop:Generator_ColumnPropNameInTable="active1Column" msprop:Generator_UserColumnName="active1" type="xs:boolean" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
         <xs:element name="obtenerDatosCotizacion" msprop:Generator_TableClassName="obtenerDatosCotizacionDataTable" msprop:Generator_TableVarName="tableobtenerDatosCotizacion" msprop:Generator_RowChangedName="obtenerDatosCotizacionRowChanged" msprop:Generator_TablePropName="obtenerDatosCotizacion" msprop:Generator_RowDeletingName="obtenerDatosCotizacionRowDeleting" msprop:Generator_RowChangingName="obtenerDatosCotizacionRowChanging" msprop:Generator_RowEvHandlerName="obtenerDatosCotizacionRowChangeEventHandler" msprop:Generator_RowDeletedName="obtenerDatosCotizacionRowDeleted" msprop:Generator_RowClassName="obtenerDatosCotizacionRow" msprop:Generator_UserTableName="obtenerDatosCotizacion" msprop:Generator_RowEvArgName="obtenerDatosCotizacionRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
@@ -1100,36 +1060,6 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="busquedaRemision" msprop:Generator_TableClassName="busquedaRemisionDataTable" msprop:Generator_TableVarName="tablebusquedaRemision" msprop:Generator_RowChangedName="busquedaRemisionRowChanged" msprop:Generator_TablePropName="busquedaRemision" msprop:Generator_RowDeletingName="busquedaRemisionRowDeleting" msprop:Generator_RowChangingName="busquedaRemisionRowChanging" msprop:Generator_RowEvHandlerName="busquedaRemisionRowChangeEventHandler" msprop:Generator_RowDeletedName="busquedaRemisionRowDeleted" msprop:Generator_RowClassName="busquedaRemisionRow" msprop:Generator_UserTableName="busquedaRemision" msprop:Generator_RowEvArgName="busquedaRemisionRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="idRemision" msprop:Generator_ColumnVarNameInTable="columnidRemision" msprop:Generator_ColumnPropNameInRow="idRemision" msprop:Generator_ColumnPropNameInTable="idRemisionColumn" msprop:Generator_UserColumnName="idRemision" type="xs:int" />
-              <xs:element name="empresa" msprop:Generator_ColumnVarNameInTable="columnempresa" msprop:Generator_ColumnPropNameInRow="empresa" msprop:Generator_ColumnPropNameInTable="empresaColumn" msprop:Generator_UserColumnName="empresa" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="500" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="atencion" msprop:Generator_ColumnVarNameInTable="columnatencion" msprop:Generator_ColumnPropNameInRow="atencion" msprop:Generator_ColumnPropNameInTable="atencionColumn" msprop:Generator_UserColumnName="atencion" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="500" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" />
-              <xs:element name="encabezado" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnencabezado" msprop:Generator_ColumnPropNameInRow="encabezado" msprop:Generator_ColumnPropNameInTable="encabezadoColumn" msprop:Generator_UserColumnName="encabezado" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="5" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="idEncabezado" msprop:Generator_ColumnVarNameInTable="columnidEncabezado" msprop:Generator_ColumnPropNameInRow="idEncabezado" msprop:Generator_ColumnPropNameInTable="idEncabezadoColumn" msprop:Generator_UserColumnName="idEncabezado" type="xs:int" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
         <xs:element name="obtenerDatosRemision" msprop:Generator_TableClassName="obtenerDatosRemisionDataTable" msprop:Generator_TableVarName="tableobtenerDatosRemision" msprop:Generator_RowChangedName="obtenerDatosRemisionRowChanged" msprop:Generator_TablePropName="obtenerDatosRemision" msprop:Generator_RowDeletingName="obtenerDatosRemisionRowDeleting" msprop:Generator_RowChangingName="obtenerDatosRemisionRowChanging" msprop:Generator_RowEvHandlerName="obtenerDatosRemisionRowChangeEventHandler" msprop:Generator_RowDeletedName="obtenerDatosRemisionRowDeleted" msprop:Generator_RowClassName="obtenerDatosRemisionRow" msprop:Generator_UserTableName="obtenerDatosRemision" msprop:Generator_RowEvArgName="obtenerDatosRemisionRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
@@ -1206,6 +1136,84 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="obtenerProductosActivos" msprop:Generator_TableClassName="obtenerProductosActivosDataTable" msprop:Generator_TableVarName="tableobtenerProductosActivos" msprop:Generator_TablePropName="obtenerProductosActivos" msprop:Generator_RowDeletingName="obtenerProductosActivosRowDeleting" msprop:Generator_RowChangingName="obtenerProductosActivosRowChanging" msprop:Generator_RowEvHandlerName="obtenerProductosActivosRowChangeEventHandler" msprop:Generator_RowDeletedName="obtenerProductosActivosRowDeleted" msprop:Generator_UserTableName="obtenerProductosActivos" msprop:Generator_RowChangedName="obtenerProductosActivosRowChanged" msprop:Generator_RowEvArgName="obtenerProductosActivosRowChangeEvent" msprop:Generator_RowClassName="obtenerProductosActivosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idProducto" msprop:Generator_ColumnVarNameInTable="columnidProducto" msprop:Generator_ColumnPropNameInRow="idProducto" msprop:Generator_ColumnPropNameInTable="idProductoColumn" msprop:Generator_UserColumnName="idProducto" type="xs:int" />
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idEmpresa" msprop:Generator_ColumnVarNameInTable="columnidEmpresa" msprop:Generator_ColumnPropNameInRow="idEmpresa" msprop:Generator_ColumnPropNameInTable="idEmpresaColumn" msprop:Generator_UserColumnName="idEmpresa" type="xs:int" minOccurs="0" />
+              <xs:element name="active" msprop:Generator_ColumnVarNameInTable="columnactive" msprop:Generator_ColumnPropNameInRow="active" msprop:Generator_ColumnPropNameInTable="activeColumn" msprop:Generator_UserColumnName="active" type="xs:boolean" />
+              <xs:element name="empresa" msprop:Generator_ColumnVarNameInTable="columnempresa" msprop:Generator_ColumnPropNameInRow="empresa" msprop:Generator_ColumnPropNameInTable="empresaColumn" msprop:Generator_UserColumnName="empresa" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="busquedaProductos" msprop:Generator_TableClassName="busquedaProductosDataTable" msprop:Generator_TableVarName="tablebusquedaProductos" msprop:Generator_TablePropName="busquedaProductos" msprop:Generator_RowDeletingName="busquedaProductosRowDeleting" msprop:Generator_RowChangingName="busquedaProductosRowChanging" msprop:Generator_RowEvHandlerName="busquedaProductosRowChangeEventHandler" msprop:Generator_RowDeletedName="busquedaProductosRowDeleted" msprop:Generator_UserTableName="busquedaProductos" msprop:Generator_RowChangedName="busquedaProductosRowChanged" msprop:Generator_RowEvArgName="busquedaProductosRowChangeEvent" msprop:Generator_RowClassName="busquedaProductosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idProducto" msprop:Generator_ColumnVarNameInTable="columnidProducto" msprop:Generator_ColumnPropNameInRow="idProducto" msprop:Generator_ColumnPropNameInTable="idProductoColumn" msprop:Generator_UserColumnName="idProducto" type="xs:int" />
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idEmpresa" msprop:Generator_ColumnVarNameInTable="columnidEmpresa" msprop:Generator_ColumnPropNameInRow="idEmpresa" msprop:Generator_ColumnPropNameInTable="idEmpresaColumn" msprop:Generator_UserColumnName="idEmpresa" type="xs:int" minOccurs="0" />
+              <xs:element name="active" msprop:Generator_ColumnVarNameInTable="columnactive" msprop:Generator_ColumnPropNameInRow="active" msprop:Generator_ColumnPropNameInTable="activeColumn" msprop:Generator_UserColumnName="active" type="xs:boolean" />
+              <xs:element name="idEmpresa1" msprop:Generator_ColumnVarNameInTable="columnidEmpresa1" msprop:Generator_ColumnPropNameInRow="idEmpresa1" msprop:Generator_ColumnPropNameInTable="idEmpresa1Column" msprop:Generator_UserColumnName="idEmpresa1" type="xs:int" />
+              <xs:element name="Nombre1" msprop:Generator_ColumnVarNameInTable="columnNombre1" msprop:Generator_ColumnPropNameInRow="Nombre1" msprop:Generator_ColumnPropNameInTable="Nombre1Column" msprop:Generator_UserColumnName="Nombre1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="active1" msprop:Generator_ColumnVarNameInTable="columnactive1" msprop:Generator_ColumnPropNameInRow="active1" msprop:Generator_ColumnPropNameInTable="active1Column" msprop:Generator_UserColumnName="active1" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="busquedaRemision" msprop:Generator_TableClassName="busquedaRemisionDataTable" msprop:Generator_TableVarName="tablebusquedaRemision" msprop:Generator_TablePropName="busquedaRemision" msprop:Generator_RowDeletingName="busquedaRemisionRowDeleting" msprop:Generator_RowChangingName="busquedaRemisionRowChanging" msprop:Generator_RowEvHandlerName="busquedaRemisionRowChangeEventHandler" msprop:Generator_RowDeletedName="busquedaRemisionRowDeleted" msprop:Generator_UserTableName="busquedaRemision" msprop:Generator_RowChangedName="busquedaRemisionRowChanged" msprop:Generator_RowEvArgName="busquedaRemisionRowChangeEvent" msprop:Generator_RowClassName="busquedaRemisionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idRemision" msprop:Generator_ColumnVarNameInTable="columnidRemision" msprop:Generator_ColumnPropNameInRow="idRemision" msprop:Generator_ColumnPropNameInTable="idRemisionColumn" msprop:Generator_UserColumnName="idRemision" type="xs:int" />
+              <xs:element name="empresa" msprop:Generator_ColumnVarNameInTable="columnempresa" msprop:Generator_ColumnPropNameInRow="empresa" msprop:Generator_ColumnPropNameInTable="empresaColumn" msprop:Generator_UserColumnName="empresa" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="atencion" msprop:Generator_ColumnVarNameInTable="columnatencion" msprop:Generator_ColumnPropNameInRow="atencion" msprop:Generator_ColumnPropNameInTable="atencionColumn" msprop:Generator_UserColumnName="atencion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" />
+              <xs:element name="encabezado" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnencabezado" msprop:Generator_ColumnPropNameInRow="encabezado" msprop:Generator_ColumnPropNameInTable="encabezadoColumn" msprop:Generator_UserColumnName="encabezado" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idEncabezado" msprop:Generator_ColumnVarNameInTable="columnidEncabezado" msprop:Generator_ColumnPropNameInRow="idEncabezado" msprop:Generator_ColumnPropNameInTable="idEncabezadoColumn" msprop:Generator_UserColumnName="idEncabezado" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -1220,6 +1228,14 @@
       <xs:selector xpath=".//mstns:obtenerProveedoresActivos" />
       <xs:field xpath="mstns:idClienteProveedor" />
     </xs:unique>
+    <xs:unique name="obtenerDatosCotizacion_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:obtenerDatosCotizacion" />
+      <xs:field xpath="mstns:idCotizacionDetalle" />
+    </xs:unique>
+    <xs:unique name="obtenerDatosOrdenCompra_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:obtenerDatosOrdenCompra" />
+      <xs:field xpath="mstns:idOrdenCompraDetalle" />
+    </xs:unique>
     <xs:unique name="obtenerProductosActivos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:obtenerProductosActivos" />
       <xs:field xpath="mstns:idProducto" />
@@ -1228,14 +1244,6 @@
       <xs:selector xpath=".//mstns:busquedaProductos" />
       <xs:field xpath="mstns:idProducto" />
       <xs:field xpath="mstns:idEmpresa1" />
-    </xs:unique>
-    <xs:unique name="obtenerDatosCotizacion_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:obtenerDatosCotizacion" />
-      <xs:field xpath="mstns:idCotizacionDetalle" />
-    </xs:unique>
-    <xs:unique name="obtenerDatosOrdenCompra_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:obtenerDatosOrdenCompra" />
-      <xs:field xpath="mstns:idOrdenCompraDetalle" />
     </xs:unique>
   </xs:element>
 </xs:schema>

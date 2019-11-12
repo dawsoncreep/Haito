@@ -40,6 +40,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtFirma = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pbFirma = new System.Windows.Forms.PictureBox();
+            this.btnCargar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFirma)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -78,7 +82,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(193, 141);
+            this.btnGuardar.Location = new System.Drawing.Point(193, 197);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 10;
@@ -88,7 +92,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(274, 141);
+            this.btnCancelar.Location = new System.Drawing.Point(274, 197);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 20;
@@ -148,11 +152,41 @@
             this.label5.TabIndex = 22;
             this.label5.Text = "Firma";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(37, 136);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 13);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Imagen Firma";
+            // 
+            // pbFirma
+            // 
+            this.pbFirma.Location = new System.Drawing.Point(124, 136);
+            this.pbFirma.Name = "pbFirma";
+            this.pbFirma.Size = new System.Drawing.Size(128, 50);
+            this.pbFirma.TabIndex = 24;
+            this.pbFirma.TabStop = false;
+            // 
+            // btnCargar
+            // 
+            this.btnCargar.Location = new System.Drawing.Point(258, 136);
+            this.btnCargar.Name = "btnCargar";
+            this.btnCargar.Size = new System.Drawing.Size(91, 23);
+            this.btnCargar.TabIndex = 25;
+            this.btnCargar.Text = "Cargar...";
+            this.btnCargar.UseVisualStyleBackColor = true;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
+            // 
             // UsuarioEditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(371, 172);
+            this.ClientSize = new System.Drawing.Size(371, 268);
+            this.Controls.Add(this.btnCargar);
+            this.Controls.Add(this.pbFirma);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.txtFirma);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtContrasenia);
@@ -168,6 +202,7 @@
             this.Name = "UsuarioEditar";
             this.Text = "Productos";
             this.Load += new System.EventHandler(this.ProductoEditar_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbFirma)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,5 +222,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtFirma;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pbFirma;
+        private System.Windows.Forms.Button btnCargar;
     }
 }
