@@ -89,6 +89,13 @@ namespace Haito
 
                 dgvProductos.Columns[19].Visible = false;
                 dgvProductos.Columns[20].Visible = false;
+                dgvProductos.Columns[21].Visible = false;
+                dgvProductos.Columns[22].Visible = false;
+                dgvProductos.Columns[23].Visible = false;
+
+                
+               // dgvProductos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+                dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
                 dgvProductos.Refresh();
             }
             catch (Exception ex)
@@ -192,14 +199,7 @@ namespace Haito
                 tbProducto.Text = dtProd.Rows[0]["nombre"].ToString();                    
             }
         }
-
-        private void dgvProductos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //eliminar elemento seleccionado
-            eliminar();
-        }
-
-       
+     
 
         private void bAgregar_Click(object sender, EventArgs e)
         {
@@ -332,9 +332,18 @@ namespace Haito
 
         private void dgvProductos_DoubleClick(object sender, EventArgs e)
         {
-            eliminar();
+            if (dgvProductos.SelectedCells.Count < 0)
+                return;
+            //se cmbia a preguntar si quiere modificar o eliminar          
+            int idProducto = (int)dgvProductos.SelectedRows[0].Cells["idProducto"].Value;
 
+            //con el idProducto manda a llamar a nuevo para ponerle modificar y que se modifique la descripcion del producto
+            ProductoEditar prodEdit = new ProductoEditar(idProducto);
+            prodEdit.ShowDialog();
 
+            cargarDatosCotizacion();
+            //eliminar elemento seleccionado
+            // eliminar();
         }
 
         private void cargarCotizacionToolStripMenuItem_Click(object sender, EventArgs e)
@@ -417,15 +426,6 @@ namespace Haito
             }
         }
 
-        private void tbObservaciones_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void cbEncabezado_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -438,9 +438,12 @@ namespace Haito
             }
         }
 
-        private void label12_Click(object sender, EventArgs e)
-        {
+    
 
+        private void bEliminar_Click(object sender, EventArgs e)
+        {
+            //se manda a eliminar el row
+            eliminar();
         }
         
     }

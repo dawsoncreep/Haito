@@ -46,6 +46,8 @@
             this.tbCantidad = new System.Windows.Forms.TextBox();
             this.cbUnidadMedida = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cbMoneda = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.cbEncabezado = new System.Windows.Forms.ComboBox();
             this.tbObservaciones = new System.Windows.Forms.TextBox();
@@ -58,6 +60,7 @@
             this.bAgregar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.bEliminar = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.tbTotal = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -71,8 +74,6 @@
             this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargarCotizacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label13 = new System.Windows.Forms.Label();
-            this.cbMoneda = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -257,7 +258,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(829, 129);
             this.panel1.TabIndex = 41;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(544, 58);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(46, 13);
+            this.label13.TabIndex = 37;
+            this.label13.Text = "Moneda";
+            // 
+            // cbMoneda
+            // 
+            this.cbMoneda.FormattingEnabled = true;
+            this.cbMoneda.Location = new System.Drawing.Point(617, 55);
+            this.cbMoneda.Name = "cbMoneda";
+            this.cbMoneda.Size = new System.Drawing.Size(200, 21);
+            this.cbMoneda.TabIndex = 36;
             // 
             // label12
             // 
@@ -267,7 +284,6 @@
             this.label12.Size = new System.Drawing.Size(67, 13);
             this.label12.TabIndex = 35;
             this.label12.Text = "Encabezado";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // cbEncabezado
             // 
@@ -286,7 +302,6 @@
             this.tbObservaciones.Name = "tbObservaciones";
             this.tbObservaciones.Size = new System.Drawing.Size(709, 42);
             this.tbObservaciones.TabIndex = 6;
-            this.tbObservaciones.TextChanged += new System.EventHandler(this.tbObservaciones_TextChanged);
             // 
             // label7
             // 
@@ -377,6 +392,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.bEliminar);
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.tbTotal);
             this.panel4.Controls.Add(this.label9);
@@ -389,10 +405,21 @@
             this.panel4.Size = new System.Drawing.Size(823, 120);
             this.panel4.TabIndex = 20;
             // 
+            // bEliminar
+            // 
+            this.bEliminar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.bEliminar.Location = new System.Drawing.Point(739, 3);
+            this.bEliminar.Name = "bEliminar";
+            this.bEliminar.Size = new System.Drawing.Size(75, 23);
+            this.bEliminar.TabIndex = 43;
+            this.bEliminar.Text = "Eliminar";
+            this.bEliminar.UseVisualStyleBackColor = false;
+            this.bEliminar.Click += new System.EventHandler(this.bEliminar_Click);
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(535, 9);
+            this.label11.Location = new System.Drawing.Point(450, 9);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(31, 13);
             this.label11.TabIndex = 48;
@@ -401,7 +428,7 @@
             // tbTotal
             // 
             this.tbTotal.AcceptsReturn = true;
-            this.tbTotal.Location = new System.Drawing.Point(575, 5);
+            this.tbTotal.Location = new System.Drawing.Point(490, 5);
             this.tbTotal.Name = "tbTotal";
             this.tbTotal.ReadOnly = true;
             this.tbTotal.Size = new System.Drawing.Size(103, 20);
@@ -410,7 +437,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(346, 9);
+            this.label9.Location = new System.Drawing.Point(261, 9);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(24, 13);
             this.label9.TabIndex = 46;
@@ -419,7 +446,7 @@
             // tbSubtotal
             // 
             this.tbSubtotal.AcceptsReturn = true;
-            this.tbSubtotal.Location = new System.Drawing.Point(181, 5);
+            this.tbSubtotal.Location = new System.Drawing.Point(96, 5);
             this.tbSubtotal.Name = "tbSubtotal";
             this.tbSubtotal.ReadOnly = true;
             this.tbSubtotal.Size = new System.Drawing.Size(103, 20);
@@ -428,7 +455,7 @@
             // tbIVA
             // 
             this.tbIVA.AcceptsReturn = true;
-            this.tbIVA.Location = new System.Drawing.Point(377, 5);
+            this.tbIVA.Location = new System.Drawing.Point(292, 5);
             this.tbIVA.Name = "tbIVA";
             this.tbIVA.ReadOnly = true;
             this.tbIVA.Size = new System.Drawing.Size(103, 20);
@@ -437,7 +464,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(126, 9);
+            this.label10.Location = new System.Drawing.Point(41, 9);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(46, 13);
             this.label10.TabIndex = 44;
@@ -455,7 +482,6 @@
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductos.Size = new System.Drawing.Size(823, 176);
             this.dgvProductos.TabIndex = 0;
-            this.dgvProductos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentDoubleClick);
             this.dgvProductos.DoubleClick += new System.EventHandler(this.dgvProductos_DoubleClick);
             // 
             // menuStrip1
@@ -506,23 +532,6 @@
             this.cargarCotizacionToolStripMenuItem.Size = new System.Drawing.Size(122, 20);
             this.cargarCotizacionToolStripMenuItem.Text = "Cargar Cotizacion...";
             this.cargarCotizacionToolStripMenuItem.Click += new System.EventHandler(this.cargarCotizacionToolStripMenuItem_Click);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(544, 58);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(46, 13);
-            this.label13.TabIndex = 37;
-            this.label13.Text = "Moneda";
-            // 
-            // cbMoneda
-            // 
-            this.cbMoneda.FormattingEnabled = true;
-            this.cbMoneda.Location = new System.Drawing.Point(617, 55);
-            this.cbMoneda.Name = "cbMoneda";
-            this.cbMoneda.Size = new System.Drawing.Size(200, 21);
-            this.cbMoneda.TabIndex = 36;
             // 
             // Cotizacion
             // 
@@ -599,5 +608,6 @@
         private System.Windows.Forms.ComboBox cbEncabezado;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cbMoneda;
+        private System.Windows.Forms.Button bEliminar;
     }
 }

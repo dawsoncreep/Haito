@@ -60,6 +60,7 @@
             this.bAgregar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.bEliminar = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.tbTotal = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -394,6 +395,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.bEliminar);
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.tbTotal);
             this.panel4.Controls.Add(this.label9);
@@ -406,10 +408,21 @@
             this.panel4.Size = new System.Drawing.Size(823, 120);
             this.panel4.TabIndex = 20;
             // 
+            // bEliminar
+            // 
+            this.bEliminar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.bEliminar.Location = new System.Drawing.Point(739, 4);
+            this.bEliminar.Name = "bEliminar";
+            this.bEliminar.Size = new System.Drawing.Size(75, 23);
+            this.bEliminar.TabIndex = 51;
+            this.bEliminar.Text = "Eliminar";
+            this.bEliminar.UseVisualStyleBackColor = false;
+            this.bEliminar.Click += new System.EventHandler(this.bEliminar_Click);
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(535, 9);
+            this.label11.Location = new System.Drawing.Point(453, 9);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(31, 13);
             this.label11.TabIndex = 48;
@@ -418,7 +431,7 @@
             // tbTotal
             // 
             this.tbTotal.AcceptsReturn = true;
-            this.tbTotal.Location = new System.Drawing.Point(575, 5);
+            this.tbTotal.Location = new System.Drawing.Point(493, 5);
             this.tbTotal.Name = "tbTotal";
             this.tbTotal.ReadOnly = true;
             this.tbTotal.Size = new System.Drawing.Size(103, 20);
@@ -427,7 +440,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(346, 9);
+            this.label9.Location = new System.Drawing.Point(264, 9);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(24, 13);
             this.label9.TabIndex = 46;
@@ -436,7 +449,7 @@
             // tbSubtotal
             // 
             this.tbSubtotal.AcceptsReturn = true;
-            this.tbSubtotal.Location = new System.Drawing.Point(181, 5);
+            this.tbSubtotal.Location = new System.Drawing.Point(99, 5);
             this.tbSubtotal.Name = "tbSubtotal";
             this.tbSubtotal.ReadOnly = true;
             this.tbSubtotal.Size = new System.Drawing.Size(103, 20);
@@ -445,7 +458,7 @@
             // tbIVA
             // 
             this.tbIVA.AcceptsReturn = true;
-            this.tbIVA.Location = new System.Drawing.Point(377, 5);
+            this.tbIVA.Location = new System.Drawing.Point(295, 5);
             this.tbIVA.Name = "tbIVA";
             this.tbIVA.ReadOnly = true;
             this.tbIVA.Size = new System.Drawing.Size(103, 20);
@@ -454,7 +467,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(126, 9);
+            this.label10.Location = new System.Drawing.Point(44, 9);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(46, 13);
             this.label10.TabIndex = 44;
@@ -472,7 +485,6 @@
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductos.Size = new System.Drawing.Size(823, 176);
             this.dgvProductos.TabIndex = 0;
-            this.dgvProductos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentDoubleClick);
             this.dgvProductos.DoubleClick += new System.EventHandler(this.dgvProductos_DoubleClick);
             // 
             // menuStrip1
@@ -499,21 +511,21 @@
             // guardarToolStripMenuItem
             // 
             this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
-            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.guardarToolStripMenuItem.Text = "Guardar";
             this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
             // 
             // imprimirToolStripMenuItem
             // 
             this.imprimirToolStripMenuItem.Name = "imprimirToolStripMenuItem";
-            this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.imprimirToolStripMenuItem.Text = "Imprimir";
             this.imprimirToolStripMenuItem.Click += new System.EventHandler(this.imprimirToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -599,5 +611,6 @@
         private System.Windows.Forms.ComboBox cbEncabezado;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cbMoneda;
+        private System.Windows.Forms.Button bEliminar;
     }
 }

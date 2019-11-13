@@ -82,6 +82,11 @@ namespace Haito
 
             dgvProductos.Columns[19].Visible = false;
             dgvProductos.Columns[20].Visible = false;
+            dgvProductos.Columns[21].Visible = false;
+            dgvProductos.Columns[22].Visible = false;
+            dgvProductos.Columns[23].Visible = false;
+
+            dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dgvProductos.Refresh();
 
         }
@@ -176,14 +181,7 @@ namespace Haito
             }
         }
 
-        private void dgvProductos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //eliminar elemento seleccionado
-
-        }
-
-       
-
+    
         private void bAgregar_Click(object sender, EventArgs e)
         {
             //al momento de agregar valida que haya un producto, 
@@ -295,20 +293,8 @@ namespace Haito
             }            
         }
 
-        private void cbUnidadMedida_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtIDFolio_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+      
+      
 
         private void eliminar()
         {
@@ -328,7 +314,18 @@ namespace Haito
 
         private void dgvProductos_DoubleClick(object sender, EventArgs e)
         {
-            eliminar();
+            if (dgvProductos.SelectedCells.Count < 0)
+                return;
+            //se cmbia a preguntar si quiere modificar o eliminar          
+            int idProducto = (int)dgvProductos.SelectedRows[0].Cells["idProducto"].Value;
+
+            //con el idProducto manda a llamar a nuevo para ponerle modificar y que se modifique la descripcion del producto
+            ProductoEditar prodEdit = new ProductoEditar(idProducto);
+            prodEdit.ShowDialog();
+
+            cargarDatosOrdenCompra();
+            //eliminar elemento seleccionado
+            // eliminar();
 
 
         }
@@ -398,6 +395,11 @@ namespace Haito
 
             qta.InsertarCambiarOrdenCompra(idFolio, idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), cbEncabezado.SelectedIndex, cbMoneda.SelectedIndex);
          
+        }
+
+        private void bEliminar_Click(object sender, EventArgs e)
+        {
+            eliminar();
         }
 
         
