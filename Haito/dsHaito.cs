@@ -1,6 +1,8 @@
-﻿namespace Haito {
-    
-    
-    public partial class dsHaito {
+﻿namespace Haito
+{
+
+
+    public partial class dsHaito
+    {
     }
 }

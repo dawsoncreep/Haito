@@ -55,7 +55,9 @@ namespace Haito
             }
 
             dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
-            qta.InsertarCambiarProducto(idProducto, (int)cbEmpresa.SelectedValue, txtNombre.Text.ToUpper(), false);
+            int tipoProducto = 0;
+            if (chbServicio.Checked) tipoProducto = 1;
+            qta.InsertarCambiarProducto(idProducto, (int)cbEmpresa.SelectedValue, txtNombre.Text.ToUpper(), false, tipoProducto);
             AutoClosingMessageBox.Show("Insertado con exito", "Éxito", 3000);
             this.Hide();
         }

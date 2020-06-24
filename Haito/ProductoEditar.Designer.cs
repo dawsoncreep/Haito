@@ -36,6 +36,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.chbServicio = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -111,11 +112,22 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // chbServicio
+            // 
+            this.chbServicio.AutoSize = true;
+            this.chbServicio.Location = new System.Drawing.Point(257, 9);
+            this.chbServicio.Name = "chbServicio";
+            this.chbServicio.Size = new System.Drawing.Size(64, 17);
+            this.chbServicio.TabIndex = 44;
+            this.chbServicio.Text = "Servicio";
+            this.chbServicio.UseVisualStyleBackColor = true;
+            // 
             // ProductoEditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(561, 394);
+            this.Controls.Add(this.chbServicio);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cbEmpresa);
             this.Controls.Add(this.txtNombre);
@@ -142,5 +154,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.CheckBox chbServicio;
     }
 }
