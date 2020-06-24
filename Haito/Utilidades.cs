@@ -70,4 +70,9 @@ namespace Haito
         MXN = 0,
         USD = 1
     }
+    enum tipoProducto
+    {
+        Producto = 0,
+        Servicio = 1
+    }
 }

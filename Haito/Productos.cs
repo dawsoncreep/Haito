@@ -63,7 +63,8 @@ namespace Haito
             if (response == DialogResult.Yes)
             {
                 dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
-                qta.InsertarCambiarProducto(idProductoEliminar, null, "", true);
+              
+                qta.InsertarCambiarProducto(idProductoEliminar, null, "", true, 0);
                 AutoClosingMessageBox.Show("Eliminado con éxito", "Éxito", 3000);
                 cargarProductos();
             }

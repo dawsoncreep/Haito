@@ -31,8 +31,7 @@ namespace Haito
             }
             idUsuario=_idUsuario;
         }
-
-   
+          
 
         private void cargarDatosCotizacion()
         {

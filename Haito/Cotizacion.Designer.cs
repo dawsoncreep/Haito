@@ -204,7 +204,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(457, 45);
+            this.label5.Location = new System.Drawing.Point(368, 45);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 13);
             this.label5.TabIndex = 37;
@@ -213,7 +213,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(97, 45);
+            this.label6.Location = new System.Drawing.Point(8, 45);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 13);
             this.label6.TabIndex = 38;
@@ -222,7 +222,7 @@
             // tbCantidad
             // 
             this.tbCantidad.AcceptsReturn = true;
-            this.tbCantidad.Location = new System.Drawing.Point(152, 41);
+            this.tbCantidad.Location = new System.Drawing.Point(63, 41);
             this.tbCantidad.Name = "tbCantidad";
             this.tbCantidad.Size = new System.Drawing.Size(103, 20);
             this.tbCantidad.TabIndex = 9;
@@ -230,7 +230,7 @@
             // cbUnidadMedida
             // 
             this.cbUnidadMedida.FormattingEnabled = true;
-            this.cbUnidadMedida.Location = new System.Drawing.Point(557, 41);
+            this.cbUnidadMedida.Location = new System.Drawing.Point(468, 41);
             this.cbUnidadMedida.Name = "cbUnidadMedida";
             this.cbUnidadMedida.Size = new System.Drawing.Size(97, 21);
             this.cbUnidadMedida.TabIndex = 11;
@@ -356,7 +356,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(261, 44);
+            this.label8.Location = new System.Drawing.Point(172, 44);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(76, 13);
             this.label8.TabIndex = 42;
@@ -365,7 +365,7 @@
             // tbPrecio
             // 
             this.tbPrecio.AcceptsReturn = true;
-            this.tbPrecio.Location = new System.Drawing.Point(348, 41);
+            this.tbPrecio.Location = new System.Drawing.Point(259, 41);
             this.tbPrecio.Name = "tbPrecio";
             this.tbPrecio.Size = new System.Drawing.Size(103, 20);
             this.tbPrecio.TabIndex = 10;
