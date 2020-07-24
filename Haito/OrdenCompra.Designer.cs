@@ -74,6 +74,10 @@
             this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargarCotizacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label14 = new System.Windows.Forms.Label();
+            this.cmbTipo = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.tbRetencion = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -237,6 +241,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.cmbTipo);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.cbMoneda);
             this.panel1.Controls.Add(this.label12);
@@ -256,7 +262,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(829, 129);
+            this.panel1.Size = new System.Drawing.Size(829, 176);
             this.panel1.TabIndex = 41;
             // 
             // label13
@@ -297,16 +303,16 @@
             // tbObservaciones
             // 
             this.tbObservaciones.AcceptsReturn = true;
-            this.tbObservaciones.Location = new System.Drawing.Point(108, 80);
+            this.tbObservaciones.Location = new System.Drawing.Point(108, 112);
             this.tbObservaciones.Multiline = true;
             this.tbObservaciones.Name = "tbObservaciones";
-            this.tbObservaciones.Size = new System.Drawing.Size(709, 45);
+            this.tbObservaciones.Size = new System.Drawing.Size(709, 58);
             this.tbObservaciones.TabIndex = 6;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 80);
+            this.label7.Location = new System.Drawing.Point(12, 112);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 13);
             this.label7.TabIndex = 33;
@@ -317,9 +323,9 @@
             this.groupBox1.Controls.Add(this.panel3);
             this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 153);
+            this.groupBox1.Location = new System.Drawing.Point(0, 200);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(829, 316);
+            this.groupBox1.Size = new System.Drawing.Size(829, 317);
             this.groupBox1.TabIndex = 42;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Productos";
@@ -338,7 +344,7 @@
             this.panel3.Controls.Add(this.cbUnidadMedida);
             this.panel3.Controls.Add(this.btnBuscarProducto);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(3, 222);
+            this.panel3.Location = new System.Drawing.Point(3, 223);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(823, 91);
             this.panel3.TabIndex = 8;
@@ -387,11 +393,13 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 16);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(823, 297);
+            this.panel2.Size = new System.Drawing.Size(823, 298);
             this.panel2.TabIndex = 41;
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.label15);
+            this.panel4.Controls.Add(this.tbRetencion);
             this.panel4.Controls.Add(this.bEliminar);
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.tbTotal);
@@ -400,7 +408,7 @@
             this.panel4.Controls.Add(this.tbIVA);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 177);
+            this.panel4.Location = new System.Drawing.Point(0, 178);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(823, 120);
             this.panel4.TabIndex = 20;
@@ -419,7 +427,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(453, 9);
+            this.label11.Location = new System.Drawing.Point(532, 10);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(31, 13);
             this.label11.TabIndex = 48;
@@ -428,7 +436,7 @@
             // tbTotal
             // 
             this.tbTotal.AcceptsReturn = true;
-            this.tbTotal.Location = new System.Drawing.Point(493, 5);
+            this.tbTotal.Location = new System.Drawing.Point(572, 6);
             this.tbTotal.Name = "tbTotal";
             this.tbTotal.ReadOnly = true;
             this.tbTotal.Size = new System.Drawing.Size(103, 20);
@@ -437,7 +445,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(264, 9);
+            this.label9.Location = new System.Drawing.Point(197, 10);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(24, 13);
             this.label9.TabIndex = 46;
@@ -446,7 +454,7 @@
             // tbSubtotal
             // 
             this.tbSubtotal.AcceptsReturn = true;
-            this.tbSubtotal.Location = new System.Drawing.Point(99, 5);
+            this.tbSubtotal.Location = new System.Drawing.Point(83, 6);
             this.tbSubtotal.Name = "tbSubtotal";
             this.tbSubtotal.ReadOnly = true;
             this.tbSubtotal.Size = new System.Drawing.Size(103, 20);
@@ -455,7 +463,7 @@
             // tbIVA
             // 
             this.tbIVA.AcceptsReturn = true;
-            this.tbIVA.Location = new System.Drawing.Point(295, 5);
+            this.tbIVA.Location = new System.Drawing.Point(228, 6);
             this.tbIVA.Name = "tbIVA";
             this.tbIVA.ReadOnly = true;
             this.tbIVA.Size = new System.Drawing.Size(103, 20);
@@ -464,7 +472,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(44, 9);
+            this.label10.Location = new System.Drawing.Point(28, 10);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(46, 13);
             this.label10.TabIndex = 44;
@@ -534,11 +542,47 @@
             this.cargarCotizacionToolStripMenuItem.Text = "Cargar Orden de Compra...";
             this.cargarCotizacionToolStripMenuItem.Click += new System.EventHandler(this.cargarCotizacionToolStripMenuItem_Click);
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(532, 85);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(80, 13);
+            this.label14.TabIndex = 41;
+            this.label14.Text = "Tipo Cotizacion";
+            // 
+            // cmbTipo
+            // 
+            this.cmbTipo.FormattingEnabled = true;
+            this.cmbTipo.Location = new System.Drawing.Point(618, 82);
+            this.cmbTipo.Name = "cmbTipo";
+            this.cmbTipo.Size = new System.Drawing.Size(200, 21);
+            this.cmbTipo.TabIndex = 40;
+            this.cmbTipo.SelectedIndexChanged += new System.EventHandler(this.cmbTipo_SelectedIndexChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(346, 10);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(56, 13);
+            this.label15.TabIndex = 52;
+            this.label15.Text = "Retención";
+            // 
+            // tbRetencion
+            // 
+            this.tbRetencion.AcceptsReturn = true;
+            this.tbRetencion.Location = new System.Drawing.Point(408, 6);
+            this.tbRetencion.Name = "tbRetencion";
+            this.tbRetencion.ReadOnly = true;
+            this.tbRetencion.Size = new System.Drawing.Size(103, 20);
+            this.tbRetencion.TabIndex = 53;
+            // 
             // OrdenCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(829, 469);
+            this.ClientSize = new System.Drawing.Size(829, 517);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
@@ -610,5 +654,9 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cbMoneda;
         private System.Windows.Forms.Button bEliminar;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox cmbTipo;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox tbRetencion;
     }
 }

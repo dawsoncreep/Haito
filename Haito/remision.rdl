@@ -64,6 +64,10 @@
           <DataField>idMoneda</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="tipo">
+          <DataField>tipo</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
         <Field Name="idUnidadMedida">
           <DataField>idUnidadMedida</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -123,6 +127,14 @@
         <Field Name="imagenFirma">
           <DataField>imagenFirma</DataField>
           <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="idProducto">
+          <DataField>idProducto</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="retencion">
+          <DataField>retencion</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -1323,6 +1335,21 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
+                      <Value>=IIF(Sum(Fields!retencion.Value, "DataSet1")&gt;0,First(Fields!retencion.Value, "DataSet1"),"")</Value>
+                      <Style>
+                        <FontFamily>Helvetica</FontFamily>
+                        <Format>'$'#,0.00;('$'#,0.00)</Format>
+                        <rd:FormatSymbolCulture>es-MX</rd:FormatSymbolCulture>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
                       <Value xml:space="preserve"> </Value>
                       <Style>
                         <FontFamily>Helvetica</FontFamily>
@@ -1343,22 +1370,10 @@
                     <TextAlign>Right</TextAlign>
                   </Style>
                 </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value />
-                      <Style>
-                        <FontFamily>Helvetica</FontFamily>
-                        <Format>'$'#,0.00;('$'#,0.00)</Format>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox19</rd:DefaultName>
               <Top>0.17639cm</Top>
-              <Left>15.26173cm</Left>
+              <Left>15.32523cm</Left>
               <Height>1.76417cm</Height>
               <Width>3.24053cm</Width>
               <ZIndex>3</ZIndex>
@@ -1425,6 +1440,17 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
+                      <Value>=IIF(Sum(Fields!retencion.Value, "DataSet1")&gt;0,"Retención","")</Value>
+                      <Style>
+                        <FontFamily>Helvetica</FontFamily>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
                       <Value>Total</Value>
                       <Style>
                         <FontFamily>Helvetica</FontFamily>
@@ -1437,9 +1463,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox20</rd:DefaultName>
               <Top>0.25577cm</Top>
-              <Left>13.46226cm</Left>
+              <Left>13.37406cm</Left>
               <Height>1.68479cm</Height>
-              <Width>1.62308cm</Width>
+              <Width>1.88767cm</Width>
               <ZIndex>4</ZIndex>
               <Visibility>
                 <Hidden>=IIF(Globals!PageNumber=Globals!TotalPages, False, True)</Hidden>

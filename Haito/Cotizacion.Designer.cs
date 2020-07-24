@@ -74,6 +74,10 @@
             this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargarCotizacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label14 = new System.Windows.Forms.Label();
+            this.cmbTipo = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.tbRetencion = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -237,6 +241,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.cmbTipo);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.cbMoneda);
             this.panel1.Controls.Add(this.label12);
@@ -256,13 +262,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(829, 129);
+            this.panel1.Size = new System.Drawing.Size(829, 172);
             this.panel1.TabIndex = 41;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(544, 58);
+            this.label13.Location = new System.Drawing.Point(565, 58);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(46, 13);
             this.label13.TabIndex = 37;
@@ -297,16 +303,16 @@
             // tbObservaciones
             // 
             this.tbObservaciones.AcceptsReturn = true;
-            this.tbObservaciones.Location = new System.Drawing.Point(108, 82);
+            this.tbObservaciones.Location = new System.Drawing.Point(108, 106);
             this.tbObservaciones.Multiline = true;
             this.tbObservaciones.Name = "tbObservaciones";
-            this.tbObservaciones.Size = new System.Drawing.Size(709, 42);
+            this.tbObservaciones.Size = new System.Drawing.Size(709, 60);
             this.tbObservaciones.TabIndex = 6;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 85);
+            this.label7.Location = new System.Drawing.Point(12, 109);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 13);
             this.label7.TabIndex = 33;
@@ -317,9 +323,9 @@
             this.groupBox1.Controls.Add(this.panel3);
             this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 153);
+            this.groupBox1.Location = new System.Drawing.Point(0, 196);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(829, 316);
+            this.groupBox1.Size = new System.Drawing.Size(829, 273);
             this.groupBox1.TabIndex = 42;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Productos";
@@ -338,10 +344,11 @@
             this.panel3.Controls.Add(this.cbUnidadMedida);
             this.panel3.Controls.Add(this.btnBuscarProducto);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(3, 222);
+            this.panel3.Location = new System.Drawing.Point(3, 179);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(823, 91);
             this.panel3.TabIndex = 8;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // btnNuevo
             // 
@@ -387,11 +394,13 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 16);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(823, 297);
+            this.panel2.Size = new System.Drawing.Size(823, 254);
             this.panel2.TabIndex = 41;
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.label15);
+            this.panel4.Controls.Add(this.tbRetencion);
             this.panel4.Controls.Add(this.bEliminar);
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.tbTotal);
@@ -400,7 +409,7 @@
             this.panel4.Controls.Add(this.tbIVA);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 177);
+            this.panel4.Location = new System.Drawing.Point(0, 134);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(823, 120);
             this.panel4.TabIndex = 20;
@@ -408,7 +417,7 @@
             // bEliminar
             // 
             this.bEliminar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.bEliminar.Location = new System.Drawing.Point(739, 3);
+            this.bEliminar.Location = new System.Drawing.Point(739, 5);
             this.bEliminar.Name = "bEliminar";
             this.bEliminar.Size = new System.Drawing.Size(75, 23);
             this.bEliminar.TabIndex = 43;
@@ -419,7 +428,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(450, 9);
+            this.label11.Location = new System.Drawing.Point(542, 10);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(31, 13);
             this.label11.TabIndex = 48;
@@ -428,7 +437,7 @@
             // tbTotal
             // 
             this.tbTotal.AcceptsReturn = true;
-            this.tbTotal.Location = new System.Drawing.Point(490, 5);
+            this.tbTotal.Location = new System.Drawing.Point(582, 6);
             this.tbTotal.Name = "tbTotal";
             this.tbTotal.ReadOnly = true;
             this.tbTotal.Size = new System.Drawing.Size(103, 20);
@@ -437,7 +446,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(261, 9);
+            this.label9.Location = new System.Drawing.Point(182, 10);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(24, 13);
             this.label9.TabIndex = 46;
@@ -446,7 +455,7 @@
             // tbSubtotal
             // 
             this.tbSubtotal.AcceptsReturn = true;
-            this.tbSubtotal.Location = new System.Drawing.Point(96, 5);
+            this.tbSubtotal.Location = new System.Drawing.Point(63, 6);
             this.tbSubtotal.Name = "tbSubtotal";
             this.tbSubtotal.ReadOnly = true;
             this.tbSubtotal.Size = new System.Drawing.Size(103, 20);
@@ -455,7 +464,7 @@
             // tbIVA
             // 
             this.tbIVA.AcceptsReturn = true;
-            this.tbIVA.Location = new System.Drawing.Point(292, 5);
+            this.tbIVA.Location = new System.Drawing.Point(213, 6);
             this.tbIVA.Name = "tbIVA";
             this.tbIVA.ReadOnly = true;
             this.tbIVA.Size = new System.Drawing.Size(103, 20);
@@ -464,7 +473,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(41, 9);
+            this.label10.Location = new System.Drawing.Point(8, 10);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(46, 13);
             this.label10.TabIndex = 44;
@@ -532,6 +541,42 @@
             this.cargarCotizacionToolStripMenuItem.Size = new System.Drawing.Size(122, 20);
             this.cargarCotizacionToolStripMenuItem.Text = "Cargar Cotizacion...";
             this.cargarCotizacionToolStripMenuItem.Click += new System.EventHandler(this.cargarCotizacionToolStripMenuItem_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(531, 85);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(80, 13);
+            this.label14.TabIndex = 39;
+            this.label14.Text = "Tipo Cotizacion";
+            // 
+            // cmbTipo
+            // 
+            this.cmbTipo.FormattingEnabled = true;
+            this.cmbTipo.Location = new System.Drawing.Point(617, 82);
+            this.cmbTipo.Name = "cmbTipo";
+            this.cmbTipo.Size = new System.Drawing.Size(200, 21);
+            this.cmbTipo.TabIndex = 38;
+            this.cmbTipo.SelectedIndexChanged += new System.EventHandler(this.cmbTipo_SelectedIndexChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(344, 10);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(56, 13);
+            this.label15.TabIndex = 50;
+            this.label15.Text = "Retención";
+            // 
+            // tbRetencion
+            // 
+            this.tbRetencion.AcceptsReturn = true;
+            this.tbRetencion.Location = new System.Drawing.Point(406, 6);
+            this.tbRetencion.Name = "tbRetencion";
+            this.tbRetencion.ReadOnly = true;
+            this.tbRetencion.Size = new System.Drawing.Size(103, 20);
+            this.tbRetencion.TabIndex = 51;
             // 
             // Cotizacion
             // 
@@ -609,5 +654,9 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cbMoneda;
         private System.Windows.Forms.Button bEliminar;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox cmbTipo;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox tbRetencion;
     }
 }

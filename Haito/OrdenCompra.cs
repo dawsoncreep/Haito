@@ -32,10 +32,9 @@ namespace Haito
             idUsuario = _idusuario;
         }
 
-   
-
         private void cargarDatosOrdenCompra()
         {
+            nueva = false;
             dsHaitoTableAdapters.obtenerDatosOrdenCompraTableAdapter dcta = new dsHaitoTableAdapters.obtenerDatosOrdenCompraTableAdapter();
             DataTable dtOrdenCompra = dcta.GetData(idOrdenCompra, cbEncabezado.SelectedIndex, cbMoneda.SelectedIndex);
 
@@ -59,6 +58,7 @@ namespace Haito
             tbSubtotal.Text = dtOrdenCompra.Rows[0]["subtotal"].ToString();
             tbIVA.Text = dtOrdenCompra.Rows[0]["iva"].ToString();
             tbTotal.Text = dtOrdenCompra.Rows[0]["total"].ToString();
+            tbRetencion.Text = dtOrdenCompra.Rows[0]["retencion"].ToString();
 
             dgvProductos.DataSource = dtOrdenCompra;
 
@@ -99,12 +99,20 @@ namespace Haito
             cargarUM();
             cargarEncabezado();
             cargarMoneda();
+            cargarTipo();
             if (idOrdenCompra != 0)
             {
                 cargarDatosOrdenCompra();
+                nueva = false;
                
             }else
             cargarSiguienteFolio();
+        }
+
+        private void cargarTipo()
+        {
+            cmbTipo.DataSource = Enum.GetValues(typeof(tipoProducto));
+            cmbTipo.SelectedIndex = 0;
         }
 
         private void cargarMoneda()
@@ -150,9 +158,7 @@ namespace Haito
             cbEmpresa.DisplayMember = "nombre";
             cbEmpresa.ValueMember = "idEmpresa";
             cbEmpresa.DataSource = eata.GetData(0, true);
-        }
-
-       
+        }      
 
         private void cbEmpresa_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -214,7 +220,7 @@ namespace Haito
 
 
                    
-                    qta.InsertarCambiarOrdenCompra(idFolio, idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), cbEncabezado.SelectedIndex, cbMoneda.SelectedIndex);
+                    qta.InsertarCambiarOrdenCompra(idFolio, idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), cbEncabezado.SelectedIndex, cbMoneda.SelectedIndex, cmbTipo.SelectedIndex);
                     int idProducto = int.Parse(dtProd.Rows[0]["idProducto"].ToString());
                     idOrdenCompra = idFolio;
                     qta.InsertarCambiarOrdenCompraDetalle(idFolio, idProducto, cantidad, precio, cbUnidadMedida.Text, false, cbEncabezado.SelectedIndex);
@@ -292,9 +298,6 @@ namespace Haito
                 }
             }            
         }
-
-      
-      
 
         private void eliminar()
         {
@@ -393,7 +396,7 @@ namespace Haito
 
 
 
-            qta.InsertarCambiarOrdenCompra(idFolio, idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), cbEncabezado.SelectedIndex, cbMoneda.SelectedIndex);
+            qta.InsertarCambiarOrdenCompra(idFolio, idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), cbEncabezado.SelectedIndex, cbMoneda.SelectedIndex, cmbTipo.SelectedIndex);
          
         }
 
@@ -402,6 +405,32 @@ namespace Haito
             eliminar();
         }
 
-        
+        private void cmbTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //cambia la manera en que se hacen los calculos de total para realizar la retención de iva, esto solo aplica
+            //para los tipos de servicios.
+            //modificar la cotizacion y volver a cargar para mostrar la retencion
+            try
+            {
+                //ingresar en bd o hacer la actualizacion dependiendo si se habia guardado anteriormente
+                dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
+                int idFolio;
+                if (nueva)
+                {
+                    return;
+                }
+                else
+                {
+                    idFolio = int.Parse(txtIDFolio.Text);
+                }
+                qta.InsertarCambiarOrdenCompra(idFolio, idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), cbEncabezado.SelectedIndex, cbMoneda.SelectedIndex, cmbTipo.SelectedIndex);
+                cargarDatosOrdenCompra();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR");
+
+            }
+        }
     }
 }

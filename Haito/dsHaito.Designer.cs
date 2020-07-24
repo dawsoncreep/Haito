@@ -2898,6 +2898,18 @@ namespace Haito {
             
             private global::System.Data.DataColumn columncantidadLetra;
             
+            private global::System.Data.DataColumn columnidMoneda;
+            
+            private global::System.Data.DataColumn columntipo;
+            
+            private global::System.Data.DataColumn columnfirma;
+            
+            private global::System.Data.DataColumn columnimagenFirma;
+            
+            private global::System.Data.DataColumn columnidProducto;
+            
+            private global::System.Data.DataColumn columnretencion;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public obtenerDatosCotizacionDataTable() {
@@ -3093,6 +3105,54 @@ namespace Haito {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn idMonedaColumn {
+                get {
+                    return this.columnidMoneda;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn tipoColumn {
+                get {
+                    return this.columntipo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn firmaColumn {
+                get {
+                    return this.columnfirma;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn imagenFirmaColumn {
+                get {
+                    return this.columnimagenFirma;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn idProductoColumn {
+                get {
+                    return this.columnidProducto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn retencionColumn {
+                get {
+                    return this.columnretencion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3147,7 +3207,13 @@ namespace Haito {
                         string atencion, 
                         string usuario, 
                         string encabezado, 
-                        string cantidadLetra) {
+                        string cantidadLetra, 
+                        int idMoneda, 
+                        int tipo, 
+                        string firma, 
+                        byte[] imagenFirma, 
+                        int idProducto, 
+                        decimal retencion) {
                 obtenerDatosCotizacionRow rowobtenerDatosCotizacionRow = ((obtenerDatosCotizacionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         idCotizacion,
@@ -3169,7 +3235,13 @@ namespace Haito {
                         atencion,
                         usuario,
                         encabezado,
-                        cantidadLetra};
+                        cantidadLetra,
+                        idMoneda,
+                        tipo,
+                        firma,
+                        imagenFirma,
+                        idProducto,
+                        retencion};
                 rowobtenerDatosCotizacionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowobtenerDatosCotizacionRow);
                 return rowobtenerDatosCotizacionRow;
@@ -3219,6 +3291,12 @@ namespace Haito {
                 this.columnusuario = base.Columns["usuario"];
                 this.columnencabezado = base.Columns["encabezado"];
                 this.columncantidadLetra = base.Columns["cantidadLetra"];
+                this.columnidMoneda = base.Columns["idMoneda"];
+                this.columntipo = base.Columns["tipo"];
+                this.columnfirma = base.Columns["firma"];
+                this.columnimagenFirma = base.Columns["imagenFirma"];
+                this.columnidProducto = base.Columns["idProducto"];
+                this.columnretencion = base.Columns["retencion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3264,6 +3342,18 @@ namespace Haito {
                 base.Columns.Add(this.columnencabezado);
                 this.columncantidadLetra = new global::System.Data.DataColumn("cantidadLetra", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncantidadLetra);
+                this.columnidMoneda = new global::System.Data.DataColumn("idMoneda", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidMoneda);
+                this.columntipo = new global::System.Data.DataColumn("tipo", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntipo);
+                this.columnfirma = new global::System.Data.DataColumn("firma", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfirma);
+                this.columnimagenFirma = new global::System.Data.DataColumn("imagenFirma", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnimagenFirma);
+                this.columnidProducto = new global::System.Data.DataColumn("idProducto", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidProducto);
+                this.columnretencion = new global::System.Data.DataColumn("retencion", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnretencion);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidCotizacionDetalle}, true));
                 this.columnidCotizacion.AllowDBNull = false;
@@ -3294,6 +3384,9 @@ namespace Haito {
                 this.columnencabezado.MaxLength = 1000;
                 this.columncantidadLetra.ReadOnly = true;
                 this.columncantidadLetra.MaxLength = 180;
+                this.columnfirma.MaxLength = 100;
+                this.columnidProducto.AllowDBNull = false;
+                this.columnretencion.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3466,6 +3559,18 @@ namespace Haito {
             private global::System.Data.DataColumn columnencabezado;
             
             private global::System.Data.DataColumn columncantidadLetra;
+            
+            private global::System.Data.DataColumn columnidMoneda;
+            
+            private global::System.Data.DataColumn columntipo;
+            
+            private global::System.Data.DataColumn columnfirma;
+            
+            private global::System.Data.DataColumn columnimagenFirma;
+            
+            private global::System.Data.DataColumn columnidProducto;
+            
+            private global::System.Data.DataColumn columnretencion;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -3662,6 +3767,54 @@ namespace Haito {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn idMonedaColumn {
+                get {
+                    return this.columnidMoneda;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn tipoColumn {
+                get {
+                    return this.columntipo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn firmaColumn {
+                get {
+                    return this.columnfirma;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn imagenFirmaColumn {
+                get {
+                    return this.columnimagenFirma;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn idProductoColumn {
+                get {
+                    return this.columnidProducto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn retencionColumn {
+                get {
+                    return this.columnretencion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3716,7 +3869,13 @@ namespace Haito {
                         string atencion, 
                         string usuario, 
                         string encabezado, 
-                        string cantidadLetra) {
+                        string cantidadLetra, 
+                        int idMoneda, 
+                        int tipo, 
+                        string firma, 
+                        byte[] imagenFirma, 
+                        int idProducto, 
+                        decimal retencion) {
                 obtenerDatosOrdenCompraRow rowobtenerDatosOrdenCompraRow = ((obtenerDatosOrdenCompraRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         idOrdenCompra,
@@ -3738,7 +3897,13 @@ namespace Haito {
                         atencion,
                         usuario,
                         encabezado,
-                        cantidadLetra};
+                        cantidadLetra,
+                        idMoneda,
+                        tipo,
+                        firma,
+                        imagenFirma,
+                        idProducto,
+                        retencion};
                 rowobtenerDatosOrdenCompraRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowobtenerDatosOrdenCompraRow);
                 return rowobtenerDatosOrdenCompraRow;
@@ -3788,6 +3953,12 @@ namespace Haito {
                 this.columnusuario = base.Columns["usuario"];
                 this.columnencabezado = base.Columns["encabezado"];
                 this.columncantidadLetra = base.Columns["cantidadLetra"];
+                this.columnidMoneda = base.Columns["idMoneda"];
+                this.columntipo = base.Columns["tipo"];
+                this.columnfirma = base.Columns["firma"];
+                this.columnimagenFirma = base.Columns["imagenFirma"];
+                this.columnidProducto = base.Columns["idProducto"];
+                this.columnretencion = base.Columns["retencion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3833,6 +4004,18 @@ namespace Haito {
                 base.Columns.Add(this.columnencabezado);
                 this.columncantidadLetra = new global::System.Data.DataColumn("cantidadLetra", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncantidadLetra);
+                this.columnidMoneda = new global::System.Data.DataColumn("idMoneda", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidMoneda);
+                this.columntipo = new global::System.Data.DataColumn("tipo", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntipo);
+                this.columnfirma = new global::System.Data.DataColumn("firma", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfirma);
+                this.columnimagenFirma = new global::System.Data.DataColumn("imagenFirma", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnimagenFirma);
+                this.columnidProducto = new global::System.Data.DataColumn("idProducto", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidProducto);
+                this.columnretencion = new global::System.Data.DataColumn("retencion", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnretencion);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidOrdenCompraDetalle}, true));
                 this.columnidOrdenCompra.AllowDBNull = false;
@@ -3862,6 +4045,9 @@ namespace Haito {
                 this.columnencabezado.MaxLength = 1000;
                 this.columncantidadLetra.ReadOnly = true;
                 this.columncantidadLetra.MaxLength = 180;
+                this.columnfirma.MaxLength = 100;
+                this.columnidProducto.AllowDBNull = false;
+                this.columnretencion.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4038,6 +4224,14 @@ namespace Haito {
             private global::System.Data.DataColumn columnfirma;
             
             private global::System.Data.DataColumn columncantidadLetra;
+            
+            private global::System.Data.DataColumn columntipo;
+            
+            private global::System.Data.DataColumn columnimagenFirma;
+            
+            private global::System.Data.DataColumn columnidProducto;
+            
+            private global::System.Data.DataColumn columnretencion;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -4250,6 +4444,38 @@ namespace Haito {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn tipoColumn {
+                get {
+                    return this.columntipo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn imagenFirmaColumn {
+                get {
+                    return this.columnimagenFirma;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn idProductoColumn {
+                get {
+                    return this.columnidProducto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn retencionColumn {
+                get {
+                    return this.columnretencion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4306,7 +4532,11 @@ namespace Haito {
                         string usuario, 
                         string encabezado, 
                         string firma, 
-                        string cantidadLetra) {
+                        string cantidadLetra, 
+                        int tipo, 
+                        byte[] imagenFirma, 
+                        int idProducto, 
+                        decimal retencion) {
                 obtenerDatosRemisionRow rowobtenerDatosRemisionRow = ((obtenerDatosRemisionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         idRemision,
@@ -4330,10 +4560,21 @@ namespace Haito {
                         usuario,
                         encabezado,
                         firma,
-                        cantidadLetra};
+                        cantidadLetra,
+                        tipo,
+                        imagenFirma,
+                        idProducto,
+                        retencion};
                 rowobtenerDatosRemisionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowobtenerDatosRemisionRow);
                 return rowobtenerDatosRemisionRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public obtenerDatosRemisionRow FindByidProducto(int idProducto) {
+                return ((obtenerDatosRemisionRow)(this.Rows.Find(new object[] {
+                            idProducto})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4375,6 +4616,10 @@ namespace Haito {
                 this.columnencabezado = base.Columns["encabezado"];
                 this.columnfirma = base.Columns["firma"];
                 this.columncantidadLetra = base.Columns["cantidadLetra"];
+                this.columntipo = base.Columns["tipo"];
+                this.columnimagenFirma = base.Columns["imagenFirma"];
+                this.columnidProducto = base.Columns["idProducto"];
+                this.columnretencion = base.Columns["retencion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4424,6 +4669,16 @@ namespace Haito {
                 base.Columns.Add(this.columnfirma);
                 this.columncantidadLetra = new global::System.Data.DataColumn("cantidadLetra", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncantidadLetra);
+                this.columntipo = new global::System.Data.DataColumn("tipo", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntipo);
+                this.columnimagenFirma = new global::System.Data.DataColumn("imagenFirma", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnimagenFirma);
+                this.columnidProducto = new global::System.Data.DataColumn("idProducto", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidProducto);
+                this.columnretencion = new global::System.Data.DataColumn("retencion", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnretencion);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnidProducto}, true));
                 this.columnidRemision.AllowDBNull = false;
                 this.columnidCliente.AllowDBNull = false;
                 this.columnfecha.AllowDBNull = false;
@@ -4452,6 +4707,9 @@ namespace Haito {
                 this.columnfirma.MaxLength = 100;
                 this.columncantidadLetra.ReadOnly = true;
                 this.columncantidadLetra.MaxLength = 180;
+                this.columnidProducto.AllowDBNull = false;
+                this.columnidProducto.Unique = true;
+                this.columnretencion.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7053,6 +7311,100 @@ namespace Haito {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int idMoneda {
+                get {
+                    try {
+                        return ((int)(this[this.tableobtenerDatosCotizacion.idMonedaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'idMoneda\' de la tabla \'obtenerDatosCotizacion\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableobtenerDatosCotizacion.idMonedaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int tipo {
+                get {
+                    try {
+                        return ((int)(this[this.tableobtenerDatosCotizacion.tipoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'tipo\' de la tabla \'obtenerDatosCotizacion\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableobtenerDatosCotizacion.tipoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string firma {
+                get {
+                    try {
+                        return ((string)(this[this.tableobtenerDatosCotizacion.firmaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'firma\' de la tabla \'obtenerDatosCotizacion\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableobtenerDatosCotizacion.firmaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public byte[] imagenFirma {
+                get {
+                    try {
+                        return ((byte[])(this[this.tableobtenerDatosCotizacion.imagenFirmaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'imagenFirma\' de la tabla \'obtenerDatosCotizacion\' es DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableobtenerDatosCotizacion.imagenFirmaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int idProducto {
+                get {
+                    return ((int)(this[this.tableobtenerDatosCotizacion.idProductoColumn]));
+                }
+                set {
+                    this[this.tableobtenerDatosCotizacion.idProductoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal retencion {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableobtenerDatosCotizacion.retencionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'retencion\' de la tabla \'obtenerDatosCotizacion\' es DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableobtenerDatosCotizacion.retencionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsobservacionesNull() {
                 return this.IsNull(this.tableobtenerDatosCotizacion.observacionesColumn);
             }
@@ -7157,6 +7509,66 @@ namespace Haito {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetcantidadLetraNull() {
                 this[this.tableobtenerDatosCotizacion.cantidadLetraColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsidMonedaNull() {
+                return this.IsNull(this.tableobtenerDatosCotizacion.idMonedaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetidMonedaNull() {
+                this[this.tableobtenerDatosCotizacion.idMonedaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IstipoNull() {
+                return this.IsNull(this.tableobtenerDatosCotizacion.tipoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SettipoNull() {
+                this[this.tableobtenerDatosCotizacion.tipoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsfirmaNull() {
+                return this.IsNull(this.tableobtenerDatosCotizacion.firmaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetfirmaNull() {
+                this[this.tableobtenerDatosCotizacion.firmaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsimagenFirmaNull() {
+                return this.IsNull(this.tableobtenerDatosCotizacion.imagenFirmaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetimagenFirmaNull() {
+                this[this.tableobtenerDatosCotizacion.imagenFirmaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsretencionNull() {
+                return this.IsNull(this.tableobtenerDatosCotizacion.retencionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetretencionNull() {
+                this[this.tableobtenerDatosCotizacion.retencionColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7454,6 +7866,100 @@ namespace Haito {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int idMoneda {
+                get {
+                    try {
+                        return ((int)(this[this.tableobtenerDatosOrdenCompra.idMonedaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'idMoneda\' de la tabla \'obtenerDatosOrdenCompra\' es DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableobtenerDatosOrdenCompra.idMonedaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int tipo {
+                get {
+                    try {
+                        return ((int)(this[this.tableobtenerDatosOrdenCompra.tipoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'tipo\' de la tabla \'obtenerDatosOrdenCompra\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableobtenerDatosOrdenCompra.tipoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string firma {
+                get {
+                    try {
+                        return ((string)(this[this.tableobtenerDatosOrdenCompra.firmaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'firma\' de la tabla \'obtenerDatosOrdenCompra\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableobtenerDatosOrdenCompra.firmaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public byte[] imagenFirma {
+                get {
+                    try {
+                        return ((byte[])(this[this.tableobtenerDatosOrdenCompra.imagenFirmaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'imagenFirma\' de la tabla \'obtenerDatosOrdenCompra\' es DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableobtenerDatosOrdenCompra.imagenFirmaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int idProducto {
+                get {
+                    return ((int)(this[this.tableobtenerDatosOrdenCompra.idProductoColumn]));
+                }
+                set {
+                    this[this.tableobtenerDatosOrdenCompra.idProductoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal retencion {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableobtenerDatosOrdenCompra.retencionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'retencion\' de la tabla \'obtenerDatosOrdenCompra\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableobtenerDatosOrdenCompra.retencionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsobservacionesNull() {
                 return this.IsNull(this.tableobtenerDatosOrdenCompra.observacionesColumn);
             }
@@ -7570,6 +8076,66 @@ namespace Haito {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetcantidadLetraNull() {
                 this[this.tableobtenerDatosOrdenCompra.cantidadLetraColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsidMonedaNull() {
+                return this.IsNull(this.tableobtenerDatosOrdenCompra.idMonedaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetidMonedaNull() {
+                this[this.tableobtenerDatosOrdenCompra.idMonedaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IstipoNull() {
+                return this.IsNull(this.tableobtenerDatosOrdenCompra.tipoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SettipoNull() {
+                this[this.tableobtenerDatosOrdenCompra.tipoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsfirmaNull() {
+                return this.IsNull(this.tableobtenerDatosOrdenCompra.firmaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetfirmaNull() {
+                this[this.tableobtenerDatosOrdenCompra.firmaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsimagenFirmaNull() {
+                return this.IsNull(this.tableobtenerDatosOrdenCompra.imagenFirmaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetimagenFirmaNull() {
+                this[this.tableobtenerDatosOrdenCompra.imagenFirmaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsretencionNull() {
+                return this.IsNull(this.tableobtenerDatosOrdenCompra.retencionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetretencionNull() {
+                this[this.tableobtenerDatosOrdenCompra.retencionColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7890,6 +8456,66 @@ namespace Haito {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int tipo {
+                get {
+                    try {
+                        return ((int)(this[this.tableobtenerDatosRemision.tipoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'tipo\' de la tabla \'obtenerDatosRemision\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableobtenerDatosRemision.tipoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public byte[] imagenFirma {
+                get {
+                    try {
+                        return ((byte[])(this[this.tableobtenerDatosRemision.imagenFirmaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'imagenFirma\' de la tabla \'obtenerDatosRemision\' es DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableobtenerDatosRemision.imagenFirmaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int idProducto {
+                get {
+                    return ((int)(this[this.tableobtenerDatosRemision.idProductoColumn]));
+                }
+                set {
+                    this[this.tableobtenerDatosRemision.idProductoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal retencion {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableobtenerDatosRemision.retencionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'retencion\' de la tabla \'obtenerDatosRemision\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableobtenerDatosRemision.retencionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsobservacionesNull() {
                 return this.IsNull(this.tableobtenerDatosRemision.observacionesColumn);
             }
@@ -8018,6 +8644,42 @@ namespace Haito {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetcantidadLetraNull() {
                 this[this.tableobtenerDatosRemision.cantidadLetraColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IstipoNull() {
+                return this.IsNull(this.tableobtenerDatosRemision.tipoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SettipoNull() {
+                this[this.tableobtenerDatosRemision.tipoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsimagenFirmaNull() {
+                return this.IsNull(this.tableobtenerDatosRemision.imagenFirmaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetimagenFirmaNull() {
+                this[this.tableobtenerDatosRemision.imagenFirmaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsretencionNull() {
+                return this.IsNull(this.tableobtenerDatosRemision.retencionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetretencionNull() {
+                this[this.tableobtenerDatosRemision.retencionColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -10108,6 +10770,12 @@ namespace Haito.dsHaitoTableAdapters {
             tableMapping.ColumnMappings.Add("usuario", "usuario");
             tableMapping.ColumnMappings.Add("encabezado", "encabezado");
             tableMapping.ColumnMappings.Add("cantidadLetra", "cantidadLetra");
+            tableMapping.ColumnMappings.Add("idMoneda", "idMoneda");
+            tableMapping.ColumnMappings.Add("tipo", "tipo");
+            tableMapping.ColumnMappings.Add("firma", "firma");
+            tableMapping.ColumnMappings.Add("imagenFirma", "imagenFirma");
+            tableMapping.ColumnMappings.Add("idProducto", "idProducto");
+            tableMapping.ColumnMappings.Add("retencion", "retencion");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -10334,6 +11002,12 @@ namespace Haito.dsHaitoTableAdapters {
             tableMapping.ColumnMappings.Add("usuario", "usuario");
             tableMapping.ColumnMappings.Add("encabezado", "encabezado");
             tableMapping.ColumnMappings.Add("cantidadLetra", "cantidadLetra");
+            tableMapping.ColumnMappings.Add("idMoneda", "idMoneda");
+            tableMapping.ColumnMappings.Add("tipo", "tipo");
+            tableMapping.ColumnMappings.Add("firma", "firma");
+            tableMapping.ColumnMappings.Add("imagenFirma", "imagenFirma");
+            tableMapping.ColumnMappings.Add("idProducto", "idProducto");
+            tableMapping.ColumnMappings.Add("retencion", "retencion");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -10562,6 +11236,10 @@ namespace Haito.dsHaitoTableAdapters {
             tableMapping.ColumnMappings.Add("encabezado", "encabezado");
             tableMapping.ColumnMappings.Add("firma", "firma");
             tableMapping.ColumnMappings.Add("cantidadLetra", "cantidadLetra");
+            tableMapping.ColumnMappings.Add("tipo", "tipo");
+            tableMapping.ColumnMappings.Add("imagenFirma", "imagenFirma");
+            tableMapping.ColumnMappings.Add("idProducto", "idProducto");
+            tableMapping.ColumnMappings.Add("retencion", "retencion");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -11336,6 +12014,7 @@ namespace Haito.dsHaitoTableAdapters {
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@observaciones", global::System.Data.SqlDbType.NVarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEncabezado", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idMoneda", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tipo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[12] = new global::System.Data.SqlClient.SqlCommand();
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[12])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Haito.Properties.Settings.Default.HaitoConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[12])).CommandText = "dbo.InsertarCambiarOrdenCompra";
@@ -11348,6 +12027,7 @@ namespace Haito.dsHaitoTableAdapters {
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[12])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@observaciones", global::System.Data.SqlDbType.NVarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[12])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEncabezado", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[12])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idMoneda", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[12])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tipo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[13] = new global::System.Data.SqlClient.SqlCommand();
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[13])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Haito.Properties.Settings.Default.HaitoConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[13])).CommandText = "dbo.obtenerSigIDCotizacion";
@@ -11413,6 +12093,7 @@ namespace Haito.dsHaitoTableAdapters {
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[19])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@observaciones", global::System.Data.SqlDbType.NVarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[19])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEncabezado", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[19])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idMoneda", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[19])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tipo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11917,7 +12598,7 @@ namespace Haito.dsHaitoTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int InsertarCambiarCotizacion(global::System.Nullable<int> idCotizacion, global::System.Nullable<int> idCliente, global::System.Nullable<global::System.DateTime> fecha, global::System.Nullable<int> idUsuario, string observaciones, global::System.Nullable<int> idEncabezado, global::System.Nullable<int> idMoneda) {
+        public virtual object InsertarCambiarCotizacion(global::System.Nullable<int> idCotizacion, global::System.Nullable<int> idCliente, global::System.Nullable<global::System.DateTime> fecha, global::System.Nullable<int> idUsuario, string observaciones, global::System.Nullable<int> idEncabezado, global::System.Nullable<int> idMoneda, global::System.Nullable<int> tipo) {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[11]));
             if ((idCotizacion.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(idCotizacion.Value));
@@ -11961,27 +12642,39 @@ namespace Haito.dsHaitoTableAdapters {
             else {
                 command.Parameters[7].Value = global::System.DBNull.Value;
             }
+            if ((tipo.HasValue == true)) {
+                command.Parameters[8].Value = ((int)(tipo.Value));
+            }
+            else {
+                command.Parameters[8].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
                 command.Connection.Open();
             }
-            int returnValue;
+            object returnValue;
             try {
-                returnValue = command.ExecuteNonQuery();
+                returnValue = command.ExecuteScalar();
             }
             finally {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
                     command.Connection.Close();
                 }
             }
-            return returnValue;
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int InsertarCambiarOrdenCompra(global::System.Nullable<int> idOrdenCompra, global::System.Nullable<int> idProveedor, global::System.Nullable<global::System.DateTime> fecha, global::System.Nullable<int> idUsuario, string observaciones, global::System.Nullable<int> idEncabezado, global::System.Nullable<int> idMoneda) {
+        public virtual object InsertarCambiarOrdenCompra(global::System.Nullable<int> idOrdenCompra, global::System.Nullable<int> idProveedor, global::System.Nullable<global::System.DateTime> fecha, global::System.Nullable<int> idUsuario, string observaciones, global::System.Nullable<int> idEncabezado, global::System.Nullable<int> idMoneda, global::System.Nullable<int> tipo) {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[12]));
             if ((idOrdenCompra.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(idOrdenCompra.Value));
@@ -12025,21 +12718,33 @@ namespace Haito.dsHaitoTableAdapters {
             else {
                 command.Parameters[7].Value = global::System.DBNull.Value;
             }
+            if ((tipo.HasValue == true)) {
+                command.Parameters[8].Value = ((int)(tipo.Value));
+            }
+            else {
+                command.Parameters[8].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
                 command.Connection.Open();
             }
-            int returnValue;
+            object returnValue;
             try {
-                returnValue = command.ExecuteNonQuery();
+                returnValue = command.ExecuteScalar();
             }
             finally {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
                     command.Connection.Close();
                 }
             }
-            return returnValue;
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12336,7 +13041,7 @@ namespace Haito.dsHaitoTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int InsertarCambiarRemision(global::System.Nullable<int> idRemision, global::System.Nullable<int> idCliente, global::System.Nullable<global::System.DateTime> fecha, global::System.Nullable<int> idUsuario, string observaciones, global::System.Nullable<int> idEncabezado, global::System.Nullable<int> idMoneda) {
+        public virtual object InsertarCambiarRemision(global::System.Nullable<int> idRemision, global::System.Nullable<int> idCliente, global::System.Nullable<global::System.DateTime> fecha, global::System.Nullable<int> idUsuario, string observaciones, global::System.Nullable<int> idEncabezado, global::System.Nullable<int> idMoneda, global::System.Nullable<int> tipo) {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[19]));
             if ((idRemision.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(idRemision.Value));
@@ -12380,21 +13085,33 @@ namespace Haito.dsHaitoTableAdapters {
             else {
                 command.Parameters[7].Value = global::System.DBNull.Value;
             }
+            if ((tipo.HasValue == true)) {
+                command.Parameters[8].Value = ((int)(tipo.Value));
+            }
+            else {
+                command.Parameters[8].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
                 command.Connection.Open();
             }
-            int returnValue;
+            object returnValue;
             try {
-                returnValue = command.ExecuteNonQuery();
+                returnValue = command.ExecuteScalar();
             }
             finally {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
                     command.Connection.Close();
                 }
             }
-            return returnValue;
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
         }
     }
     

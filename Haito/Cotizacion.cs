@@ -30,8 +30,7 @@ namespace Haito
                 txtIDFolio.Text = idCotizacion.ToString();
             }
             idUsuario=_idUsuario;
-        }
-          
+        }          
 
         private void cargarDatosCotizacion()
         {
@@ -57,6 +56,8 @@ namespace Haito
                 cbMoneda.SelectedIndex = (int)dtCotizacion.Rows[0]["idMoneda"];
                 cbEncabezado.SelectedIndex = (int)dtCotizacion.Rows[0]["idEncabezado"];
 
+                cmbTipo.SelectedIndex = (int)dtCotizacion.Rows[0]["tipo"];
+
                 cbAtencion.SelectedValue = (int)dtCotizacion.Rows[0]["idCliente"];
                 dateFecha.Text = DateTime.Parse( dtCotizacion.Rows[0]["fecha"].ToString()).ToShortDateString();
                 tbObservaciones.Text = dtCotizacion.Rows[0]["observaciones"].ToString();
@@ -64,6 +65,7 @@ namespace Haito
                 //totales
                 tbSubtotal.Text = dtCotizacion.Rows[0]["subtotal"].ToString();
                 tbIVA.Text = dtCotizacion.Rows[0]["iva"].ToString();
+                tbRetencion.Text = dtCotizacion.Rows[0]["retencion"].ToString();
                 tbTotal.Text = dtCotizacion.Rows[0]["total"].ToString();
 
                 dgvProductos.DataSource = dtCotizacion;
@@ -91,7 +93,7 @@ namespace Haito
                 dgvProductos.Columns[21].Visible = false;
                 dgvProductos.Columns[22].Visible = false;
                 dgvProductos.Columns[23].Visible = false;
-
+                dgvProductos.Columns[24].Visible = false;
                 
                // dgvProductos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
                 dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
@@ -112,6 +114,7 @@ namespace Haito
             cargarUM();
             cargarEncabezados();
             cargarMonedas();
+            cargarTipo();
             try
             {
                 if (idCotizacion != 0)
@@ -123,6 +126,12 @@ namespace Haito
                     cargarSiguienteFolio((int)cbEncabezado.SelectedValue);
             }
             catch (Exception Exception) { AutoClosingMessageBox.Show(Exception.Message,"error",3000); }
+        }
+
+        private void cargarTipo()
+        {
+            cmbTipo.DataSource = Enum.GetValues(typeof(tipoProducto));
+            cmbTipo.SelectedIndex = 0;
         }
 
         private void cargarMonedas()
@@ -206,8 +215,6 @@ namespace Haito
             //que las cantidades sean decimales validos
             //que el precio sea valido y que se haya seleccionado una unidad de medida.
             //se van a guardar con el numero de cotizacion que se haya mostrado en el folio superior
-            
-
             try
             {
                 if (valida() != "OK")
@@ -233,7 +240,7 @@ namespace Haito
                     }
 
 
-                    qta.InsertarCambiarCotizacion(idFolio, idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), cbEncabezado.SelectedIndex, cbMoneda.SelectedIndex);
+                    qta.InsertarCambiarCotizacion(idFolio, idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), cbEncabezado.SelectedIndex, cbMoneda.SelectedIndex, cmbTipo.SelectedIndex);
                     int idProducto = int.Parse(dtProd.Rows[0]["idProducto"].ToString());
                     idCotizacion = int.Parse(txtIDFolio.Text);
                     qta.InsertarCambiarCotizacionDetalle(idFolio, idProducto, cantidad, precio, cbUnidadMedida.Text 
@@ -414,7 +421,7 @@ namespace Haito
 
 
 
-            qta.InsertarCambiarCotizacion(idFolio, idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), (int) cbEncabezado.SelectedValue, cbMoneda.SelectedIndex);
+                    qta.InsertarCambiarCotizacion(idFolio, idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), (int) cbEncabezado.SelectedValue, cbMoneda.SelectedIndex, cmbTipo.SelectedIndex);
 
                     AutoClosingMessageBox.Show("Ingreso correcto", "Cotización", 2000);
                 }
@@ -425,7 +432,6 @@ namespace Haito
             }
         }
 
-
         private void cbEncabezado_SelectedIndexChanged(object sender, EventArgs e)
         {
             //cambia el folio por encabezado solo si es nuevo 
@@ -435,15 +441,45 @@ namespace Haito
                 txtIDFolio.Text = qta.obtenerSigIDCotizacion((int)cbEncabezado.SelectedValue).ToString();
                 idEncabezado = (int)cbEncabezado.SelectedValue;
             }
-        }
-
-    
+        }    
 
         private void bEliminar_Click(object sender, EventArgs e)
         {
             //se manda a eliminar el row
             eliminar();
         }
-        
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cmbTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //cambia la manera en que se hacen los calculos de total para realizar la retención de iva, esto solo aplica
+            //para los tipos de servicios.
+            //modificar la cotizacion y volver a cargar para mostrar la retencion
+            try
+            {
+                    //ingresar en bd o hacer la actualizacion dependiendo si se habia guardado anteriormente
+                    dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
+                    int idFolio;
+                    if (nueva)
+                    {
+                    return;
+                    }
+                    else
+                    {
+                        idFolio = int.Parse(txtIDFolio.Text);
+                    }
+                    qta.InsertarCambiarCotizacion(idFolio, idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), cbEncabezado.SelectedIndex, cbMoneda.SelectedIndex, cmbTipo.SelectedIndex);
+                    cargarDatosCotizacion();                   
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR");
+
+            }
+        }
     }
 }

@@ -64,6 +64,7 @@ namespace Haito
                 tbSubtotal.Text = dtRemision.Rows[0]["subtotal"].ToString();
                 tbIVA.Text = dtRemision.Rows[0]["iva"].ToString();
                 tbTotal.Text = dtRemision.Rows[0]["total"].ToString();
+                tbRetencion.Text = dtRemision.Rows[0]["retencion"].ToString();
 
                 dgvProductos.DataSource = dtRemision;
 
@@ -109,6 +110,7 @@ namespace Haito
             cargarUM();
             cargarEncabezados();
             cargarMonedas();
+            cargarTipo();
             try
             {
                 if (idRemision != 0)
@@ -120,6 +122,12 @@ namespace Haito
                     cargarSiguienteFolio((int)cbEncabezado.SelectedValue);
             }
             catch (Exception Exception) { AutoClosingMessageBox.Show(Exception.Message,"error",3000); }
+        }
+
+        private void cargarTipo()
+        {
+            cmbTipo.DataSource = Enum.GetValues(typeof(tipoProducto));
+            cmbTipo.SelectedIndex = 0;
         }
 
         private void cargarMonedas()
@@ -237,7 +245,7 @@ namespace Haito
                     }
 
 
-                    qta.InsertarCambiarRemision(idFolio, idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), cbEncabezado.SelectedIndex, cbMoneda.SelectedIndex);
+                    qta.InsertarCambiarRemision(idFolio, idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), cbEncabezado.SelectedIndex, cbMoneda.SelectedIndex,cmbTipo.SelectedIndex);
                     int idProducto = int.Parse(dtProd.Rows[0]["idProducto"].ToString());
                     idRemision = int.Parse(txtIDFolio.Text);
                     qta.InsertarCambiarRemisionDetalle(idFolio, idProducto, cantidad, precio, cbUnidadMedida.Text 
@@ -420,7 +428,7 @@ namespace Haito
 
 
 
-            qta.InsertarCambiarCotizacion(idFolio, idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), (int) cbEncabezado.SelectedValue, cbMoneda.SelectedIndex);
+            qta.InsertarCambiarRemision(idFolio, idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), (int) cbEncabezado.SelectedValue, cbMoneda.SelectedIndex, cmbTipo.SelectedIndex);
 
                     AutoClosingMessageBox.Show("Ingreso correcto", "Cotización", 2000);
                 }
@@ -461,6 +469,32 @@ namespace Haito
         {
             eliminar();
         }
-        
+
+        private void cmbTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //cambia la manera en que se hacen los calculos de total para realizar la retención de iva, esto solo aplica
+            //para los tipos de servicios.
+            try
+            {
+                //ingresar en bd o hacer la actualizacion dependiendo si se habia guardado anteriormente
+                dsHaitoTableAdapters.QueriesTableAdapter qta = new dsHaitoTableAdapters.QueriesTableAdapter();
+                int idFolio;
+                if (nueva)
+                {
+                    return;
+                }
+                else
+                {
+                    idFolio = int.Parse(txtIDFolio.Text);
+                }
+                qta.InsertarCambiarRemision(idFolio, idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), cbEncabezado.SelectedIndex, cbMoneda.SelectedIndex, cmbTipo.SelectedIndex);
+                cargarDatosRemision();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR");
+
+            }
+        }
     }
 }
