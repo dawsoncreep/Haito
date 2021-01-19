@@ -26,8 +26,8 @@ namespace Haito.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\;Initial Catalog=Haito;Integrated Security=False;uid=sa; pwd=Nissan" +
-            "2015;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.1\\;Initial Catalog=Haito;Integrated Security=False;uid=sa; " +
+            "pwd=Nissan2015;")]
         public string HaitoConnectionString {
             get {
                 return ((string)(this["HaitoConnectionString"]));

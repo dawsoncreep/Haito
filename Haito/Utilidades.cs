@@ -13,10 +13,6 @@ namespace Haito
     {
     }
 
-
-
-
-    
     public class AutoClosingMessageBox
     {
         System.Threading.Timer _timeoutTimer;
@@ -49,9 +45,22 @@ namespace Haito
 
     enum unidadMedida
     {
-        PZ = 1
-        ,Kg = 2
-        ,Ton = 3        
+          PZ = 1
+        , Kg = 2
+        , Ton = 3
+        , Metro = 4
+        , Lote = 5
+        , Caja = 6
+        , Tramo = 7
+        , Cm = 8
+        , Pulgada = 9
+        , M2 = 10
+        , M3 = 11
+        , Libra = 12
+        , Litro = 13
+        , Galon = 14
+        , Cubeta = 15
+        , Gramo = 16
     }
 
     enum rol

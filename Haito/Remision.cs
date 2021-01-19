@@ -417,7 +417,7 @@ namespace Haito
                     int idFolio;
                     if (nueva)
                     {//obtiene el siguiente folio
-                        idFolio = int.Parse(qta.siguienteFolio("ordenCompra").ToString());
+                        idFolio = int.Parse(qta.siguienteFolio("remision").ToString());
                         txtIDFolio.Text = idFolio.ToString();
                         nueva = false;
                     }
@@ -430,7 +430,7 @@ namespace Haito
 
             qta.InsertarCambiarRemision(idFolio, idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), (int) cbEncabezado.SelectedValue, cbMoneda.SelectedIndex, cmbTipo.SelectedIndex);
 
-                    AutoClosingMessageBox.Show("Ingreso correcto", "Cotización", 2000);
+                    AutoClosingMessageBox.Show("Ingreso correcto", "Remisión", 2000);
                 }
             }
             catch (Exception ex) {

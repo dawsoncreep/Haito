@@ -240,7 +240,7 @@ namespace Haito
                     }
 
 
-                    qta.InsertarCambiarCotizacion(idFolio, idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), cbEncabezado.SelectedIndex, cbMoneda.SelectedIndex, cmbTipo.SelectedIndex);
+                    qta.InsertarCambiarCotizacion(idFolio, idContacto, DateTime.Parse(dateFecha.Text), idUsuario, tbObservaciones.Text.ToUpper(), (int)cbEncabezado.SelectedValue, cbMoneda.SelectedIndex, cmbTipo.SelectedIndex);
                     int idProducto = int.Parse(dtProd.Rows[0]["idProducto"].ToString());
                     idCotizacion = int.Parse(txtIDFolio.Text);
                     qta.InsertarCambiarCotizacionDetalle(idFolio, idProducto, cantidad, precio, cbUnidadMedida.Text 

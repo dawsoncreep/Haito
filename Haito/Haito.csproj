@@ -27,7 +27,7 @@
     <ProductName>Cotizaciones</ProductName>
     <PublisherName>Jaime Castorena</PublisherName>
     <SuiteName>Haito</SuiteName>
-    <ApplicationRevision>41</ApplicationRevision>
+    <ApplicationRevision>43</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -296,9 +296,9 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="remision.rdl">
+    <Content Include="remision.rdl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
     <None Include="Resources\logoSinFondo.png" />
   </ItemGroup>
   <ItemGroup>
