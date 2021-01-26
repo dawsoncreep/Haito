@@ -410,7 +410,7 @@ namespace Haito
                     int idFolio;
                     if (nueva)
                     {//obtiene el siguiente folio
-                        idFolio = int.Parse(qta.siguienteFolio("ordenCompra").ToString());
+                        idFolio = int.Parse(qta.siguienteFolio("cotizacion").ToString());
                         txtIDFolio.Text = idFolio.ToString();
                         nueva = false;
                     }
